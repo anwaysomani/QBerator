@@ -1,0 +1,23 @@
+body {
+	background-color: #69d4d6;
+	text-align: center;
+}
+
+html {
+	margin: 20px;
+}
+
+a {
+	font: 20px bold;
+	text-color: #ff4000;
+}
+
+h1 {
+	font: 30px Bold, Arial Black, Helvetica, Serif;
+	text-decoration: underline;
+	background-color: green;
+	text-align: center;
+	padding: 15px;
+	margin: 20px;
+	border: 10px solid red;
+}

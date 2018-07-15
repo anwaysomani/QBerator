@@ -1,10 +1,11 @@
-
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <h2>Log in to My Site</h2>
+  <h2>Welcome to Login Page</h2>
+  <link rel="stylesheet" href="{% static "css/login.css" %}" type="text/css" />
   {% if form.errors %}
-    <p style="color: red">Your username and password didn't match. Please try again.</p>
+    <p style="color: red">Login credentials didn't match. Please check username and password again.</p>
   {% endif %}
   <form method="post">
     {% csrf_token %}
@@ -21,7 +22,7 @@
         {% endif %}
       </p>
     {% endfor %}
-    <button type="submit">Log in</button>
-    <a href="{% url 'signup' %}">New to My Site? Sign up</a>
+    <button type="submit" class="button">Log In</button><br><br>
+    <a href="{% url 'signup' %}">New Faculty Registration</a>
   </form>
 {% endblock %}
