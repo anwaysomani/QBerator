@@ -12,7 +12,7 @@
     <input type="hidden" name="next" value="{{ next }}" />
     {% for field in form %}
       <p>
-      {{ field.label_tag }}<br>
+        {{ field.label_tag }}<br>
         {{ field }}<br>
         {% for error in field.errors %}
           <p style="color: red">{{ error }}</p>
