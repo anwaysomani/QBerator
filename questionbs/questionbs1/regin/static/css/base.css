@@ -1,0 +1,26 @@
+body {
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+html {
+ 	background: white url("img/background/lightbuild.png") no-repeat;
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	font: 20px bold;
+	text-color: #ff4000;
+}
+
+h1 {
+	font: 30px Bold, Arial Black, Helvetica, Serif;
+	text-decoration: underline;
+	background-color: green;
+	text-align: center;
+	padding: 15px;
+	margin: 20px;
+	border: 10px solid red;
+}
