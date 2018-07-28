@@ -14,5 +14,8 @@ class SignUpForm(UserCreationForm):
         fields = ('first_name', 'last_name', 'mobile_no', 'email', 'password1', 'password2', )
 
 class JoinForm(forms.Form):
-    employee_id = forms.IntegerField()
-    password = forms.CharField()
+    employee_id = forms.CharField()
+
+    class Meta:
+        model = User
+        fields = ('employee_id', 'password', )

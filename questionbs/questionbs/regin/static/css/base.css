@@ -28,3 +28,8 @@ h1 {
 .sign-up {
 	background-color: green;
 }
+
+.truth {
+	background-color: yellow;
+	font: 40px Bold Arial Black, Arial, Serif;
+}

@@ -8,7 +8,8 @@ from questionbs.regin.forms import SignUpForm
 def home(request):
     return render(request, 'home.html')
 
-
+def login(request):
+    return render(request, 'login.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -33,8 +34,8 @@ from .forms import JoinForm
 
 class JoinFormView(FormView):
     form_class = JoinForm
-    template_name = 'forms/ajax.html'
-    success_url = '/home.html'
+    template_name = 'login.html'
+    success_url = '/home'
 
     def form_invalid(self, form):
         response = super(JoinFormView, self). form_invalid(form)
@@ -59,5 +60,5 @@ from .mixins import AjaxFormMixin
 
 class JoinFormView(AjaxFormMixin, FormView):
     form_class = JoinForm
-    template_name = 'forms/ajax.html'
-    success_url = '/home.html'
+    template_name = 'login.html'
+    success_url = '/home'

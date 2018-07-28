@@ -1,68 +1,53 @@
-{% extends 'base.html' %}
-{% comment "template_location" %}
-	'forms/ajax.html'
-{% endcomment %}
-{% load static %}
+{% extends "base.html" %}
 
 {% block content %}
-  <!--<form class='my-ajax-form' method='POST' action='.' data-url='{{ request.build_absolute_uri|safe }}'>
-        {% csrf_token %}
-        {{form.as_p|safe}}
-        <button type='submit'>Submit</button>
-  </form>-->
+    <form class='my-ajax-form' method='POST' action='.' data-url='{{ request.build_absolute_uri|safe }}'>
+	{% csrf_token %}
 
-    <!--<script>
-	$(document).ready(function(){
-    	var $myForm = $('.my-ajax-form')
-    	$myForm.submit(function(event){
-        	event.preventDefault()
-        	var $formData = $(this).serialize()
-        	var $thisURL = $myForm.attr('data-url') || window.location.href // or set your own url
-        	$.ajax({
-            		method: "POST",
-            		url: $thisURL,
-            		data: $formData,
-	            	success: handleFormSuccess,
- 	           	error: handleFormError,
-        	})
-    	})
+	<!-- Trial for old-new compare 
+	{% for field in form %}
+	  <p>
+	      {% for error in field.errors %}
+	        <p style="color:red">{{ error }}</p>
+	      {% endfor %}
+	      {% if field.help_text %}
+	        <p><small style="color: grey">{{ field.help_text }}</small></p>
+	     {% endif %}
+	  </p>
+	{% endfor %}
+	{{form.as_p|safe}}-->
+	<button type='submit' class="button">Login</button><br><br>
+	<a href="{% url 'signup' %}">New Faculty Registration</a>
+    </form>
 
-    	function handleFormSuccess(data, textStatus, jqXHR){
-        	console.log(data)
-        	console.log(textStatus)
-        	console.log(jqXHR)
-        	$myForm.reset(); // reset form data
-    	}
+<script>
+$(document).ready(function(){
+    var $myForm = $('.my-ajax-form')
+    $myForm.submit(function(event){
+        event.preventDefault()
+        var $formData = $(this).serialize()
+        var $thisURL = $myForm.attr('data-url') || window.location.href // or set your own url
+        $.ajax({
+            method: "POST",
+            url: $thisURL,
+            data: $formData,
+            success: handleFormSuccess,
+            error: handleFormError,
+        })
+    })
 
-    	function handleFormError(jqXHR, textStatus, errorThrown){
-        	console.log(jqXHR)
-        	console.log(textStatus)
-        	console.log(errorThrown)
-    	}
-	})
-    </script>-->
-  
-  <!--<h2>Welcome to Login Page</h2>
-  <link rel="stylesheet" href="{% static "css/login.css" %}" type="text/css" />
-  {% if form.errors %}
-    <p style="color: red">Login credentials didn't match. Please check username and password again.</p>
-  {% endif %}
-  <form method="post">
-    {% csrf_token %}
-    <input type="hidden" name="next" value="{{ next }}" />
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}<br>
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-        {% if field.help_text %}
-          <p><small style="color: grey">{{ field.help_text }}</small></p>
-        {% endif %}
-      </p>
-    {% endfor %}
-    <button type="submit" class="button">Log In</button><br><br>
-    <a href="{% url 'signup' %}">New Faculty Registration</a>
-  </form>-->
-{% endblock %}
+    function handleFormSuccess(data, textStatus, jqXHR){
+        console.log(data)
+        console.log(textStatus)
+        console.log(jqXHR)
+        $myForm.reset(); // reset form data
+    }
+
+    function handleFormError(jqXHR, textStatus, errorThrown){
+        console.log(jqXHR)
+        console.log(textStatus)
+        console.log(errorThrown)
+    }
+})
+</script>
+{% endblock content %}
