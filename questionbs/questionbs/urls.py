@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
-
+from django.contrib import admin
 from questionbs.regin import views as regin_views
-
+from regin.views import JoinFormView
 
 urlpatterns = [
+    url('admin/', admin.site.urls),
     url(r'^$', regin_views.home, name='home'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^signup/$', regin_views.signup, name='signup'),
+    url(r'^about/$', regin_views.about, name='about'),
+    url(r'^join/', JoinFormView.as_view(), name='join'), #login form using AJAX
 ]
 
