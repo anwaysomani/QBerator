@@ -3,14 +3,12 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from questionbs.regin.forms import SignUpForm
 
-
+# Home Page(after_login)
 @login_required
 def home(request):
     return render(request, 'home.html')
 
-def login(request):
-    return render(request, 'login.html')
-
+# SignUp Form configuration
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -25,10 +23,11 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
+# About Page(bef-af log)
 def about(request):
     return render(request, 'subs/about.html')
 
-# login form using AJAX for avoiding refresh after logging in
+# login form(using AJAX)
 from django.views.generic import FormView
 from .forms import JoinForm
 

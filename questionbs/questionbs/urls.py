@@ -21,11 +21,12 @@ from regin.views import JoinFormView
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url(r'^$', regin_views.home,  name='/home'),
+    url(r'^home/$', regin_views.home,  name='home'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^signup/$', regin_views.signup, name='signup'),
     url(r'^about/$', regin_views.about, name='about'),
     url(r'^join/', JoinFormView.as_view(), name='join'), #login form using AJAX
+    url(r'', regin_views.home, name='default_home'),
 ]
 

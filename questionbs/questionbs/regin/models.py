@@ -1,17 +1,31 @@
+import datetime
+import uuid
+
+from django.contrib.auth import User
 from django.db import models
 from django.urls import reverse
 
-class User(models.Model):
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    email = models.CharField(max_length=20)
-    password = models.CharField(max_length=20)
-    password2 = models.CharField(max_length=20)
 
+def get_file_name(file_name):
+    '''
+    This will return a randomly generated file name
+    of 16 characters
 
-    def get_absolute_url(self):
-        return reverse('regin:index')
+    Note -
+    ----
+    Extension does not persist.
 
-class Question(models.Model):
-    question = models.TextField(max_length=250)
+    '''
+
+    file_name = str(uuid.uuid4())
+    return file_name
+    
+
+class UserProfile(User):
+    middle_name = models.CharField(max_length=30)
+    contact_number = models.BigIntegerField()
+    employee_id = models.CharField(max_length=16)
+    date_of_joining = models.DateField()
+    gender = models.CharField()
+    profile_picture = models.ImageField(upload_to=get_file_name())
 
