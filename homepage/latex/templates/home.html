@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css" />
+</head>
+
+<body>
+	<header>
+		IMAGINARY UNIVERSITY
+
+		<p>Name: {{ user.first_name }}</p>
+		<p>E. Id: {{user.employee_id }}</p>
+		<p>Mail: {{user.email }}</p>
+		<hr />
+	</header>
+
+	<main>
+		{% block content %}
+		<h2><span>Questionnaire</span></h2>
+
+		<a href="{% url 'CreateQues' %}">
+			<div class="point-box">
+				<img src="{% static 'img/create.jpg' %}">
+				<p>Create</p>
+			</div>
+		</a>
+		{% endblock %}
+	</main>
+
+	<footer>
+		<br /><br /><br />
+		<hr />
+		<a href="{% url 'about' %}"> ABOUT </a>
+	</footer>
+</body>
+
+</html>
+
