@@ -1,5 +1,5 @@
 body {
-	background-color: blue;
+	background-color: turquoise;
 }
 
 h2 {
@@ -17,15 +17,27 @@ h2 span {
 }
 
 img {
-	width: 20px;
-	height: 20px;
+	width: 200px;
+	height: 200px;
 }
 
 .point-box {
 	height: 30px;
 	width: 30px;
+	background-color: white;
+	border: 10px solid black;
 }
 
 p {
+	text-align: left;
+}
+
+h3 {
 	text-align: center;
 }
+
+html {
+	height: 100%;
+}
+
+

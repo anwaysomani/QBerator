@@ -9,12 +9,14 @@
 
 <body>
 	<header>
-		IMAGINARY UNIVERSITY
-
+		<h3><u>IMAGINARY UNIVERSITY</u></h3>
+		
 		<p>Name: {{ user.first_name }}</p>
 		<p>E. Id: {{user.employee_id }}</p>
 		<p>Mail: {{user.email }}</p>
+		<br />
 		<hr />
+		
 	</header>
 
 	<main>
@@ -33,7 +35,9 @@
 	<footer>
 		<br /><br /><br />
 		<hr />
-		<a href="{% url 'about' %}"> ABOUT </a>
+		<div class="content">
+			<a href="{% url 'about' %}"> ABOUT </a>
+		</div>
 	</footer>
 </body>
 
