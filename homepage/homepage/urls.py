@@ -13,15 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from django.conf.urls import url, include
-from latex import views as latex_views
-from latex.views import HomeView, CreateQues
+from django.conf.urls import url
+from latex import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view()),
-    url(r'^about/$', latex_views.about, name='about'),
-    url(r'^CreateQues/$', latex_views.CreateQues, name='CreateQues'),
+        url(r'^$', views.index, name='index'),
 ]
