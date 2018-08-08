@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from latex import views
 
 urlpatterns = [
-        url(r'^$', views.index, name='index'),
+        url('', include('latex.urls')),
 ]

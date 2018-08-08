@@ -1,8 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
 	<title>Question Paper Creator</title>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
 </head>
 
 <body>
@@ -11,8 +14,21 @@
 		<hr />
 	</div>
 	
+	<div class="opt-box-var">
+		<a href="{% url 'form' %}">
+			<div class="opt-box clearfix">
+				<img class="create" src="{% static 'img/create.jpg' %}">
+				<div class="texthere1">Create Question</div>
+			</div>
+		</a>
+
+		<div class="opt-box">
+			<img class="view" src="{% static 'img/view.png' %}">
+			<div class="texthere1">View Questions</div>
+		</div>
+	</div>
+	<hr>
 	{% block content %}
-	
 	{% endblock %}
 	
 </body>

@@ -1,0 +1,60 @@
+body {
+	background-color: turquoise;
+}
+
+.opt-box {
+	width: 25%;
+	height: 150px;
+	border-style: solid;
+	margin: 15px;
+	padding: 10px;
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 160px;
+}
+
+.quest-box {
+	margin: 10px 10px 0px 0px;
+	width: 100%;
+	height: 100%;
+	border-style: solid;
+}
+
+.img1 {
+	float: right;
+}
+
+.const-header {
+	background-color: orange;
+	margin: -10px;
+	padding: -5px;
+	text-align: center;
+	font: 35px Bold Arial Black, Verdana, Serif;
+	align-items: center;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+.opt-box-var {
+	align-items: center;
+}
+
+.view {
+	width: 145px;
+	height: 145px;
+}
+
+.create {
+	width: 145px;
+	height: 145px;
+}
+
+.texthere1 {
+	float: right;
+	justify-content: center;
+	font: 25px Bold Verdana, Helvetica, Serif;
+	overflow: hidden;
+}
