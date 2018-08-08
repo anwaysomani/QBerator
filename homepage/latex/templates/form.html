@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block option %}
+	<div class="opt-box-var">
+		<a href="{% url 'form' %}">
+			<div class="opt-box clearfix">
+				<img class="create" src="{% static 'img/create.png' %}">
+				<div class="texthere1">Create Question</div>
+			</div>
+		</a>
+	 	<a href="{% url 'list' %}">
+			<div class="opt-box clearfix">
+				<img class="view" src="{% static 'img/view.png' %}">
+				<div class="texthere1">View Question</div>
+			</div>
+		</a>
+
+{% endblock option %}
 
 {% block content %}
 <div class="quest-box">	
-	<p> </p>
 	<h1>Question:</h1>
 	{% load crispy_forms_tags %}
 	{% crispy form %}
 </div>
 
-{% endblock %}
+{% endblock content %}

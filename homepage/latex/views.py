@@ -7,3 +7,6 @@ def index(request):
 
 def form(request):
     return render(request, 'form.html', {'form': InsQuestion()})
+
+def list(request):
+    return render(request, 'list.html')
