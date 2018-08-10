@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from latex import views
+from django.conf.urls import url
 
 urlpatterns = [
         url('', include('latex.urls')),

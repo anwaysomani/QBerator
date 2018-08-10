@@ -129,3 +129,5 @@ STATIC_ROOT = "/latex/static"
 
 MEDIA_ROOT = '/static/img/'
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
