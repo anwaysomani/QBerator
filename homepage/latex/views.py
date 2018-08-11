@@ -40,3 +40,4 @@ def list(request):
 # view trial'ed' for completin page of django
 def done(request):
     return render(request, 'done.html')
+
