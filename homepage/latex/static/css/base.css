@@ -1,72 +1,72 @@
-body {
-	background-color: green;
-	width: 100%;
-	height: 100%;
+html {
+	margin: -10px;
+	padding: 0px;
 }
 
-.opt-box {
+body {
+	background-color: turquoise;
+}
+
+
+.uni-name-box {
+	background-color: orange;
+	width: 100%;
+	height: 45px;
+	text-align: center;
+	font: 30px Bold Helvetica, Arial, Serif;
+	text-decoration: underline;
+}
+
+.option-choice-box {
+	border: thick solid black;
 	width: 25%;
-	height: 150px;
-	border-style: solid;
-	margin: 15px;
-	padding: 10px;
+	height: 120px;
 	float: left;
-	display: inline-block;
 	vertical-align: top;
+	display: inline-block;
+	margin: 15px;
 	margin-left: 160px;
 }
 
-.quest-box {
-	text-align: center;
-	margin: auto;
-	width: 90%;
-	height: 90%;
-	border-style: solid;
-	padding: 10px 0px 10px 0px;
+.end-report-link-block {
+	position: fixed;
+	bottom: 0px;
+	background-color: black;
+	font-color: white;
+	width: 100%;
 }
 
-.table-data {
-	margin: auto;
+.option-choice-box-comb {
+	align: center;
+}
+
+.question-form-box {
+	text-align: center;
+}
+
+.question-form {
+	text-align: center;
+}
+
+.submission-button {
+	text-align: center;
+	align: center;
+	position: absolute;
 	width: 50%;
-	height: 100%;
-	border-style: solid;
-	padding: 10px 0px 10px 0px;
+	border: none;
+	padding: 15px 32px;
+	display: inline-block;
+	cursor: pointer;
+	background-color: green;
+	float: center;
 }
 
-.img1 {
-	float: right;
+.field {
+	padding: 5px;
+	margin: 10px;
 }
 
-.const-header {
-	background-color: orange;
-	margin: 0px;
+p {
 	padding: 0px;
-	text-align: center;
-	font: 35px Bold Arial Black, Verdana, Serif;
-	align-items: center;
-}
-
-.clearfix {
-	overflow: auto;
-}
-
-.opt-box-var {
-	align-items: center;
-}
-
-.view {
-	width: 145px;
-	height: 145px
-}
-
-.create {
-	width: 145px;
-	height: 145px;
-}
-
-.texthere1 {
-	float: right;
-	justify-content: center;
-	font: 25px Bold Verdana, Helvetica, Serif;
-	overflow: hidden;
+	margin: 0px;
 }

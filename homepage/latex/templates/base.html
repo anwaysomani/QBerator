@@ -1,91 +1,50 @@
 {% load static %}
 
 <!DOCTYPE html>
+
 <html>
 
 <head>
-	<title>Question Paper Creator</title>
-	
-	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
-	
-	<!-- Bootstrap for form.html -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Question Bank</title>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 
-	<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs.jquery/1.4/jquery.min.js'></script>
-	<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
-
-	<script>
-		$(function() {
-			var newHash      = "",
-			        $mainContent = $("#main-content"),
-			        $pageWrap    = $("#page-wrap"),
-			        baseHeight   = 0,
-			        $el;
-        
-	    			$pageWrap.height($pageWrap.height());
-				baseHeight = $pageWrap.height() - $mainContent.height();
-    
-	    			$("nav").delegate("a", "click", function() {
-        				window.location.hash = $(this).attr("href");
-        				return false;
-    				});
-    
-    				$(window).bind('hashchange', function(){
-    
-        				newHash = window.location.hash.substring(1);
-        
-        				if (newHash) {
-            					$mainContent
-                				.find("#guts")
-                				.fadeOut(200, function() {
-                    					$mainContent.hide().load(newHash + " #guts", function() {
-                        					$mainContent.fadeIn(200, function() {
-                            						$pageWrap.animate({
-                                						height: baseHeight + $mainContent.height() + "px"
-                            						});
-                        					});
-                        					$("link a").removeClass("current");
-                        					$("link a[href='"+newHash+"']").addClass("current");
-                    					});
-                				});
-        				};
-        
-    				});
-    
-    				$(window).trigger('hashchange');
-
-	<!--	});-->
-	</script>
+	<!--Bootstrap for HTML's-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 
 <body>
-	{% block head %}
-		<div class="const-header">
-			UNIVERSITY
-			<hr />
-		</div>
-	{% endblock head %}
+	{% block title %}
+	<div class="uni-name-box">
+		UNIVERSITY
+	</div>
+	{% endblock title %}
 	
-	{% block option %}
-		<div class="opt-box-var">
-			<a href="{% url 'form' %}">
-				<div class="opt-box">
-					<img class="create" src="{% static 'img/create.png' %}">
-					<div class="texthere1">Create Question</div>
-				</div>
-			</a>
-			<a href="{% url 'list' %}">
-				<div class="opt-box">
-					<img class="view" src="{% static 'img/view.png' %}">
-					<div class="texthere1">View Questions</div>
-				</div>
-			</a>
+	<div class="option-choice-box-comb">
+		<div class="option-choice-box">
+			<a href="{% url 'createquestion' %}">Create Question</a>
 		</div>
-	{% endblock option %}
-	<br><br><br><br><br><br><br><br><br><br><br>
+		<div class="option-choice-box">
+			<a href="">View Question</a>
+		</div>
+	</div>
+	
+	<br /><br /><br /><br /><br /><br /><br /><br /><br />
 	{% block content %}
-	{% endblock content %}
 	
-</body>
+	{% endblock content %}
 
+<!--	<footer>
+		<div class="end-report-link-block">
+			<a href="">
+				Report Issue
+			</a>
+			<div class="get-name-in-centre">
+				Developed by Anway Somani
+			</div>
+		</div>
+</footer>-->
+</body>
+		
 </html>

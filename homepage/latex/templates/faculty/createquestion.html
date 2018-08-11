@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<form method="post" novalidate>
+	{% csrf_token %} 
+	
+	<div class="question-form-box">
+		<form class="question-form">
+			<fieldset>
+				<legend>Particulars</legend>
+				<div class="field">
+					<p>Branch</p>
+					{{ form.branch }}
+				</div>
+				<div class="field">
+					<p>Specialization</p>
+					{{ form.specialization }}
+				</div>
+				<div class="field">
+					<p>Semester</p>
+					{{ form.semester }}
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Unit</legend>
+				<div class="field">
+					<p>Module</p>
+					{{ form.module }}
+				</div>
+				<div class="field">
+					<p>Chapter</p>
+					{{ form.chapter }}
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Question</legend>
+				<div class="field">
+					<p>Question</p>
+					{{ form.question }}
+				</div>
+				<div class="field">
+					<p>Marks</p>
+					{{ form.marks }}
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Additonal Information</legend>
+				<div class="field">
+					<p>Priority rating</p>
+					{{ form.priority }}
+				</div>
+				<div class="field">
+					<p>Notes</p>
+					{{ form.notes }}
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	
+	<button type="submit" class="submission-button">Submit</button>
+</form>
+
+{% endblock content %}
+

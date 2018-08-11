@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'latex',
     'crispy_forms',
+    'widget_tweaks',
 ]
 
-AUTH_USER_MODEL = 'latex.User'
+# AUTH_USER_MODEL = 'latex.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

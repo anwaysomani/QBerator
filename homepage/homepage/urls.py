@@ -17,13 +17,8 @@ from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 from latex import views as latex_views
 from django.conf.urls import url
-from latex.views import latex, faculty, hod
 
 urlpatterns = [
         url('', include('latex.urls')),
 
-        # For multiple user type login
-        url(r'signup/$', latex.SignUpView.as_view, name='signup'),
-        url(r'signup/faculty/$', faculty.FacultySignUpView, name='faculty_signup'),
-        url(r'signup/hod/$', hod.HodSignUpView, name='hod_signup'),
 ]
