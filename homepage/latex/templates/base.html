@@ -7,7 +7,9 @@
 	<title>Question Paper Creator</title>
 	
 	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
-
+	
+	<!-- Bootstrap for form.html -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs.jquery/1.4/jquery.min.js'></script>
 	<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
@@ -67,7 +69,7 @@
 	{% block option %}
 		<div class="opt-box-var">
 			<a href="{% url 'form' %}">
-				<div class="opt-box clearfix">
+				<div class="opt-box">
 					<img class="create" src="{% static 'img/create.png' %}">
 					<div class="texthere1">Create Question</div>
 				</div>

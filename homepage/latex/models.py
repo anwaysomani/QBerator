@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Question(models.Model):
     branch = models.CharField(blank=False, max_length=60)
     course = models.CharField(blank=False, max_length=60)
@@ -39,3 +40,13 @@ class Question(models.Model):
     # returns to index page after clicking submit
     def get_absolute_url(self):
         return reverse('latex:index')
+
+
+from django.contrib.auth.models import AbstractUser
+
+class User(AbstractUser):
+    is_faculty = models.BooleanField(default=False)
+    is_hod = models.BooleanField(default=False)
+
+class Faculty(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)

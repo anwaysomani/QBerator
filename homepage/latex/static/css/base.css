@@ -1,5 +1,7 @@
 body {
-	background-color: turquoise;
+	background-color: green;
+	width: 100%;
+	height: 100%;
 }
 
 .opt-box {
@@ -16,9 +18,9 @@ body {
 
 .quest-box {
 	text-align: center;
-	margin: 10px 10px 0px 0px;
-	width: 100%;
-	height: 100%;
+	margin: auto;
+	width: 90%;
+	height: 90%;
 	border-style: solid;
 	padding: 10px 0px 10px 0px;
 }
@@ -37,8 +39,8 @@ body {
 
 .const-header {
 	background-color: orange;
-	margin: -10px;
-	padding: -5px;
+	margin: 0px;
+	padding: 0px;
 	text-align: center;
 	font: 35px Bold Arial Black, Verdana, Serif;
 	align-items: center;

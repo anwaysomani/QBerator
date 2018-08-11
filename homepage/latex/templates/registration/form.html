@@ -4,13 +4,13 @@
 {% block option %}
 	<div class="opt-box-var">
 		<a href="{% url 'form' %}">
-			<div class="opt-box clearfix">
+			<div class="opt-box">
 				<img class="create" src="{% static 'img/create.png' %}">
 				<div class="texthere1">Create Question</div>
 			</div>
 		</a>
 	 	<a href="{% url 'list' %}">
-			<div class="opt-box clearfix">
+			<div class="opt-box">
 				<img class="view" src="{% static 'img/view.png' %}">
 				<div class="texthere1">View Questions</div>
 			</div>
@@ -23,8 +23,28 @@
 	<h1>Question:</h1>
 	{% csrf_token %}
 	{% load crispy_forms_tags %}
-	{{ form.field|as_crispy_field:"bootstrap" }}
-	<!--{% crispy form %}-->
+	<form>
+		<fieldset>
+			<legend>Particulars</legend>
+			<div class="form-group">
+				{{ form.branch|as_crispy_field:"bootstrap" }}<p>Enter field</p>
+			</div>
+			<br />
+			{{ form.course|as_crispy_field:"bootstrap" }}
+			{{ form.module|as_crispy_field:"bootstrap" }}
+			{{ form.chapter|as_crispy_field:"bootstrap" }}
+		</fieldset>
+		<fieldset>
+			<legend>Question</legend>
+			{{ form.question|as_crispy_field:"bootstrap" }}
+			{{ form.marks|as_crispy_field:"bootstrap" }}
+		</fieldset>
+		<fieldset>
+			<legend>Additional</legend>
+			{{ form.priority|as_crispy_field:"bootstrap" }}
+		</fieldset>
+	</form>
+	
 </div>
 
 {% endblock content %}

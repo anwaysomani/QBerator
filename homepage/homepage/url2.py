@@ -23,7 +23,7 @@ urlpatterns = [
         url('', include('latex.urls')),
 
         # For multiple user type login
-        url(r'signup/$', latex.SignUpView.as_view, name='signup'),
-        url(r'signup/faculty/$', faculty.FacultySignUpView, name='faculty_signup'),
-        url(r'signup/hod/$', hod.HodSignUpView, name='hod_signup'),
+        url(r'signup/$', latex_views.latex.SignUpView.as_view(), name='signup'),
+        url(r'signup/faculty/$', latex_views.faculty.FacultySignUpView(), name='faculty_signup'),
+        url(r'signup/hod/$', latex_views.latex.hod.HodSignUpView(), name='hod_signup'),
 ]

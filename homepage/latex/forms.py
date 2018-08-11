@@ -39,3 +39,40 @@ class InsQuestion(forms.ModelForm):
                             InlineRadios('marks'),),
                 Fieldset('Additional Information',
                             InlineRadios('priority'),))
+
+
+# form for user login(multiple user types)                
+from django.contrib.auth.forms import UserCreationForm
+from django.db import transaction
+
+from latex.models import User, Faculty
+
+class FacultySignUpForm(UserCreationForm):
+    employee_id = forms.IntegerField()
+    email_id = forms.EmailField(help_text='Update mails will be received here')
+        
+    class Meta(UserCreationForm.Meta):
+        model = User
+
+    @transaction.atomic
+    def save(self):
+        user = super().save(commit=False)
+        user.is_faculty = True
+        user.save()
+        faculty = Faculty.objects.create(user=user)
+        faculty.employee_id.add(*self.cleaned_data.get('employee_id'))
+        faculty.emil_id.add(*self.cleaned_data.get('email_id'))
+        return user
+
+
+class HodSignUpForm(UserCreationForm):
+    
+    class Meta(UserCreationForm.Meta):
+        model = User
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.is_hod = True
+        if commit:
+            user.save()
+        return user

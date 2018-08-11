@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import InsQuestion 
+from ..forms import InsQuestion 
 from django.urls import reverse
 
 #Views for trial editing
@@ -37,7 +37,12 @@ def form(request):
 def list(request):
     return render(request, 'list.html')
 
-# view trial'ed' for completin page of django
+# view trial'ed' for completion page of django
 def done(request):
     return render(request, 'done.html')
 
+# SignUpView
+from django.views.generic import TemplateView
+
+class SignUpView(TemplateView):
+    template_name = 'registration/signup.html'

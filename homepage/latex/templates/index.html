@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% if user.is_authenticated and user.is_faculty %}
+	<link rel="stylesheet" type="type/css" href="{% static 'css/faculty.css' %}">
+	{% else %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/hod.css' %}">
+	{% endif %}
+</head>
