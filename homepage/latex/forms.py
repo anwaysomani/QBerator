@@ -14,6 +14,6 @@ class InsertQuestion(forms.ModelForm):
      note = forms.ModelChoiceField(queryset=Additional.objects.none())
 
      class Meta:
-            model = models.Chapter, models.Question, models.Marks, models.Additional
+            model = Chapter, Question, Marks, Additional
 
             fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
