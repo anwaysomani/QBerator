@@ -5,7 +5,6 @@ from .models import Branch, Specialization, Semester, Course, Module, Chapter, Q
 class InsertQuestion(forms.ModelForm):
      branch = forms.ModelChoiceField(queryset=Branch.objects.all())
      specialization = forms.ModelChoiceField(queryset=Specialization.objects.none())
-     chapter = forms.ModelChoiceField(queryset=.Chapter.objects.none())
      course = forms.ModelChoiceField(queryset=Course.objects.none())
      module= forms.ModelChoiceField(queryset=Module.objects.none())
      chapter = forms.ModelChoiceField(queryset=Chapter.objects.none())
