@@ -91,7 +91,7 @@ class InsQuestion(models.Model):
     priority = models.ForeignKey(Additional, related_name='%(class)s_requests_created', on_delete=models.CASCADE)
     note = models.ForeignKey(Additional, on_delete=models.CASCADE)
 
-Specialization_opt = [
+Specialization = [
         {'BCA': ['Plain', 'MACT', 'CTIS']},   
         {'B.Tech': ['DS', 'MACT', 'CTIS']},
         {'BBA': ['FS', 'IB']},

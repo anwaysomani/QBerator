@@ -15,5 +15,8 @@ class InsertQuestion(forms.ModelForm):
 
      class Meta:
             model = Chapter, Question, Marks, Additional
-
             fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['Specilaization'].queryset = Specialization.objects.none()
