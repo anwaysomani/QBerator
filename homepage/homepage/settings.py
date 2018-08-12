@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'latex',
     'crispy_forms',
     'widget_tweaks',
+    'smart_selects',
 ]
 
 # AUTH_USER_MODEL = 'latex.User'
@@ -134,3 +135,9 @@ MEDIA_ROOT = '/static/img/'
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = '/'
+
+# -------------------------------------------------------------
+
+# JQuery true for all webpages using Smart_Selects
+
+JQUERY_URL = True

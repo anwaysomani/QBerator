@@ -1,23 +1,20 @@
 from django import forms
-from .models import CreateQuestion
+from django.db import models
+from .models import Branch, Specialization, Semester, Course, Module, Chapter, Question, Marks, Additional
 
-class CreateQuestion(forms.ModelForm):
-    class Meta:
-        model = CreateQuestion
-        fields = ['branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'notes']
+class InsertQuestion(forms.ModelForm):
+     branch = forms.ModelChoiceField(queryset=models.Branch.objects.all())
+     specialization = forms.ModelChoiceField(queryset=models.Specialization.objects.none())
+     chapter = forms.ModelChoiceField(queryset=models.Chapter.objects.none())
+     course = forms.ModelChoiceField(queryset=models.Course.objects.none())
+     module= forms.ModelChoiceField(queryset=models.Module.objects.none())
+     chapter = forms.ModelChoiceField(queryset=models.Chapter.objects.none())
+     question= forms.ModelChoiceField(queryset=models.Question.objects.none())
+     marks = forms.ModelChoiceField(queryset=models.Marks.objects.all())
+     priority = forms.ModelChoiceField(queryset=models.Additonal.objects.all())
+     note = forms.ModelChoiceField(queryset=models.Additonal.objects.none())
 
-    def clean(self):
-        cleaned_data = super(CreateQuestion, self).clean()
-        branch = cleaned_data.get('branch')
-        specialization = cleaned_data.get('specialization')
-        semester = cleaned_data.get('semester')
-        course = cleaned_data.get('course')
-        module = cleaned_data.get('module')
-        chapter = cleaned_data.get('chapter')
-        question = cleaned_data.get('question')
-        marks = cleaned_data.get('marks')
-        priority = cleaned_data.get('priority')
-        notes = cleaned_data.get('notes')
+     class Meta:
+            model = models.Chapter, models.Question, models.Marks, models.Additional
 
-        if not branch and not specialization and not semester and not course and not module and not chapter and not question and not marks:
-            raise forms.ValidationError('Fill in all the fields!')
+            fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
