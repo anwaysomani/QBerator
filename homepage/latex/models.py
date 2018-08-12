@@ -40,14 +40,14 @@ class Course(models.Model):
 
 class Module(models.Model):
     name = models.CharField(max_length=50)
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
     def __unicode__(self):
         return u'%s' % self.name
 
 class Chapter(models.Model):
     name = models.CharField(max_length=50)
-    module = models.ForeignKey(Module, on_delete=models.SET_NULL)
+    module = models.ForeignKey(Module, on_delete=models.CASCADE)
 
     def __unicode__(self):
         return u'%s' % self.name
@@ -80,16 +80,16 @@ class Additional(models.Model):
     note = models.CharField(max_length=200)
 
 class InsQuestion(models.Model):
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL)
-    specialization = models.ForeignKey(Specialization, on_delete=models.SET_NULL)
-    semester = models.ForeignKey(Semester, on_delete=models.SET_NULL)
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL)
-    module = models.ForeignKey(Module, on_delete=models.SET_NULL)
-    chapter = models.ForeignKey(Chapter, on_delete=models.SET_NULL)
-    quest = models.ForeignKey(Question, on_delete=models.SET_NULL)
-    marks = models.ForeignKey(Marks, on_delete=models.SET_NULL)
-    priority = models.ForeignKey(Additional, on_delete=models.SET_NULL)
-    note = models.ForeignKey(Additional, on_delete=models.SET_NULL)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
+    specialization = models.ForeignKey(Specialization, on_delete=models.CASCADE)
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    module = models.ForeignKey(Module, on_delete=models.CASCADE)
+    chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
+    quest = models.ForeignKey(Question, on_delete=models.CASCADE)
+    marks = models.ForeignKey(Marks, on_delete=models.CASCADE)
+    priority = models.ForeignKey(Additional, related_name='%(class)s_requests_created', on_delete=models.CASCADE)
+    note = models.ForeignKey(Additional, on_delete=models.CASCADE)
 
 Specialization_opt = [
         {'BCA': ['Plain', 'MACT', 'CTIS']},   
