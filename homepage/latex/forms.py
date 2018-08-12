@@ -4,7 +4,7 @@ from .models import Branch, Specialization, Semester, Course, Module, Chapter, Q
 
 class InsertQuestion(forms.ModelForm):
      branch = forms.ModelChoiceField(queryset=Branch.objects.all())
-     specialization = forms.ModelChoiceField(queryset=Specialization.objects.none())
+     specialization = forms.ModelChoiceField(queryset=Specialization.objects.all())
      course = forms.ModelChoiceField(queryset=Course.objects.none())
      module= forms.ModelChoiceField(queryset=Module.objects.none())
      chapter = forms.ModelChoiceField(queryset=Chapter.objects.none())
@@ -16,7 +16,7 @@ class InsertQuestion(forms.ModelForm):
      class Meta:
             model = Chapter, Question, Marks, Additional
             fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
-
-        def __init__(self, *args, **kwargs):
+            
+     def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.fields['Specilaization'].queryset = Specialization.objects.none()

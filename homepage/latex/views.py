@@ -20,3 +20,4 @@ class InsQuestionUpdateView(UpdateView):
     model = InsQuestion
     fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
     success_url = reverse_lazy('question_changelist')
+
