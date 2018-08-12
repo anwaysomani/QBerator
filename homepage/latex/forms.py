@@ -10,8 +10,8 @@ class InsertQuestion(forms.ModelForm):
      chapter = forms.ModelChoiceField(queryset=Chapter.objects.none())
      question= forms.ModelChoiceField(queryset=Question.objects.none())
      marks = forms.ModelChoiceField(queryset=Marks.objects.all())
-     priority = forms.ModelChoiceField(queryset=Additonal.objects.all())
-     note = forms.ModelChoiceField(queryset=Additonal.objects.none())
+     priority = forms.ModelChoiceField(queryset=Additional.objects.all())
+     note = forms.ModelChoiceField(queryset=Additional.objects.none())
 
      class Meta:
             model = models.Chapter, models.Question, models.Marks, models.Additional
