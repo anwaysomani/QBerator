@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 
@@ -61,6 +62,21 @@
 	
 	<button type="submit" class="submission-button">Submit</button>
 </form>
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Person Form</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Save</button>
+    <a href="{% url 'person_changelist' %}">Nevermind</a>
+  </form>
+{% endblock %}
+
 <script>
 	$(document).ready(function(){
     		$('select[name=branch]').change(function(){

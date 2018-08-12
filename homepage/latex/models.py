@@ -27,7 +27,7 @@ class Semester(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
 
     def __unicode__(self):
-        return u'%s' % self.name
+        return u'%s' % self.sem
 
 class Course(models.Model):
     name = models.CharField(max_length=50)
@@ -40,14 +40,14 @@ class Course(models.Model):
 
 class Module(models.Model):
     name = models.CharField(max_length=50)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL)
 
     def __unicode__(self):
         return u'%s' % self.name
 
 class Chapter(models.Model):
     name = models.CharField(max_length=50)
-    module = models.ForeignKey(Module, on_delete=models.CASCADE)
+    module = models.ForeignKey(Module, on_delete=models.SET_NULL)
 
     def __unicode__(self):
         return u'%s' % self.name
@@ -78,4 +78,25 @@ class Additional(models.Model):
     )
     priority = models.IntegerField(choices=PRIORITY_CHOICE)
     note = models.CharField(max_length=200)
+
+class InsQuestion(models.Model):
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL)
+    specialization = models.ForeignKey(Specialization, on_delete=models.SET_NULL)
+    semester = models.ForeignKey(Semester, on_delete=models.SET_NULL)
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL)
+    module = models.ForeignKey(Module, on_delete=models.SET_NULL)
+    chapter = models.ForeignKey(Chapter, on_delete=models.SET_NULL)
+    quest = models.ForeignKey(Question, on_delete=models.SET_NULL)
+    marks = models.ForeignKey(Marks, on_delete=models.SET_NULL)
+    priority = models.ForeignKey(Additional, on_delete=models.SET_NULL)
+    note = models.ForeignKey(Additional, on_delete=models.SET_NULL)
+
+Specialization_opt = [
+        {'BCA': ['Plain', 'MACT', 'CTIS']},   
+        {'B.Tech': ['DS', 'MACT', 'CTIS']},
+        {'BBA': ['FS', 'IB']},
+        {'B.Com': ['Hons.']},
+        {'B.Sc': ['Animation & VFX']},
+]
+
 

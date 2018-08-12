@@ -25,3 +25,21 @@ def get_specialization(request, branch_id):
     for specialization in specializations:
         specialization_dict[specialization.id] = specialization.name
     return HttpResponse(simplejson.dumps(specialization_dict), mimetype="application/json")
+
+from django.views.generic import ListView, CreateView, UpdateView
+from django.urls import reverse_lazy
+from .models import InsQuestion
+
+class InsQuestionListview(ListView):
+    model =  InsQuestion
+    context_object_name = 'question'
+
+class InsQuestionCreateView(CreateView):
+    model = InsQuestion
+    fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
+    success_url = reverse_lazy('question_changelist')
+
+class InsQuestionUpdateView(UpdateView):
+    model = InsQuestion
+    fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
+    success_url = reverse_lazy('question_changelist')
