@@ -135,5 +135,12 @@ MEDIA_URL = '/media/'
 
 # -------------------------------------------------------------
 
-# JQuery true for all webpages using Smart_Selects
+# Login requirements
 
+#LOGIN_REQUIRED_URLS = (
+#        r'faculty/(.*)$',
+#)
+
+#LOGIN_REQUIRED_URLS_EXCEPTIONS = (
+#        r'login/(.*)$',
+#)

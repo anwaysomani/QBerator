@@ -1,5 +1,11 @@
 from django.shortcuts import render
 
+
+
+
+
+
+
 # index page of faculty containing view option and all accordions
 def facultyindex(request):
     return render(request, 'index/faculty_index.html', {})

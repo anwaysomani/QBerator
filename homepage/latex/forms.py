@@ -11,4 +11,5 @@ class SemesterForm(forms.Form):
             ('7', '7'),
             ('8', '8'),
     ]
-    semester = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect
+    semester = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+
