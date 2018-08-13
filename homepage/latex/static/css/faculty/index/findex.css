@@ -3,11 +3,11 @@ html {
 	padding: 0px;
 }
 
-body {
+/*body {
 	margin: 0px;
 	padding: 0px;
-	background-color: black;
-}
+	background: yellow;
+}*/
 
 .hr-text {
 	line-height: 1em;
@@ -22,11 +22,13 @@ body {
 
 .uni-heading {
 	background-color: orange;
+	font-family: 'Roboto';
 	font: 40px Bold Arial Black, Helvetica, Serif;
 	text-align: center;
 	border: Solid Black;
 	border-width: 0px 0px 8px 0px;
 	padding: 5px;
+	margin: -20px 0px 0px 0px;
 }
 
 .option-title-box {
@@ -34,10 +36,16 @@ body {
 	text-align: right;
 	margin: 0px;
 	padding: 1px;
-	/*position: sticky;*/
 }
 
-h4 {
+.coloringut {
+  color: white;
+  font: 20px Bold Arial Black, Arial, Serif;
+}
+
+h5 {
+	display: inline;
+	float: center;
 	color: white;
 }
 
@@ -68,6 +76,7 @@ h3 {
 
 .container {
   max-width: 970px;
+  background: yellow;
 }
 
 div[class*='col-'] {
