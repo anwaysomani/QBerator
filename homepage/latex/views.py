@@ -1,23 +1,29 @@
 from django.shortcuts import render
 
-def index(request):
-    return render(request, 'base.html')
+# index page of faculty containing view option and all accordions
+def facultyindex(request):
+    return render(request, 'index/faculty_index.html', {})
 
-from django.views.generic import ListView, CreateView, UpdateView
-from django.urls import reverse_lazy
-from .models import InsQuestion
+def facultysem1index(request):
+    return render(request, 'faculty/index/index_sem1.html', {})
 
-class InsQuestionListView(ListView):
-    model =  InsQuestion
-    context_object_name = 'question'
+def facultysem2index(request):
+    return render(request, 'faculty/index/index_sem2.html', {})
 
-class InsQuestionCreateView(CreateView):
-    model = InsQuestion
-    fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
-    success_url = reverse_lazy('question_changelist')
+def facultysem3index(request):
+    return render(request, 'faculty/index/index_sem3.html', {})
 
-class InsQuestionUpdateView(UpdateView):
-    model = InsQuestion
-    fields = ('branch', 'specialization', 'semester', 'course', 'module', 'chapter', 'question', 'marks', 'priority', 'note')
-    success_url = reverse_lazy('question_changelist')
+def facultysem4index(request):
+    return render(request, 'faculty/index/index_sem4.html', {})
 
+def facultysem5index(request):
+    return render(request, 'faculty/index/index_sem5.html', {})
+
+def facultysem6index(request):
+    return render(request, 'faculty/index/index_sem6.html', {})
+
+def facultysem7index(request):
+    return render(request, 'faculty/index/index_sem7.html', {})
+
+def facultysem8index(request):
+    return render(request, 'faculty/index/index_sem8.html', {})
