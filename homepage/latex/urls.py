@@ -1,9 +1,11 @@
-from django.urls import path
 from django.conf.urls import url
 from . import views
 from latex.views import facultyindex
+from latex.views import NewsCreateView, FeedbackCreateView
 
 urlpatterns = [
+
+        url(r'index/$', views.index, name='index'),
 
         # index after Faculty Login
         url(r'faculty/^$', views.facultyindex, name='facultyindex'),
@@ -17,4 +19,15 @@ urlpatterns = [
         url(r'faculty/facsem6/$', views.facultysem6index, name='facsem6'),
         url(r'faculty/facsem7/$', views.facultysem7index, name='facsem7'),
         url(r'faculty/facsem8/$', views.facultysem8index, name='facsem8'),
+
+        # urls for django-bootstrap-modal-forms
+        url(r'modal/create-test/', views.CreateView.as_view(), name='create_test'),
+        url(r'modal/update-test/<int:pk>', views.UpdateView.as_view(), name='update_test'),
+        url(r'modal/success', views.SuccessView.as_view(), name='success_view'),
+        url(r'^create/$', NewsCreateView.as_view(), name='news-create'),
+
+        # django-modal form using django--fm
+        url(r'^create/$', FeedbackCreateView.as_view(), name="feedback_create"),
+
+
 ]

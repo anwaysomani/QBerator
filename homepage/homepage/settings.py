@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'latex',
     'widget_tweaks',
+    'bootstrap_modal_forms',
+    'fm',
+    'crispy_forms',
 ]
 
 # AUTH_USER_MODEL = 'latex.User'
@@ -144,3 +147,5 @@ MEDIA_URL = '/media/'
 #LOGIN_REQUIRED_URLS_EXCEPTIONS = (
 #        r'login/(.*)$',
 #)
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
