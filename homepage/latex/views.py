@@ -37,10 +37,16 @@ def facultysem8index(request):
     return render(request, 'faculty/index/index_sem8.html', {})
 
 
+# BCA - MACT modal view
+from django.views.generic import ListView
+from fm.views import AjaxCreateView, AjaxUpdateView, AjaxDeleteView
+from .models import EI
+from .form import EIForm
 
-# Ajax for modal form - django-fm
-from fm.views import AjaxCreateView
-from .forms import TestForm
+class English_I_ListView(ListView):
+    model = EI
 
-class FeedbackCreateView(AjaxCreateView):
-    form_class = TestForm
+class English_I_CreateView(AjaxCreateView):
+    form_class = EIForm
+
+# bal: to create update and delete view for English_I

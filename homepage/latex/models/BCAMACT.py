@@ -1,4 +1,4 @@
-form django.db import models
+from django.db import models
 
 # Common Choices
 # --------------
@@ -39,6 +39,7 @@ class EI(models.Model):
     marks = models.IntegerField(choices=MARKS_CHOICES)
     priority = models.IntegerField(choices=PRIORITY_CHOICES)
     notes = models.CharField(max_length=500)
+    update_count = models.PositiveIntegerField(default=0)
 
 #Fundamentals Of Mathematics
 class FOM(models.Model):
