@@ -148,7 +148,7 @@ class BCIE(models.Model):
 # --------------------
 
 # Introdcution to Linux
-class IOL(models.Model):
+class ITL(models.Model):
     modules = models.CharField(choices=MOD_CHOICES, max_length=60)
     question = models.CharField(max_length=500)
     marks = models.IntegerField(choices=MARKS_CHOICES)
