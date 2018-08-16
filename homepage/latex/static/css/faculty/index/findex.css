@@ -39,8 +39,14 @@ html {
 }
 
 .coloringut {
-  color: white;
-  font: 20px Bold Arial Black, Arial, Serif;
+	color: white;
+  	font: 20px Bold Arial Black, Arial, Serif;
+}
+
+.coloringat {
+	color: white;
+	font: 20px Bold Arial Black, Arial, Serif;
+	float: left;
 }
 
 h5 {

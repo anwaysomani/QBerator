@@ -15,3 +15,5 @@ from .BCAMACT import PS, FOS, MEABM, AAP, WTAVASIM, POV, SOSII, SOSIIL, AAPL, SI
 # Sem - 6
 from .BCAMACT import MT, ITWA, MPI
 
+# Login Form
+from .models import UserProfile

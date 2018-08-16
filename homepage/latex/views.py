@@ -44,9 +44,29 @@ from .models import EI
 from .form import EIForm
 
 class English_I_ListView(ListView):
-    model = EI
+    template_name = 'list.html'
+
+    def get_queryset(self):
+        return EI.objects.all()
 
 class English_I_CreateView(AjaxCreateView):
+    form = EIForm()
     form_class = EIForm
 
+    if form.is_valid():
+        if request.method == 'POST':
+            form = EIForm(request.POST)
+            if form.is_valid():
+                form.save()
+
 # bal: to create update and delete view for English_I
+"""
+# Login page
+from django.contirb.auth.models import User
+from .models import UserProfile
+from .forms import UserProfileForm
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
+
+def login(request):
+"""

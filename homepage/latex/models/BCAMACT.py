@@ -13,17 +13,17 @@ MOD_CHOICES = (
 
 # Common Marks
 MARKS_CHOICES = (
-        ('2', '2'),
-        ('5', '5'),
-        ('10', '10'),
+        (2, '2'),
+        (5, '5'),
+        (10, '10'),
 )
 
 # Common Priority
 PRIORITY_CHOICES = (
-        ('1', '1'),
-        ('2', '2'),
-        ('3', '3'),
-        ('4', '4'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
 )
 
 
@@ -35,7 +35,7 @@ PRIORITY_CHOICES = (
 #English - I
 class EI(models.Model):
     modules = models.CharField(choices=MOD_CHOICES, max_length=60)
-    question = models.CharField(max_length=500)
+    question = models.TextField()
     marks = models.IntegerField(choices=MARKS_CHOICES)
     priority = models.IntegerField(choices=PRIORITY_CHOICES)
     notes = models.CharField(max_length=500)

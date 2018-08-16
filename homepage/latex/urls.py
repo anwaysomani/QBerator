@@ -8,7 +8,7 @@ urlpatterns = [
         url(r'index/$', views.index, name='index'),
 
         # index after Faculty Login
-        url(r'faculty/^$', views.facultyindex, name='facultyindex'),
+        url(r'faculty/$', views.facultyindex, name='facultyindex'),
 
         # urls for faculty semester pages
         url(r'faculty/facsem1/$', views.facultysem1index, name='facsem1'),
