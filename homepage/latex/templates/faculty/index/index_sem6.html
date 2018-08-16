@@ -10,9 +10,13 @@
 
     	<!-- Existing CSS Link -->
     	<link rel="stylesheet" href="{% static 'css/faculty/index/findex.css' %}">
-    	<!-- Bootstrap CSS Link -->
+    	
+	<!-- Bootstrap CSS Link -->
     	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+	<!-- Local CSS Link to Overwrite Bootstrap CSS -->
+      	<link rel="stylesheet" type="text/css" href="{% static 'css/faculty/index/foverwrite.css' %}">
 
     	<!-- Google Icon Links -->
     	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
@@ -24,6 +28,10 @@
 
     	<!-- Google Font -->
     	<link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Almendra' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Amarante' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Ewert' rel='stylesheet'>
 </head>
 
 <body>
@@ -34,6 +42,7 @@
 
 
     <div class="option-title-box">
+	<a href="{% url 'facultyindex' %}" class="coloringat"><--Back to Semester View</a>
         <a href="" class="coloringut">View All Questions ---></a>
     </div>
     {% endblock title %}
@@ -45,7 +54,7 @@
     <!-- Information Technology -->   
     <div class="container">
         <div class="col-md-6 col-sm-6">
-		<h3>Information Technology</h3><br><br><br><br>
+		<h3><u>Information Technology</u></h3><br><br><br><br>
             	<div class="panel-group wrap" id="bs-collapse">
                 	<div class="panel">
                 	</div>
@@ -206,7 +215,7 @@
 
 	<!-- Management -->
         <div class="col-md-6 col-sm-6">
-	<h3>Management</h3><br><br><br><br>
+		<h3><u>Management</u></h3><br><br><br><br>
         	<div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
                 	<div class="panel">
                 	</div>
@@ -281,6 +290,16 @@
     </div>
     <!-- end of container -->
 
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+
+    <!-- Script for colliding Modal Bootstrap JS and accordion+bs_collapse coloumns -->
+    <script>
+      $('.accordion', '.bs-collapse').on('hidden', function(e){
+            e.stopPropagation();
+      });
+
+    <!-- Scripts for accordion + bs-collapse -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
 

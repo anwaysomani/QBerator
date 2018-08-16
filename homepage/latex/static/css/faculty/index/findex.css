@@ -3,11 +3,9 @@ html {
 	padding: 0px;
 }
 
-/*body {
-	margin: 0px;
-	padding: 0px;
-	background: yellow;
-}*/
+body {
+	background-color: green;
+}
 
 .hr-text {
 	line-height: 1em;
@@ -22,8 +20,8 @@ html {
 
 .uni-heading {
 	background-color: orange;
-	font-family: 'Roboto';
-	font: 40px Bold Arial Black, Helvetica, Serif;
+	font: 40px Bold;
+	font-family: 'Allan';
 	text-align: center;
 	border: Solid Black;
 	border-width: 0px 0px 8px 0px;
@@ -36,15 +34,18 @@ html {
 	text-align: right;
 	margin: 0px;
 	padding: 1px;
+  height: 40px;
 }
 
 .coloringut {
-	color: white;
-  	font: 20px Bold Arial Black, Arial, Serif;
+  background-color: white;
+	color: red;
+  font: 20px Bold Arial Black, Arial, Serif;
 }
 
 .coloringat {
-	color: white;
+  background-color: white;
+	color: red;
 	font: 20px Bold Arial Black, Arial, Serif;
 	float: left;
 }
@@ -56,10 +57,19 @@ h5 {
 }
 
 h3 {
+	font: 50px Bold Georgia;
 	color: white;
 	display: inline;
 	float: left;
 	margin: 15px;
+}
+
+u {
+	text-decoration: underline double blue;
+}
+
+.one-to-link {
+  text-decoration: underline solid green;
 }
 
 /*body {
@@ -71,8 +81,8 @@ h3 {
 
 h3 {
   color: #fff;
-  font-size: 24px;
-  text-align: center;
+  font-size: 50px;
+  text-align: right;
   margin-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #eee;
@@ -81,8 +91,13 @@ h3 {
 }
 
 .container {
-  max-width: 970px;
-  background: yellow;
+  max-width: 1000px;
+  background: #F1F2B5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #135058, #F1F2B5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #135058, #F1F2B5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 }
 
 div[class*='col-'] {
@@ -126,7 +141,12 @@ a:active {
 }
 
 .panel-heading {
-  background-color: #009688;
+  background: #00d2ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
   border-radius: 0;
   border: none;
   color: #fff;
@@ -143,7 +163,7 @@ a:active {
 }
 
 .panel-body {
-  background: #fff;
+  background: #d8dfe3;
 }
 
 .panel:last-child .panel-body {

@@ -59,7 +59,14 @@ class ESASI(models.Model):
 
 #Computer Fundamentals & Organizations
 class CFAO(models.Model):
-    modules = models.CharField(choices=MOD_CHOICES, max_length=60)
+    CFAO_CHOICES = (
+            (1, 'General Features Of A Computer'),
+            (2, 'Computer Organisation'),
+            (3, 'Computer Hardwarwe and Software Resources'),
+            (4, 'MS Office'),
+            (5, 'Introduction To Networking'),
+    )
+    modules = models.CharField(choices=CFAO_CHOICES, max_length=60)
     question = models.CharField(max_length=500)
     marks = models.IntegerField(choices=MARKS_CHOICES)
     priority = models.IntegerField(choices=PRIORITY_CHOICES)

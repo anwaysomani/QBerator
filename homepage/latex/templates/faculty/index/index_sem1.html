@@ -10,9 +10,13 @@
 
     	<!-- Existing CSS Link -->
     	<link rel="stylesheet" href="{% static 'css/faculty/index/findex.css' %}">
-    	<!-- Bootstrap CSS Link -->
+    	
+      	<!-- Bootstrap CSS Link -->
     	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+      	<!-- Local CSS Link to Overwrite Bootstrap CSS -->
+      	<link rel="stylesheet" type="text/css" href="{% static 'css/faculty/index/foverwrite.css' %}">
 
     	<!-- Google Icon Links -->
     	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
@@ -20,10 +24,17 @@
 
     	<!-- JavaScript Link for Bootstrap JS and JQuery -->
     	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     	<!-- Google Font -->
     	<link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Almendra' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Amarante' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Ewert' rel='stylesheet'>
+
+
+
 </head>
 
 <body>
@@ -34,8 +45,8 @@
 
 
     <div class="option-title-box">
-	    <a href="" class="coloringat"><--Back to Semester View</a>
-	    <a href="" class="coloringut">View All Questions ---></a>
+	    <a href="{% url 'facultyindex' %}" class="coloringat"><u class="one-to-link"><--Back to Semester View</u></a>
+	    <a href="" class="coloringut"><u class="one-to-link">View All Questions ---></u></a>
     </div>
     {% endblock title %}
     
@@ -46,7 +57,7 @@
     <!-- Information Technology -->   
     <div class="container">
         <div class="col-md-6 col-sm-6">
-		<h3>Information Technology</h3><br><br><br><br>
+		    <h3><u>Information Technology</u></h3><br><br><br><br>
             	<div class="panel-group wrap" id="bs-collapse">
                 	<div class="panel">
                 	</div>
@@ -65,7 +76,7 @@
 						<p><a href="{% url 'english_I' %}" class="fm-create" data-fm-head="Create" data-fm-callback="reload">English-I</a></p>
 						<p><a href="">Fundamentals Of Mathematics</a></p>
 						<p><a href="">Effective Speaking & Analytical Skills-I</a></p>
-						<p><a href="">Computer Fundamentals & Organizations</a></p>
+						<p><a href="{% url 'cfao' %}" class="fm-create" data-fm-head="Create" data-fm-callback="reload">Computer Fundamentals & Organizations</a></p>
 						<p><a href="">Introduction to Linux</a></p>
 						<p><a href="">Programming in C</a></p>
 						<p><a href="">C Programming Lab</a></p>	
@@ -211,7 +222,7 @@
 
 	<!-- Management -->
         <div class="col-md-6 col-sm-6">
-	<h3>Management</h3><br><br><br><br>
+		<h3><u>Management</u></h3><br><br><br><br>
         	<div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
                 	<div class="panel">
                 	</div>
@@ -301,7 +312,6 @@
 	    $('.accordion', '.bs-collapse').on('hidden', function(e){
   	        e.stopPropagation();
 	    });
-
 
     <!-- Scripts for accordion + bs-collapse -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

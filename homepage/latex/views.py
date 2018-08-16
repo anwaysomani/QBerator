@@ -40,8 +40,8 @@ def facultysem8index(request):
 # BCA - MACT modal view
 from django.views.generic import ListView
 from fm.views import AjaxCreateView, AjaxUpdateView, AjaxDeleteView
-from .models import EI
-from .form import EIForm
+from .models import EI, CFAO
+from .form import EIForm, CFAOForm
 
 class English_I_ListView(ListView):
     template_name = 'list.html'
@@ -60,13 +60,19 @@ class English_I_CreateView(AjaxCreateView):
                 form.save()
 
 # bal: to create update and delete view for English_I
-"""
-# Login page
-from django.contirb.auth.models import User
-from .models import UserProfile
-from .forms import UserProfileForm
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
 
-def login(request):
-"""
+class CFAO_ListView(ListView):
+    template_name = 'list.html'
+
+    def get_queryset(self):
+        return CFAO.objects.all()
+
+class CFAO_CreateView(AjaxCreateView):
+    form = CFAOForm()
+    form_class = CFAOForm
+
+    if form.is_valid():
+        if request.method == 'POST':
+            form = CFAOForm(request.POST)
+            if form.is_valid():
+                form.save()

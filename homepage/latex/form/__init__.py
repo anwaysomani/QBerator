@@ -2,4 +2,4 @@
 # ----------------
 
 # 1) BCA - MACT
-from .BCAMACT import EIForm
+from .BCAMACT import EIForm, CFAOForm

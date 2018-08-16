@@ -1,10 +1,20 @@
 from django.conf.urls import url
 from . import views
 from latex.views import facultyindex
-from latex.views import English_I_CreateView, English_I_ListView
+from latex.views import English_I_CreateView, English_I_ListView, CFAO_CreateView, CFAO_ListView
+
+# For Login System
+from django.conf.urls import url
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-
+        # Login System (fac)
+        url(r'^login/$', auth_views.login, name='login'),
+        url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+        url(r'^admin/', admin.site.urls),
+    
+        # Index(random)
         url(r'index/$', views.index, name='index'),
 
         # index after Faculty Login
@@ -21,6 +31,11 @@ urlpatterns = [
         url(r'faculty/facsem8/$', views.facultysem8index, name='facsem8'),
 
         # django modals for BCA-MACT
+        # English-I
         url(r'^EnglishIC/$', English_I_CreateView.as_view(), name="english_I"),
         url(r'EnglishIL/$', English_I_ListView.as_view(), name="english_i_list"),
+        # CFAO
+        url(r'^CFAOC/$', CFAO_CreateView.as_view(), name="cfao"),
+        url(r'CFAOL/$', CFAO_ListView.as_view(), name="cfao_list"),
+
 ]
