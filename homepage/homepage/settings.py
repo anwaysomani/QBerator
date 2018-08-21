@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
-# AUTH_USER_MODEL = 'latex.User'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'latex.middleware.RequireLoginMiddleware', 
 ]
 
 ROOT_URLCONF = 'homepage.urls'
@@ -138,20 +135,5 @@ MEDIA_URL = '/media/'
 
 
 # -------------------------------------------------------------
-
-
-# Django built-in login system
-LOGIN_REDIRECT_URL = 'facultyindex'
-
-# @login_required
-LOGIN_REQUIRED_URLS = (
-        r'(.*)',
-)
-
-LOGIN_URL = '/admin'
-
-LOGIN_REQUIRED_URLS_EXCEPTIONS = (
-        r'login/(.*)$',
-)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
