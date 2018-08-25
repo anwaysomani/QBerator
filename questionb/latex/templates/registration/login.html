@@ -1,12 +1,23 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
 
-{% block title %}Login{% endblock %}
+<head>
+	<title>Common Login Form</title>
+</head>
 
-{% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-{% endblock %}
+<body>
+	<form id="login_form" method="post" action="login/">
+	{% csrf_token %}
+		Email:
+		<input type="text" name="email" value="" id="email" size="50" />
+		<br />
+
+		Password:
+		<input type="password" name="password" value="" id="password" size="50" />
+
+		<input type="submit" name="submit" value="submit" />
+	</form>
+</body>
+
+</html>
+
