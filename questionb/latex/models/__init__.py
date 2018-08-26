@@ -1,2 +1,3 @@
 
-# Importing HoD and Faculty form
+# importing models for Admin site
+from .basecourse import BranchSem, Subject
