@@ -1,15 +1,36 @@
 from django.contrib import admin
 from .models import *
 
-# displaying list for BranchSem
+# Combining Modules:
+# ------------------
+
+# Module View
+class ModuleTabularInline(admin.TabularInline):
+    model = Modules
+    min_length = 2
+
+# Inserting Module in Course
+class CourseAdmin(admin.ModelAdmin):
+    inlines = [ModuleTabularInline]
+    
+    class Meta:
+        model = Course
+
+# Inserting List Display Views
 class branchdisp(admin.ModelAdmin):
-    list_display = ('branch', 'specialization', 'semester')
+    list_display = ('branch', 'specialization'),
 
-# displaying list for Subject
-class subjectdisp(admin.ModelAdmin):
-    list_display = ('branch', 'subject', 'sub_code')
+class semesterdisp(admin.ModelAdmin):
+    list_display = ('branch', 'sem_abbreviation'),
+
+class coursedisp(admin.ModelAdmin):
+    list_display = ('sem_abbreviation', 'course', 'course_code')
+
+class moduledisp(admin.ModelAdmin):
+    list_display = ('course', 'module')
 
 
-# Registering mods in admin
-admin.site.register(BranchSem,branchdisp)
-admin.site.register(Subject,subjectdisp)
+admin.site.register(Branch, branchdisp)
+admin.site.register(Semester, semesterdisp)
+admin.site.register(Course, CourseAdmin)
+admin.site.register(Modules, moduledisp)

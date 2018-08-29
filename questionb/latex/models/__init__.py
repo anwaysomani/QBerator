@@ -1,3 +1,3 @@
 
 # importing models for Admin site
-from .basecourse import BranchSem, Subject
+from .raw import *

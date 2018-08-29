@@ -33,15 +33,25 @@ p {
 .big-box {
 	width: 1100px;
 	height: 450px;
-	margin: 100px 100px 100px 100px;
+	margin: 35px 50px 50px 50px;
 	padding: 15px;
 	background-color: transparent;
+}
+
+.indent {
+	text-indent: 50px;
+}
+
+.opt-title {
+	color: red;
 }
 
 .left-box {
 	float: left;
 	opacity: 1.0;
-	margin-left: -30px;
+	margin-left: -40px;
+	padding: 5px;
+	margin-top: 5px;
 }
 
 .right-wala-box {
@@ -91,5 +101,25 @@ p {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+.down-wala {
+	position: absolute;
+}
+
+footer { 
+	background-color: black;
+	text-color: white;
+	width: 100%;
+	text-align: center;
+	align: center;
+	word-spacing: 20px;
+	margin-top: 10px;
+}
+
+.ffoot {
+	background-color: black;
+	font: 30px Bold Arial Black, Helvetica, Serif;
+	margin: 0px;
 }
 

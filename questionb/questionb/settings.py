@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'latex',
     'crispy_forms',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [

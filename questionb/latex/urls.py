@@ -10,6 +10,12 @@ urlpatterns = [
     # HOD Login
     url(r'^hlogin/', views.hod_login, name='hod-login'),
 
+    # Post-HOD Login
+    url(r'hindex/$', views.hindex, name='hindex'),
+
     # Post-Faculty Login
     url(r'findex/$', views.findex, name='findex'),
+
+    # Page for Sem-1
+    url(r'fsindex/$', views.sem1, name='fsindex'),
 ]

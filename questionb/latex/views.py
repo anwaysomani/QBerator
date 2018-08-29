@@ -33,6 +33,7 @@ def hod_login(request):
 
 
 # Second view for checking authentication(login form)
+"""
 def faculty_login(request):
     title = "Faculty Login"
 
@@ -51,8 +52,8 @@ def faculty_login(request):
     #else:
         #form = faculty_login()
 
-    return render(request, 'registration/facultylogin.html', {'form': form, 'title': title})
-
+    return render(request, 'registration/facultylogin.html', {'form': form})
+"""
 
 
 
@@ -62,3 +63,10 @@ def faculty_login(request):
 def findex(request):
     return render(request, 'faculty/findex.html', {})
 
+def hindex(request):
+    return render(request, 'hod/hindex.html', {})
+
+
+# Checking semester views for list/grid view
+def sem1(request):
+    return render(request, 'faculty/sem1/sem1.html', {})
