@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Semester 1 Page  for Information Technology</title>
+
+	<!-- Loading Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Load Font Awesome Icon Library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/faculty/sem1.css' %}">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+
+
+	<!-- To be discovered -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap for Collapsible -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+	<div class="uni-heading">
+                AJEENKYA DY PATIL UNIVERSITY
+        </div>
+
+	<hr />
+
+	<div class="blank-box">
+
+	</div>
+
+	<div class="sidenav">
+		<div class="base-tier-head">
+			Courses
+		</div>
+
+		<!-- BCA - MACT -->
+		<div class="base-tier">
+			BCA-MACT
+		</div>
+		{% block bcamact %}
+		{% endblock bcamact %}
+
+		<!-- BCA - CTIS -->
+		<div class="base-tier">
+                	BCA-CTIS
+                </div>
+                {% block bcactis %}
+
+                {% endblock bcactis %}
+
+		<!-- BCA - DS -->
+		<div class="base-tier">
+                	BCA-DS
+                </div>
+                {% block bcads %}
+                {% endblock bcads %}
+		
+		<!-- B. Tech- MACT -->
+		<div class="base-tier">
+                	B. Tech-MACT
+                </div>
+                {% block btmact %}
+                {% endblock btmact %}
+
+		<!-- B. Tech - CTIS -->
+		<div class="base-tier">
+                	B. Tech-CTIS
+                </div>
+                {% block btctis %}
+                {% endblock btctis %}
+
+		<!-- B. Tech - DS -->
+		<div class="base-tier">
+			B. Tech-DS
+                </div>
+                {% block btds %}
+                {% endblock btds %}
+
+
+
+  
+	</div>
+
+	<div class="main">
+		{% block content %}
+		{% endblock content %}
+	</div>
+	
+	<br />
+	<br />
+
+</body>
+
+</html>

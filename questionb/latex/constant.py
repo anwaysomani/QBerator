@@ -35,3 +35,24 @@ MODULE_TYPE_CHOICES = [
         ('9', 'GE'),
         ('10', 'SF'),
 ]
+
+MOD_CHOICES = [
+        ('1', 'Module 1'),
+        ('2', 'Module 2'),
+        ('3', 'Module 3'),
+        ('4', 'Module 4'),
+        ('5', 'Module 5'),
+]
+
+MARKS_CHOICES = [
+        (1, '2'),
+        (2, '5'),
+        (3, '10'),
+]
+
+PRI_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+]

@@ -39,3 +39,11 @@ class Modules(models.Model):
 
     def __str__(self):
         return self.module
+
+
+
+# Declaring Itemss:
+"""
+    For multi-line coding, this is enabled.
+    But, to the most different ways, there cannot be any modal for a form.
+    """

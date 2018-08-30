@@ -23,14 +23,14 @@ class branchdisp(admin.ModelAdmin):
 class semesterdisp(admin.ModelAdmin):
     list_display = ('branch', 'sem_abbreviation'),
 
-class coursedisp(admin.ModelAdmin):
-    list_display = ('sem_abbreviation', 'course', 'course_code')
+#class coursedisp(admin.ModelAdmin):
+ #   list_display = ('sem_abbreviation', 'course', 'course_code')
 
 class moduledisp(admin.ModelAdmin):
     list_display = ('course', 'module')
 
 
-admin.site.register(Branch, branchdisp)
-admin.site.register(Semester, semesterdisp)
+admin.site.register(Branch)
+admin.site.register(Semester)
 admin.site.register(Course, CourseAdmin)
-admin.site.register(Modules, moduledisp)
+admin.site.register(Modules)
