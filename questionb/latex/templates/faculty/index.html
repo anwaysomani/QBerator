@@ -42,64 +42,80 @@
 
 	<div class="blank-box">
 
-	</div>
+		<div class="sidenav">
+			<div class="base-tier-head">
+				Courses
+			</div>
 
-	<div class="sidenav">
-		<div class="base-tier-head">
-			Courses
-		</div>
+			<!-- BCA - MACT -->
+			<div class="base-tier">
+				BCA-MACT
+			</div>
+			{% block bcamact %}
+			{% endblock bcamact %}
 
-		<!-- BCA - MACT -->
-		<div class="base-tier">
-			BCA-MACT
-		</div>
-		{% block bcamact %}
-		{% endblock bcamact %}
+			<!-- BCA - CTIS -->
+			<div class="base-tier">
+                		BCA-CTIS
+                	</div>
+                	{% block bcactis %}
 
-		<!-- BCA - CTIS -->
-		<div class="base-tier">
-                	BCA-CTIS
-                </div>
-                {% block bcactis %}
+                	{% endblock bcactis %}
 
-                {% endblock bcactis %}
-
-		<!-- BCA - DS -->
-		<div class="base-tier">
-                	BCA-DS
-                </div>
-                {% block bcads %}
-                {% endblock bcads %}
+			<!-- BCA - DS -->
+			<div class="base-tier">
+                		BCA-DS
+	                </div>
+        	        {% block bcads %}
+                	{% endblock bcads %}
 		
-		<!-- B. Tech- MACT -->
-		<div class="base-tier">
-                	B. Tech-MACT
-                </div>
-                {% block btmact %}
-                {% endblock btmact %}
+			<!-- B. Tech- MACT -->
+			<div class="base-tier">
+                		B. Tech-MACT
+	                </div>
+        	        {% block btmact %}
+	               	{% endblock btmact %}
 
-		<!-- B. Tech - CTIS -->
-		<div class="base-tier">
-                	B. Tech-CTIS
-                </div>
-                {% block btctis %}
-                {% endblock btctis %}
+			<!-- B. Tech - CTIS -->
+			<div class="base-tier">
+                		B. Tech-CTIS
+	                </div>
+        	        {% block btctis %}
+                	{% endblock btctis %}
+	
+			<!-- B. Tech - DS -->
+			<div class="base-tier">
+				B. Tech-DS
+	                </div>
+        	        {% block btds %}
+                	{% endblock btds %}
+		</div>
 
-		<!-- B. Tech - DS -->
-		<div class="base-tier">
-			B. Tech-DS
-                </div>
-                {% block btds %}
-                {% endblock btds %}
-
-
-
-  
+		
 	</div>
-
 	<div class="main">
-		{% block content %}
-		{% endblock content %}
+		<fieldset>
+			<legend>Add Question</legend>
+
+				<label for="{{ form.modules.id_for_label }}">Module:</label>
+				{{ form.modules }}<br />
+				<label for="{{ form.question.id_for_label }}">Question:</label>
+				{{ form.question }}<br />
+				<label for="{{ form.marks.id_for_label }}">Marks:</label>
+				{{ form.marks }}<br />
+				<label for="{{ form.priority.id_for_label }}">Priority:</label>
+				{{ form.priority }}<br />
+		</fieldset>
+
+		<!--<form method="post">
+        	{% csrf_token %}
+           	{{ form.as_p }}
+  
+          	
+  		</form>-->
+  		<button type="submit" class="btn btn-default">Submit</button>
+ 		<!--Name in the block is important right now!-->
+
 	</div>
 	
 	<br />

@@ -6,7 +6,20 @@ from ..forms import *
 
 # Semester-1
 def sem1(request):
-    return render(request, 'faculty/exfindex/sem1.html', {})
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+  
+        if form.is_valid():
+            pass
+            #form.save()
+            #all_questions = AQuestion.objects.all
+            #return render(request, 'faculty/exfindex/sem3.html', {'form': form})
+            
+    else:
+        form = QuestionForm()
+    return render(request, 'faculty/exfindex/sem3.html', {'form': form})
+
+    #return render(request, 'faculty/exfindex/sem1.html', {})
 
 # Semester-2
 def sem2(request):

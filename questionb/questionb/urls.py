@@ -20,8 +20,12 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    # Urls from admin
     url(r'^admin/', admin.site.urls),
+
+    # Urls from latex
     url('', include('latex.urls.held')),
     url('', include('latex.urls.postlogin')),
     url('', include('latex.urls.fsemester')),
+
 ]
