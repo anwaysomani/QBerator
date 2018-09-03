@@ -9,4 +9,8 @@ urlpatterns = [
 
     # Post Faculty Login
     url(r'findex/$', views.findex, name='findex'),
+
+    # Trial for trial.html dropdown 
+    url(r'findex/fsem1/trial/$', views.trial, name='trial'),
+    url(r'findex/fsem1/trial2/$', views.trial2, name='trial2'),
 ]

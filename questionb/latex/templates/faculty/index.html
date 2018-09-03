@@ -96,15 +96,23 @@
 	<div class="main">
 		<fieldset>
 			<legend>Add Question</legend>
+		
+			<table>
+				<tr>					
+					<td><label for"module">Module:</label>
+					<select name="module">
+						{% block module %}
+						{% endblock module %}
+					</select></td><br />
+				</tr>
+			</table>
 
-				<label for="{{ form.modules.id_for_label }}">Module:</label>
-				{{ form.modules }}<br />
-				<label for="{{ form.question.id_for_label }}">Question:</label>
-				{{ form.question }}<br />
-				<label for="{{ form.marks.id_for_label }}">Marks:</label>
-				{{ form.marks }}<br />
-				<label for="{{ form.priority.id_for_label }}">Priority:</label>
-				{{ form.priority }}<br />
+			<label for="{{ form.question.id_for_label }}">Question:</label>
+			{{ form.question }}<br />
+			<label for="{{ form.marks.id_for_label }}">Marks:</label>
+			{{ form.marks }}<br />
+			<label for="{{ form.priority.id_for_label }}">Priority:</label>
+			{{ form.priority }}<br />
 		</fieldset>
 
 		<!--<form method="post">

@@ -17,7 +17,7 @@ def sem1(request):
             
     else:
         form = QuestionForm()
-    return render(request, 'faculty/exfindex/sem3.html', {'form': form})
+    return render(request, 'faculty/exfindex/sem1.html', {'form': form})
 
     #return render(request, 'faculty/exfindex/sem1.html', {})
 
