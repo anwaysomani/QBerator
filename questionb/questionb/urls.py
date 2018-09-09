@@ -27,5 +27,6 @@ urlpatterns = [
     url('', include('latex.urls.held')),
     url('', include('latex.urls.postlogin')),
     url('', include('latex.urls.fsemester')),
+    url('', include('latex.urls.question')),
 
 ]

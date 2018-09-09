@@ -1,0 +1,30 @@
+--> CREATING VIEW FOR PARTICULAR COURSE PAGE
+ ---------------------------------------------(mock)
+from django.shortcuts import render, redirect
+from ..forms import QuestionForm
+from ..models import AQuestion
+
+def trial(request):
+    comm: If this is a 'POST' request, we need to process the form data
+    if request.method == 'POST':
+        comm: Create a form instance and populate it with data from the request
+        form = QuestionForm(request.POST)
+        comm: Check whether the form is valid
+        if form.is_valid():
+            module = form.cleaned_data['module']
+            question = form.cleaned_data['question']
+            marks = form.cleaned_data['marks']
+            priority = form.cleaned_data['priority']
+            notes = form.cleaned_data['notes']
+
+            ques = AQuestion(course=(course), semester=(semester), module=module, question=question, marks=marks, priority=priority, notes=notes)
+            ques.save()
+
+            return HttpResponseRedirect('/')
+
+    comm: If this is a 'GET' method or any other request method:
+    else:
+        form = QuestionForm()
+
+    comm: Mention page for view
+    return render(request, 'faculty/exfindex/{% select %}.html', {'form': form})
