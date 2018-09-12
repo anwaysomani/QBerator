@@ -40,10 +40,17 @@ class Modules(models.Model):
     def __str__(self):
         return self.module
 
-
-
-# Declaring Itemss:
 """
-    For multi-line coding, this is enabled.
-    But, to the most different ways, there cannot be any modal for a form.
-    """
+class FacultyModuleMap(models.Model):
+    faculty = ForeignKey
+    module = SerializedField
+
+    def save(self, *args, **kwargs):
+        
+        if self.module:
+            if not Modules.objects.filter(module__in=self.modules).exists():
+                raise Exception('Module not found! Please check again')
+        
+        super(FacultyModuleMap, self).save(*args, **kwargs)
+"""
+            

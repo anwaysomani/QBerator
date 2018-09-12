@@ -42,7 +42,8 @@ def trial2(request):
         form = QuestionForm(request.POST)
  
         if form.is_valid():
-            pass
+            #pass
+            form.save()
  
     else:
         form = QuestionForm()

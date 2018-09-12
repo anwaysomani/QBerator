@@ -28,5 +28,6 @@ urlpatterns = [
     url('', include('latex.urls.postlogin')),
     url('', include('latex.urls.fsemester')),
     url('', include('latex.urls.question')),
+    url('', include('latex.urls.login')),
 
 ]

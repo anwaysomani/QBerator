@@ -10,8 +10,8 @@ def sem1(request):
         form = QuestionForm(request.POST)
   
         if form.is_valid():
-            pass
-            #form.save()
+            #pass
+            form.save()
             #all_questions = AQuestion.objects.all
             #return render(request, 'faculty/exfindex/sem3.html', {'form': form})
             

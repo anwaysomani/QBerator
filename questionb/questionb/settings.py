@@ -144,3 +144,5 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.CryptPasswordHasher',
 )
 
+# Login redirect view
+LOGIN_REDIRECT_URL = 'findex'

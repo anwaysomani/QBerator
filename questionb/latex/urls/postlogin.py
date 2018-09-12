@@ -5,10 +5,10 @@ urlpatterns = [
     # Post Login Urls
 
     # Post HOD Login
-    url(r'hindex/$', views.hindex, name='hindex'),
+    url(r'^hindex/$', views.hindex, name='hindex'),
 
     # Post Faculty Login
-    url(r'findex/$', views.findex, name='findex'),
+    url(r'^findex/$', views.findex, name='findex'),
 
     # Trial for trial.html dropdown 
     url(r'findex/fsem1/trial/$', views.trial, name='trial'),
