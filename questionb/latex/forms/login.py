@@ -2,8 +2,10 @@ from django import forms
 from django.contrib.auth import authenticate, get_user_model, login, logout
 
 
-User = get_user_model()
+# User = get_user_model()
 
+#-----------------------------------
+# Faculty login form for main/flogin
 class FacultyLoginForm(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)
@@ -27,7 +29,9 @@ class FacultyLoginForm(forms.Form):
                 raise forms.ValidationError("This user is no longer active")
         return super(FacultyLoginForm, self).clean(*args, **kwargs)
 
+# -----------------------------------------------------------------
 
+# Hod login form for main/hlogin
 class HODLoginForm(forms.Form):
     employee_id = forms.IntegerField()
     password = forms.CharField(widget=forms.PasswordInput)
@@ -49,3 +53,5 @@ class HODLoginForm(forms.Form):
             if not user.is_active:
                 raise forms.ValidationError("This user is no longer active.")
         return super(HODLoginForm, self).clean(*args, **kwargs)
+
+# -------------------------------------------------------------

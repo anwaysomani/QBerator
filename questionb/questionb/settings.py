@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'latex',#external
+    
     'crispy_forms',
     'multiselectfield',
 ]
@@ -70,6 +71,8 @@ TEMPLATES = [
         },
     },
 ]
+
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')],
 
 WSGI_APPLICATION = 'questionb.wsgi.application'
 

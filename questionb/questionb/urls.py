@@ -24,10 +24,14 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # Urls from latex
-    url('', include('latex.urls.held')),
-    url('', include('latex.urls.postlogin')),
-    url('', include('latex.urls.fsemester')),
-    url('', include('latex.urls.question')),
+    
+    # includes urls for login(Ajeenkya DY Patil University: seperated login for Faculty and HoD
     url('', include('latex.urls.login')),
+   
+    # Post Login to: 'findex', 'hindex'
+    url('', include('latex.urls.postlogin')),
+    
+    # finde to fsem1-fsem8 
+    url('', include('latex.urls.fsemester')),
 
 ]

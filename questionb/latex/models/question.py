@@ -3,7 +3,7 @@ from ..constant import *
 from multiselectfield import MultiSelectField
 
 # Fields: 
-class AQuestion(models.Model):
+class Question(models.Model):
     modules = models.CharField(max_length=100, choices=MOD_CHOICES)
     question = models.CharField(max_length=300)
     marks = MultiSelectField(choices=MARKS_CHOICES)
@@ -12,4 +12,3 @@ class AQuestion(models.Model):
 
     def __str__(self):
         return self.question
-    
