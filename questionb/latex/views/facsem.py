@@ -10,7 +10,6 @@ def sem1(request):
         form = QuestionForm(request.POST)
   
         if form.is_valid():
-            #pass
             form.save()
             #all_questions = AQuestion.objects.all
             #return render(request, 'faculty/exfindex/sem3.html', {'form': form})
@@ -18,8 +17,6 @@ def sem1(request):
     else:
         form = QuestionForm()
     return render(request, 'faculty/exfindex/sem1.html', {'form': form})
-
-    #return render(request, 'faculty/exfindex/sem1.html', {})
 
 # Semester-2
 def sem2(request):

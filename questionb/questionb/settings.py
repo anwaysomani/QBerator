@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'latex',#external
+    'accounts',#external
     
     'crispy_forms',
     'multiselectfield',

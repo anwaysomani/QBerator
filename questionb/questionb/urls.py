@@ -22,16 +22,18 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     # Urls from admin
     url(r'^admin/', admin.site.urls),
+    # url for login
+    url('accounts/', include('django.contrib.auth.urls')),
+
+    # Urls from accounts
+    url('', include('accounts.urls')),
 
     # Urls from latex
-    
     # includes urls for login(Ajeenkya DY Patil University: seperated login for Faculty and HoD
-    url('', include('latex.urls.login')),
-   
+    #url('', include('latex.urls.login')),
     # Post Login to: 'findex', 'hindex'
     url('', include('latex.urls.postlogin')),
-    
-    # finde to fsem1-fsem8 
+    # findex to fsem1-fsem8 
     url('', include('latex.urls.fsemester')),
 
 ]
