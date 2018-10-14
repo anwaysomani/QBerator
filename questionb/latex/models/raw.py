@@ -40,17 +40,10 @@ class Modules(models.Model):
     def __str__(self):
         return self.module
 
-"""
-class FacultyModuleMap(models.Model):
-    faculty = ForeignKey
-    module = SerializedField
+# trial clss for module availability
+class Check(models.Model):
+    name = models.CharField(max_length=20)
+    age = models.IntegerField()
 
-    def save(self, *args, **kwargs):
-        
-        if self.module:
-            if not Modules.objects.filter(module__in=self.modules).exists():
-                raise Exception('Module not found! Please check again')
-        
-        super(FacultyModuleMap, self).save(*args, **kwargs)
-"""
-            
+    def __str__(self):
+        return self.name

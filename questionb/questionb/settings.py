@@ -112,6 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#AUTH_USER_MODEL = 'accounts.Profile'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -149,4 +150,4 @@ PASSWORD_HASHERS = (
 )
 
 # Login redirect view
-LOGIN_REDIRECT_URL = 'findex'
+LOGIN_REDIRECT_URL = 'panel-redirect'

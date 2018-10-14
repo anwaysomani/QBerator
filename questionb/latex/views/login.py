@@ -27,41 +27,6 @@ def main(request):
     return render(request, 'main.html', {})
 # -----------------------------------------
 
-# ------------------
-# Faculty Login View
-def faculty_login(request):
-    print(request.user.is_authenticated())
-    title = "Faculty Login"
-    form = FacultyLoginForm(request.POST or None)
-    if form.is_valid():
-        email = form.cleaned_data.get("email")
-        password = form.cleaned_data.get("password")
-        user = authenticate(email=email, password=password)
-        login(request, user)
-        print(request.user.is_authenticated())
-        return redirect('findex')
-
-    return render(request, "registration/facultylogin.html", {"form":form, "title":title})
-# ----------------------------------------------------------------------------------------
-
-# ---------------
-# HoD Login View
-def hod_login(request):
-    print(request.user.is_authenticated())
-    title = "Department Head Login"
-    form = HODLoginForm(request.POST or None)
-    if form.is_valid():
-        email = form.cleaned_data.get("email")
-        password = form.cleaned_data.get("password")
-        user = authenticate(email=email, password=password)
-        login(request, user)
-        print(request.user.is_authenticated())
-        return redirect('hindex')
-
-    return render(request, "registration/hodlogin.html", {"form":form, "title":title})
-# ------------------------------------------------------------------------------------
-
-
 # -------------------
 # Post-Faculty Login:
 # -------------------
@@ -74,5 +39,5 @@ def findex(request):
 def hindex(request):
     return render(request, 'hod/hindex.html', {})
 
-
-
+def error(request):
+    return render(request, 'error.html', {})

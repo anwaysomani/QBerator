@@ -5,5 +5,5 @@ from .raw import *
 # importing model for question creation
 from .question import *
 
-# importing model for Profile editing in admin
-#from .profiles import Profile
+# importing model for trials of dynamic models(self)
+from .fields import *

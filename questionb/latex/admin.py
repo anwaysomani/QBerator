@@ -30,8 +30,14 @@ class moduledisp(admin.ModelAdmin):
     list_display = ('course', 'module')
 
 
-#admin.site.register(Branch)
-#admin.site.register(Semester)
-#admin.site.register(Course, CourseAdmin)
-#admin.site.register(Modules)
-#admin.site.register(Profile)
+admin.site.register(Branch)
+admin.site.register(Semester)
+admin.site.register(Course, CourseAdmin)
+admin.site.register(Modules)
+admin.site.register(Branch1)
+admin.site.register(Specialization1)
+admin.site.register(Semester1)
+admin.site.register(Subject1)
+admin.site.register(Module1)
+admin.site.register(Chapter1)
+
