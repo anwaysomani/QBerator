@@ -10,37 +10,41 @@ class Branch(models.Model):
     def __str__(self):
         return self.branch
 
+# Model: myDeclareSemesterModel
+#class DeclareSemester(models.Model):
+#    semester = models.CharField(max_length=6)
+
+#    def __str__(self):
+#        return self.semester
+
 # Model: Specialization
 class Specialization(models.Model):
     branch = models.ForeignKey(Branch)
     specialization1 = models.CharField(max_length=30)
     specialization2 = models.CharField(max_length=30, blank=True)
     abbreviation = models.CharField(max_length=20)
+#   semester = models.ForeignKey(DeclareSemester, null=True)
 
     def __str__(self):
-        return self.branch.br_abbr + " " + self.abbreviation  
+        return self.branch.br_abbr + " " + self.abbreviation
 
-# Model: myDeclareSemesterModel
-class DeclareSemester(models.Model):
-    semesters = models.CharField(max_length=6)
-
-    def __str__(self):
-        return self.semesters
-
-
-# Model: Semester
+# Mdoel: Semester
 class Semester(models.Model):
-    branch = models.ForeignKey(Branch)
-    semesters = models.ForeignKey(DeclareSemester, default='Sem-')
+    specialization = models.ForeignKey(Specialization)
+    semester = models.CharField(max_length=7)
 
     def __str__(self):
-        return self.branch.branch + "-  " + self.semester.semester
+        return self.specialization.branch.br_abbr + " " + self.specialization.abbreviation + " " + self.semester
+    
 
 # Model: Subject
 class Subject(models.Model):
-    branch = models.ForeignKey(Branch)
-    semester = models.ForeignKey(Semester)
+    specialization = models.ForeignKey(Specialization, null=True)
+    #semester = models.ForeignKey(Semester)
     subject = models.CharField(max_length=75)
+
+    class Meta:
+        unique_together = [("specialization", "subject")]
 
     def __str__(self):
         return self.subject

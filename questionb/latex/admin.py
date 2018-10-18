@@ -31,13 +31,14 @@ class moduledisp(admin.ModelAdmin):
     list_display = ('course', 'module')
 """
 
-admin.site.register(Question)
+#admin.site.register(Question)
 admin.site.register(Branch)
 admin.site.register(Specialization)
 admin.site.register(Semester)
 admin.site.register(Subject)
 admin.site.register(Module)
 admin.site.register(Chapter)
+admin.site.register(Question)
 
 # My Declare Field
-admin.site.register(DeclareSemester)
+#admin.site.register(DeclareSemester)
