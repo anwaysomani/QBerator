@@ -33,18 +33,22 @@ class Semester(models.Model):
     specialization = models.ForeignKey(Specialization)
     semester = models.CharField(max_length=7)
 
+    class Meta:
+        unique_together = [("specialization", "semester")]
+
     def __str__(self):
         return self.specialization.branch.br_abbr + " " + self.specialization.abbreviation + " " + self.semester
     
 
 # Model: Subject
 class Subject(models.Model):
-    specialization = models.ForeignKey(Specialization, null=True)
+    semester = models.ManyToManyField(Semester)
+    #specialization = models.ForeignKey(Specialization, null=True)
     #semester = models.ForeignKey(Semester)
     subject = models.CharField(max_length=75)
 
-    class Meta:
-        unique_together = [("specialization", "subject")]
+    #class Meta:
+    #    unique_together = [("specialization", "subject")]
 
     def __str__(self):
         return self.subject
