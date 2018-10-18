@@ -2,6 +2,8 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from ..constant import *
 
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 # Model: Branch
 class Branch(models.Model):
     branch = models.CharField(max_length=75)
@@ -43,12 +45,16 @@ class Semester(models.Model):
 # Model: Subject
 class Subject(models.Model):
     semester = models.ManyToManyField(Semester)
-    #specialization = models.ForeignKey(Specialization, null=True)
-    #semester = models.ForeignKey(Semester)
     subject = models.CharField(max_length=75)
+    subject_code = models.CharField(max_length=6, null=True)
+    module_type = models.CharField(max_length=2, null=True)
+    credits = models.IntegerField(validators=[MaxValueValidator(9), MinValueValidator(1)], null=True)
 
     #class Meta:
     #    unique_together = [("specialization", "subject")]
+    
+    def clean_module_type(self):
+        return self.cleaned_data["module_type"].upper()
 
     def __str__(self):
         return self.subject
