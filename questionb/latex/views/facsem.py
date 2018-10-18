@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 # Semester-1
 @login_required(login_url='/accounts/login/')
 def sem1(request):
+    """
     if request.method == 'POST':
         form = QuestionForm(request.POST)
   
@@ -18,6 +19,7 @@ def sem1(request):
             
     else:
         form = QuestionForm()
+    """
     return render(request, 'faculty/exfindex/sem1.html', {'form': form})
 
 

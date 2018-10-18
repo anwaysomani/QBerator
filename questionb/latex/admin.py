@@ -5,6 +5,7 @@ from .models import *
 # ------------------
 
 # Module View
+"""
 class ModuleTabularInline(admin.TabularInline):
     model = Modules
     min_length = 2
@@ -28,16 +29,15 @@ class semesterdisp(admin.ModelAdmin):
 
 class moduledisp(admin.ModelAdmin):
     list_display = ('course', 'module')
+"""
 
-
+admin.site.register(Question)
 admin.site.register(Branch)
+admin.site.register(Specialization)
 admin.site.register(Semester)
-admin.site.register(Course, CourseAdmin)
-admin.site.register(Modules)
-admin.site.register(Branch1)
-admin.site.register(Specialization1)
-admin.site.register(Semester1)
-admin.site.register(Subject1)
-admin.site.register(Module1)
-admin.site.register(Chapter1)
+admin.site.register(Subject)
+admin.site.register(Module)
+admin.site.register(Chapter)
 
+# My Declare Field
+admin.site.register(DeclareSemester)

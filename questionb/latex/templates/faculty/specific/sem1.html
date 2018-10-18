@@ -1,31 +1,22 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Semester 1 Page for Information Technology</title>
+	<title>Question Form Generator</title>
 
 	<!-- Local CSS file link -->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/faculty/sem1.css' %}">
-
-	<!-- To be discovered -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="static.css">
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 
-	<!-- Load Font Awesome Icon Library -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="{% static 'css/faculty/sem1.css' %}">
 
 	<!-- JS for Ajax -->
 	<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
 	<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
 	<script type='text/javascript' src='js/dynamicpage.js'></script>
+
 
 </head>
 
@@ -34,7 +25,7 @@
 	<div class="clg-header">
 		<div class="adj-bottom">
 			<div class="left1 returnsem">
-				<a href="{% url 'findex' %}" class="returnsem">
+				<a href="#" class="returnsem">
 					<-- Back to<br> 
 					Semester view
 				</a>
@@ -45,10 +36,9 @@
 
 	<hr class="hor1" size="20">
 
-	{% block bca-sem-block %}
 	<!-- Block for entering semesters -->
-	<div class="sem-block"> 
-	<!--<ul>
+	<div class="sem-block">
+	<ul>
 		<li><div class="sems">
 			<a href="#" class="subj1">
 				Subject-1
@@ -69,11 +59,11 @@
 				Subject-4
 			</a>
 		</div></li>
-	</ul> -->
+	</ul>
 	</div>
 
 	<hr class="hor1" size="5">
-
+	
 	<div class="subject-title">
 		Subject Name
 	</div>
@@ -81,13 +71,13 @@
 	<br>
 
 	<div class="whole">
-		<!-- {% block question-form %}
-
-		{% endblock %} -->
-		<!-- <div class="left-side-wala">
+		<div class="left-side-wala">
 			<form>
 				<fieldset>
 					<legend>Chapter Details</legend>
+					<!-- Module:<br>
+					<input type="text" name="firstname">
+					<br> -->
 					
 						<label>Select Module</label>
 						<select id="moduleList">
@@ -103,6 +93,9 @@
 							<option value="2">2</option>
 						</select>
 					
+					<!-- Chapter:<br>
+					<input type="text" name="lastname">
+					<br> -->
 				</fieldset>
 				<fieldset>
 					<legend>Question details</legend>
@@ -137,10 +130,21 @@
 			3. This is Module # 3<br>
 			4. This is Module # 4<br>
 			5. This is Module # 5<br>
-		</div> -->
+		</div>
 	</div>
 
-	{% endblock %}
+
+
+	<!-- -->
+	<!-- <script type="text/javascript">
+		var classHighlight = 'highlight';
+		var $thumbs = $('.subj1').click(function(e) {
+    		e.preventDefault();
+    		$thumbs.removeClass(classHighlight);
+    		$(this).addClass(classHighlight);
+		});
+	</script> -->
+
 
 </body>
 </html>
