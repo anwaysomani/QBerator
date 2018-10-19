@@ -151,3 +151,4 @@ PASSWORD_HASHERS = (
 
 # Login redirect view
 LOGIN_REDIRECT_URL = 'panel-redirect'
+

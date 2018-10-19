@@ -17,6 +17,7 @@ urlpatterns = [
 
     # login
     url(r'^accounts/login/', views.login, name='login'),
+    #url(r'^$', views.login, name='login'),
 
     # redirect view trial
     url(r'^panel-redirect/$', PanelRedirectView.as_view(), name='panel-redirect'),

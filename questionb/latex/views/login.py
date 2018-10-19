@@ -19,6 +19,7 @@ from ..forms import *
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
+from ..constants import *
 
 # Views below: v
 
@@ -33,7 +34,8 @@ def main(request):
 
 # Faculty Logged-In
 def findex(request):
-    return render(request, 'faculty/findex.html', {})
+    #import ipdb;ipdb.set_trace()
+    return render(request, 'faculty/findex.html')
 
 # Head-of-Department Logged-In
 def hindex(request):

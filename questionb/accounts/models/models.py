@@ -3,19 +3,19 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from multiselectfield import MultiSelectField
+
+from latex.models import *
+
+# Importing constants
+from ..constants import *
+
 # Testing custom user fields with AbstractUser
 
 class Profile(models.Model):
-    HOD = 1
-    FACULTY = 2
-    ROLE_CHOICES = (
-            (1, 'Head-Of-Department'),
-            (2, 'Faculty'),
-    )
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    subject = models.CharField(max_length=30, blank=True)
-    role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, null=True, blank=True)
+    #subject = models.CharField(max_length=20, null=True, choices=SUBJECT)
+    subject = models.ManyToManyField(Subject)
 
     def __str__(self):
         return self.user.username

@@ -8,6 +8,7 @@ from .models import *
 #@admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
     list_filter = ('semester',)
+    list_display = ('subject', 'subject_code')
 
     class Media:
         css = {
@@ -41,6 +42,7 @@ class coursedisp(admin.ModelAdmin):
 class moduledisp(admin.ModelAdmin):
     list_display = ('course', 'module')
 """
+
 
 admin.site.register(Branch)
 admin.site.register(Specialization)

@@ -3,6 +3,7 @@ from multiselectfield import MultiSelectField
 from ..constant import *
 
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 # Model: Branch
 class Branch(models.Model):
@@ -12,20 +13,12 @@ class Branch(models.Model):
     def __str__(self):
         return self.branch
 
-# Model: myDeclareSemesterModel
-#class DeclareSemester(models.Model):
-#    semester = models.CharField(max_length=6)
-
-#    def __str__(self):
-#        return self.semester
-
 # Model: Specialization
 class Specialization(models.Model):
     branch = models.ForeignKey(Branch)
     specialization1 = models.CharField(max_length=30)
     specialization2 = models.CharField(max_length=30, blank=True)
     abbreviation = models.CharField(max_length=20)
-#   semester = models.ForeignKey(DeclareSemester, null=True)
 
     def __str__(self):
         return self.branch.br_abbr + " " + self.abbreviation
@@ -46,13 +39,10 @@ class Semester(models.Model):
 class Subject(models.Model):
     semester = models.ManyToManyField(Semester)
     subject = models.CharField(max_length=75)
-    subject_code = models.CharField(max_length=6, null=True)
-    module_type = models.CharField(max_length=2, null=True)
-    credits = models.IntegerField(validators=[MaxValueValidator(9), MinValueValidator(1)], null=True)
+    subject_code = models.CharField(max_length=6, null=True, blank=True)
+    module_type = models.CharField(max_length=2, null=True, blank=True)
+    credits = models.IntegerField(validators=[MaxValueValidator(9), MinValueValidator(1)], null=True, blank=True)
 
-    #class Meta:
-    #    unique_together = [("specialization", "subject")]
-    
     def clean_module_type(self):
         return self.cleaned_data["module_type"].upper()
 
