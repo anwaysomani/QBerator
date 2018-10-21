@@ -38,7 +38,7 @@ class Semester(models.Model):
 # Model: Subject
 class Subject(models.Model):
     semester = models.ManyToManyField(Semester)
-    subject = models.CharField(max_length=75)
+    subject = models.CharField(max_length=75, unique=True)
     subject_code = models.CharField(max_length=6, null=True, blank=True)
     module_type = models.CharField(max_length=2, null=True, blank=True)
     credits = models.IntegerField(validators=[MaxValueValidator(9), MinValueValidator(1)], null=True, blank=True)

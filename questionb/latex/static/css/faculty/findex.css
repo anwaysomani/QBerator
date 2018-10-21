@@ -6,6 +6,7 @@ body {
 	background: url('../../img/faculty_spotlight.jpg') no-repeat;
 	background-size: auto;
 	background-position: 50% 50%;
+	/*background-color: blue;*/
 
 }
 
@@ -128,4 +129,33 @@ footer {
     cursor: not-allowed;
     opacity: 0.5;
     text-decoration: none;
+}
+
+/* New decoration in findex */
+ul {
+	list-style-type: none;
+	overflow: hidden;
+}
+
+.sems {
+	width: 25%;
+    background-color: grey;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px double black;
+    border-bottom: 2px solid black;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Istok Web', sans-serif;
+    font: 10px Bold;
+}
+
+.subj1 {
+    color: yellow;
+    font: 20px Bold;
+    text-decoration: none;
+}
+
+.subj1 a.subj1 {
+    background-color: white;
 }

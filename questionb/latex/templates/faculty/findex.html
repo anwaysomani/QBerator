@@ -6,8 +6,10 @@
 <head>
 	<title>Question Bank Software</title>
         
-        <link rel="stylesheet" href="{% static 'css/faculty/findex.css' %}">
         <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="{% static 'css/faculty/findex.css' %}">
+
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
@@ -20,19 +22,27 @@
         </div>
 
         <div class="big-box">
-                <div class="left-box">
-			<p class="opt-title"><u>Create Question</u></p>
-                        	<p class="indent"><a href="{% url 'fsem1' %}">> Semester 1</a></p>
-	                        <p class="indent disable"><a href="{% url 'fsem2' %}">> Semester 2</a></p>
-                   	        <p class="indent"><a href="{% url 'fsem3' %}">> Semester 3</a></p>
-                	        <p class="indent disable"><a href="{% url 'fsem4' %}">> Semester 4</a></p>
-                        	<p class="indent"><a href="{% url 'fsem5' %}">> Semester 5</a></p>
-	                        <p class="indent disable"><a href="{% url 'fsem6' %}">> Semester 6</a></p>
-        	                <p class="indent disable"><a href="{% url 'fsem7' %}">> Semester 7</a></p>
-                	        <p class="indent disable"><a href="{% url 'fsem8' %}">> Semester 8</a></p>
+            <!--<div class="left-box">
+			    <p class="opt-title"><u>Create Question</u></p>
+                   	<p class="indent"><a href="{% url 'fsem1' %}">> Semester 1</a></p>
+	                <p class="indent disable"><a href="{% url 'fsem2' %}">> Semester 2</a></p>
+                    <p class="indent"><a href="{% url 'fsem3' %}">> Semester 3</a></p>
+                	<p class="indent disable"><a href="{% url 'fsem4' %}">> Semester 4</a></p>
+                    <p class="indent"><a href="{% url 'fsem5' %}">> Semester 5</a></p>
+	                <p class="indent disable"><a href="{% url 'fsem6' %}">> Semester 6</a></p>
+        	        <p class="indent disable"><a href="{% url 'fsem7' %}">> Semester 7</a></p>
+                	<p class="indent disable"><a href="{% url 'fsem8' %}">> Semester 8</a></p>
 			<p class="opt-title"><a href="" class="opt-title"><u>View Questions</u></a></p>
 			<p class="opt-title"><a href="" class="opt-title"><u>Profile</u></a></p>
-		</div>
+		</div> -->
+        {% for subject in list %}
+        <li><div class="sems">
+            <a href="#" class="subj1">
+                <!-- Subject here -->
+                {{ subject }}<br><br>
+            </a>
+        </div></li>
+        {% endfor %}
 	</div>
 
 	<footer>

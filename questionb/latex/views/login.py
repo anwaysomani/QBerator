@@ -35,7 +35,10 @@ def main(request):
 # Faculty Logged-In
 def findex(request):
     #import ipdb;ipdb.set_trace()
-    return render(request, 'faculty/findex.html')
+    user = request.user
+    lister = user.profile.subject.all()
+    # return render(request, 'faculty/exfindex/sem1.html', {'list': lister, 'user': user})
+    return render(request, 'faculty/findex.html', {'list': lister, 'user': user})
 
 # Head-of-Department Logged-In
 def hindex(request):

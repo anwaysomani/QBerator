@@ -12,6 +12,10 @@ class ProfileInline(admin.StackedInline):
 
 class CustomUserAdmin(UserAdmin):
     inlines = (ProfileInline, )
+    #list_display = ('username', 'subject_list_display')
+
+    #def subject_list_display(self, obj):
+    #    return obj.Subject
 
     def get_inline_instances(self, request, obj=None):
         if not obj:

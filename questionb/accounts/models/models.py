@@ -15,7 +15,7 @@ from ..constants import *
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     #subject = models.CharField(max_length=20, null=True, choices=SUBJECT)
-    subject = models.ManyToManyField(Subject)
+    subject = models.ManyToManyField(Subject, blank=True)
 
     def __str__(self):
         return self.user.username

@@ -20,7 +20,10 @@ def sem1(request):
     else:
         form = QuestionForm()
     """
-    return render(request, 'faculty/exfindex/sem1.html', {})
+    #lister = Subject.objects.filter()
+    user = request.user
+    lister = user.profile.subject.filter(subject__Module_type__contains='CC')
+    return render(request, 'faculty/exfindex/sem1.html', {'list': lister, 'user': user})
 
 
 # Semester-2
