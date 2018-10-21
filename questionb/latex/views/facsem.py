@@ -15,7 +15,7 @@ def sem1(request):
         if form.is_valid():
             form.save()
             #all_questions = AQuestion.objects.all
-            #return render(request, 'faculty/exfindex/sem3.html', {'form': form})
+            #eturn render(request, 'faculty/exfindex/sem3.html', {'form': form})
             
     else:
         form = QuestionForm()

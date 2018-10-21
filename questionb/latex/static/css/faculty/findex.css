@@ -3,20 +3,21 @@ html {
 }
 
 body {
+	
 	background: url('../../img/faculty_spotlight.jpg') no-repeat;
 	background-size: auto;
 	background-position: 50% 50%;
-	/*background-color: blue;*/
-
+	/*background-color: #141e30;*/
+	
 }
 
 .uni-heading {
 	background-color: orange;
-        font-family: 'Roboto';
-        font: 40px Bold;
+    font-family: 'Roboto';
+    font: 40px Bold;
 	font-family: 'Allan';
-        text-align: center;
-        border: Solid Black;
+    text-align: center;
+    border: Solid Black;
 	width: 2000px;
         border-width: 0px 0px 8px 0px;
         padding: 5px;
@@ -133,27 +134,36 @@ footer {
 
 /* New decoration in findex */
 ul {
-	list-style-type: none;
+	list-style: none;
 	overflow: hidden;
 }
 
+li {
+	list-style: none; 
+}
+
 .sems {
+	text-align: center;
 	width: 25%;
-    background-color: grey;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    border-top: 2px double black;
-    border-bottom: 2px solid black;
+    background: #000000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-top: 3px double white;
+    border-bottom: 3px solid white;
     margin: 0px;
     padding: 0px;
     font-family: 'Istok Web', sans-serif;
-    font: 10px Bold;
+    font: 20px Bold;
 }
 
 .subj1 {
+	/*margin: auto;
+	padding: auto;*/
     color: yellow;
-    font: 20px Bold;
-    text-decoration: none;
+    font: 22px Bold;
+    text-decoration: underline;
 }
 
 .subj1 a.subj1 {

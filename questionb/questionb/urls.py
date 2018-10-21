@@ -35,5 +35,8 @@ urlpatterns = [
     url('', include('latex.urls.postlogin')),
     # findex to fsem1-fsem8 
     url('', include('latex.urls.fsemester')),
+    
+    # Subject page
+    url('', include('latex.urls.eachsrs')),
 
 ]

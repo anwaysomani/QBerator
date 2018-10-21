@@ -1,0 +1,12 @@
+.uni-heading {
+	background-color: orange;
+    font-family: 'Roboto';
+    font: 40px Bold;
+	font-family: 'Allan';
+    text-align: center;
+    border: Solid Black;
+	width: 2000px;
+        border-width: 0px 0px 8px 0px;
+        padding: 5px;
+        margin: 0px 0px 0px 0px;
+}
