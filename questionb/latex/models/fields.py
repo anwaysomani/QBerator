@@ -46,6 +46,9 @@ class Subject(models.Model):
     def clean_module_type(self):
         return self.cleaned_data["module_type"].upper()
 
+    def __unicode__(self):
+        return self.id
+
     def __str__(self):
         return self.subject
 

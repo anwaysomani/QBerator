@@ -6,7 +6,7 @@ from ..models import *
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = {'modules', 'question', 'marks', 'priority', 'notes'}
+        fields = {'block', 'modules', 'question', 'marks', 'priority', 'notes'}
         widgets = { 
                    'modules': forms.Select(),
                    'question': forms.Textarea(attrs={"placeholder": "Enter question here...", "rows": 5,"cols": 40,}),

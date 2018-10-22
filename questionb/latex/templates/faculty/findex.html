@@ -36,10 +36,12 @@
 			<p class="opt-title"><a href="" class="opt-title"><u>View Questions</u></a></p>
 			<p class="opt-title"><a href="" class="opt-title"><u>Profile</u></a></p>
 		</div> -->
+
         {% for subject in list %}
         <li><div class="sems">
-            <a href="#" class="subj1">
+            <a href="{% url 'eachsubject' subject.id %}" class="subj1">
                 <!-- Subject here -->
+                {{ subject.id }}
                 {{ subject }}<br><br>
             </a>
         </div></li>
