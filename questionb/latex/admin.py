@@ -1,14 +1,34 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group
 from .models import *
 
 # Combining Modules:
 # ------------------
 
+# Changing admin header
+# admin.site.site_header = 'AdminReBaba'
+
+# -----------------------------------------------------
+# Creating trial inline for Subject Model            ||
+# TabularInline is used for referring to Foreign Keys||
+#class SubjectTabularInline(admin.TabularInline):    ||
+#    model = Subject                                 ||
+# -----------------------------------------------------
+
+
 # Changing Many-To-Many Field View
 #@admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
+    # ---------------------------------
+    # adding SubjectInline           ||
+    #inlines = [SubjectTabularInline]||
+    # (to add inline, use syntax)    ||
+    # ---------------------------------
+
     list_filter = ('semester',)
     list_display = ('subject', 'subject_code')
+    search_fields = ('subject',)
+    #save_as = True
 
     class Media:
         css = {

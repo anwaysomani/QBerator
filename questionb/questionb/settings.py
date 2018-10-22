@@ -30,6 +30,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django-Suit Configurations
+    'suit',
+    #'latex.apps.SuitConfig',
+    
+    # Existing Django-Project 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

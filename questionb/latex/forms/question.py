@@ -8,10 +8,10 @@ class QuestionForm(forms.ModelForm):
         model = Question
         fields = {'modules', 'question', 'marks', 'priority', 'notes'}
         widgets = { 
-                   'marks': forms.RadioSelect,
-                   'question': forms.Textarea(attrs={"placeholder": "Enter question here...", "rows": 5,"cols": 40,}),
-                   'priority': forms.RadioSelect,
                    'modules': forms.Select(),
+                   'question': forms.Textarea(attrs={"placeholder": "Enter question here...", "rows": 5,"cols": 40,}),
+                   'marks': forms.Select(),
+                   'priority': forms.Select(),
                    'notes': forms.Textarea(attrs={"placholder": "Special note...", "rows": 1, "cols": 25,}),
         }
 
