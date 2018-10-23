@@ -1,3 +1,8 @@
+html {
+    margin: 0px;
+    padding-left: 0px;
+}
+
 .uni-heading {
 	background-color: orange;
     font-family: 'Roboto';
@@ -5,10 +10,10 @@
 	font-family: 'Allan';
     text-align: center;
     border: Solid Black;
-	width: 2000px;
-        border-width: 0px 0px 8px 0px;
-        padding: 5px;
-        margin: 0px 0px 0px 0px;
+	width: auto;
+    border-width: 0px 0px 8px 0px;
+    padding: 5px;
+    margin: 0px 0px 0px 0px;
 }
 
 table {
@@ -25,4 +30,13 @@ td, th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+.delete-row {
+    border-radius: 10px;
+}
+
+/*BootStrap Design Change*/
+.form-group {
+    margin: 0px;
 }

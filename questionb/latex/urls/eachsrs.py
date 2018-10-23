@@ -7,5 +7,9 @@ urlpatterns = [
         url(r'subject/(?P<id>\d+)', views.quesdata_view, name='eachsubject'),
 
         # (?P<id>\d+)
+
+        # ------------------------------------------------------------------
+        # Trial pattern for exporting to pdf
+        url(r'epdf/', views.html_to_pdf_view, name='epdf'),
 ]
 

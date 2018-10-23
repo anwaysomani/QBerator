@@ -26,45 +26,81 @@
     	AJEENKYA DY PATIL UNIVERSITY
     </div>
 
-    <div style="background-color: red; font: 20px Bold Arial Black, Helvetica, Serif;">
+    <!-- <div style="background-color: red; font: 20px Bold Arial Black, Helvetica, Serif;">
     	{% for obj in object %}
     		{{ obj.subject }} - 
     	{% endfor %} <br>
     	{{ obj.subject }}<br>
     	{{ id }}<br>
     	{{ user }}<br>
-    	<!-- {% for subject in list %} 
+    	{% for subject in list %} 
     		{{ subject }} - 
-    	{% endfor %} -->
-    </div>
+    	{% endfor %} 
+    </div> -->
 
 
     <div class="#">
     	<h3>Question Creation</h3>
-    	<form method="POST" class="POST-form">
+    	<form method="POST" class="POST-form form-horizontal">
     		{% csrf_token %} 
-    		<!-- {{ form.as_p }} -->
-    		<td><label for="id_block">Block</label></td>
-    		{{ form.block.errors }}
-    		{{ form.block }}
-    		<td><label for="id_block">Modules</label></td>
-    		{{ form.modules.errors }}
-    		{{ form.modules }}
-    		<br /><br />
-    		<td><label for="id_block">Question</label></td>
-    		{{ form.question.errors }}
-    		{{ form.question }}
-    		<td><label for="id_block">Marks</label></td>
-    		{{ form.marks.errors }}
-    		{{ form.marks }}
-    		<td><label for="id_block">Priority</label></td>
-    		{{ form.priority.errors }}
-    		{{ form.priority }}
-    		<td><label for="id_block">Notes</label></td>
-    		{{ form.notes.errors }}
-    		{{ form.notes }}
+    		<div class="form-group">
+	    		<!-- {{ form.as_p }} -->
+	    		<!-- <div class="form-group">
+			      <label class="control-label col-sm-2" for="email">Email:</label>
+			      <div class="col-sm-5">
+			        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+			      </div>
+			    </div> -->
+			    <div class="form-group">
+	    			<label for="id_block" class="control-label col-sm-2">Block</label>
+	    			<div class="col-sm-5">
+	    				{{ form.block.errors }}
+	    				{{ form.block }}
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="id_modules" class="control-label col-sm-2">Modules</label>
+	    			<div class="col-sm-5">
+	    				{{ form.modules.errors }}
+	    				{{ form.modules }}
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="id_question" class="control-label col-sm-2">Question</label>
+	    			<div class="col-sm-5">
+	    				{{ form.question.errors }}
+	    				{{ form.question }}
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="id_marks" class="control-label col-sm-2">Marks</label>
+	    			<div class="col-sm-5">
+	    				{{ form.marks.errors }}
+	    				{{ form.marks }}
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="id_priority" class="control-label col-sm-2">Priority</label>
+	    			<div class="col-sm-5">
+	    				{{ form.priority.errors }}
+	    				{{ form.priority }}
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="id_notes" class="control-label col-sm-2">Notes</label>
+	    			<div class="col-sm-5">
+	    				{{ form.notes.errors }}
+	    				{{ form.notes }}
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<div class="col-sm-offset-2 col-sm-5">
+	    				<button type="submit" class="save btn btn-default">Save Question</button>
+	    			</div>
+	    		</div>
+	    	</div>
 
-    		<button type="submit" class="save btn btn-default">Save Question</button>
+    		
     	</form>
 
 
@@ -89,6 +125,7 @@
 	    		{% endfor %}
 	    	</tbody>
     		<button type="button" class="delete-row">Delete Row</button>
+    		<br>
 
     	</table>
 

@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Test</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ajeenkya DY Patil University</h1>
+  
+  {{ user }}
+
+
+  <h3>Section A</h3>
+  <br>
+  <p>Q. Answer the following(Any Five):</p>
+
+  <table id="quesTable">
+	{% for quer in query %}
+	 	Q.{{ forloop.counter }} - {{ quer.question }}<br>
+	{% endfor %}
+  </table>
+</body>
+</html>
+
