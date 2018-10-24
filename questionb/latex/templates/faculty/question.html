@@ -41,28 +41,22 @@
 
     <div class="#">
     	<h3>Question Creation</h3>
+    	<!-- <p>Block: {{ id }}</p> -->
     	<form method="POST" class="POST-form form-horizontal">
     		{% csrf_token %} 
     		<div class="form-group">
-	    		<!-- {{ form.as_p }} -->
-	    		<!-- <div class="form-group">
-			      <label class="control-label col-sm-2" for="email">Email:</label>
-			      <div class="col-sm-5">
-			        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-			      </div>
-			    </div> -->
 			    <div class="form-group">
 	    			<label for="id_block" class="control-label col-sm-2">Block</label>
 	    			<div class="col-sm-5">
 	    				{{ form.block.errors }}
-	    				{{ form.block }}<!-- <input value="{{ id }}" disabled="disabled"> -->
+	    				{{ form.block }}  <i>Enter block value as '{{ id }}' here...</i>
 	    			</div>
 	    		</div>
 	    		<div class="form-group">
 	    			<label for="id_modules" class="control-label col-sm-2">Modules</label>
 	    			<div class="col-sm-5">
 	    				{{ form.modules.errors }}
-	    				{{ form.modules }}
+	    				<!-- {{ id }} -  -->{{ form.modules }}
 	    			</div>
 	    		</div>
 	    		<div class="form-group">

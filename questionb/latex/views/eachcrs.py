@@ -14,7 +14,7 @@ def quesdata_view(request, id):
     
     # Form for question creation
     if request.method=="POST":
-        form = QuestionForm(request.POST, initial={"block": id})
+        form = QuestionForm(request.POST)
         if form.is_valid():
             #block = form.cleaned_data['block']
             question = form.cleaned_data['question']
@@ -27,7 +27,7 @@ def quesdata_view(request, id):
             form = QuestionForm()
     else:
         form = QuestionForm()
-        print("Cannot get form saved")
+        print("Cannot decide status...")
 
 
 

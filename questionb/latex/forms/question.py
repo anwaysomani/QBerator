@@ -6,15 +6,16 @@ from ..models import *
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = {'modules', 'question', 'marks', 'priority', 'notes'}
-        widgets = { 
+        fields = {'block', 'modules', 'question', 'marks', 'priority', 'notes'}
+        widgets = {
+                   #'block': forms.IntegerField(attrs={"placeholder": "Enter above block value",}),
                    'modules': forms.Select(),
                    'question': forms.Textarea(attrs={"placeholder": "Enter question here...", "rows": 5,"cols": 40,}),
                    'marks': forms.Select(),
                    'priority': forms.Select(),
                    'notes': forms.Textarea(attrs={"placholder": "Special note...", "rows": 1, "cols": 25,}),
         }
-        
+
         def save(self):
             if not self.id:
                 self.block = subject.id()
