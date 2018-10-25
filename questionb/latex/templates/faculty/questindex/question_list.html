@@ -1,0 +1,55 @@
+{% extends '../question.html' %}
+{% load static %}
+
+
+{% block content %}
+	<h1 class="page-header">Questions</h1>
+
+	<!-- Button to trigger Adding option -->
+	<p>
+		<button type="button" class="btn btn-primary js-create-question">
+			<span class="glyphicon glyphicon-plus"></span>
+			New Question
+		</button>
+	</p>
+
+	<table class="table" id="question-table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Question</th>
+				<th>Module</th>
+				<th>Marks</th>
+				<th>Priority</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for ques in questions %}
+				<tr>
+					<td>{{ ques.id }}</td>
+					<td>{{ ques.question }}</td>
+					<td>{{ ques.modules }}</td>
+					<td>{{ ques.marks }}</td>
+					<td>{{ ques.priority }}</td>
+				</tr>
+			{% empty %}
+				<tr>
+					<td colspan="7" class="text-center bg-warning">No Questions</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<!-- Modal for creation -->
+	<div class="modal fade" id="modal-book">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	<script src="{% static 'js/question.js' %}"></script>
+{% endblock javascript %}

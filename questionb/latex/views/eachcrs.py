@@ -29,8 +29,26 @@ def quesdata_view(request, id):
         form = QuestionForm()
         print("Cannot decide status...")
 
-
-
     return render(request, "faculty/question.html", {'form': form, 'query': query, 'list': lister, 'object': obj, 'id': id})
+
+# ------------------------------------------------------------------------
+# Generic Views
+
+from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+class QuestionUpdate(UpdateView):
+    model = Question
+
+    print("Completed updation succesfully")
+    fields = ['block', 'modules', 'question', 'marks', 'priority', 'notes']
+    template_name = 'faculty/questindex/questionedit.html'
+    success_url = '#'  #reverse_lazy('question-update')
+
+
+class QuestionDelete(DeleteView):
+    model = Question
+    template_name = 'faculty/questindex/questiondel.html'
+    success_url = 'eachsubject'
 
 

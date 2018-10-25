@@ -40,3 +40,12 @@ tr:nth-child(even) {
 .form-group {
     margin: 0px;
 }
+
+/*Setting size for table columns*/
+.questionTable td, .questionTable th{
+    width: auto;
+}
+
+td {
+    border: 2px solid black;
+}

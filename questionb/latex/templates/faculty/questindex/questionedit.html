@@ -1,0 +1,18 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Editing Question Form</title>
+</head>
+
+<body>
+
+	<p><a href="javascript:history.go(-2)"><< Return to Creation Department</a></p>
+
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Update" class="btn btn-success">
+	</form>
+
+</body>
+</html>

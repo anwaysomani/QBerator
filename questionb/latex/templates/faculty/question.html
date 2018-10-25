@@ -26,19 +26,6 @@
     	AJEENKYA DY PATIL UNIVERSITY
     </div>
 
-    <!-- <div style="background-color: red; font: 20px Bold Arial Black, Helvetica, Serif;">
-    	{% for obj in object %}
-    		{{ obj.subject }} - 
-    	{% endfor %} <br>
-    	{{ obj.subject }}<br>
-    	{{ id }}<br>
-    	{{ user }}<br>
-    	{% for subject in list %} 
-    		{{ subject }} - 
-    	{% endfor %} 
-    </div> -->
-
-
     <div class="#">
     	<h3>Question Creation</h3>
     	<!-- <p>Block: {{ id }}</p> -->
@@ -49,14 +36,14 @@
 	    			<label for="id_block" class="control-label col-sm-2">Block</label>
 	    			<div class="col-sm-5">
 	    				{{ form.block.errors }}
-	    				{{ form.block }}  <i>Enter block value as '{{ id }}' here...</i>
+	    				{{ form.block }}  <i>Enter block value as <b>'{{ id }}'</b> here...</i>
 	    			</div>
 	    		</div>
 	    		<div class="form-group">
 	    			<label for="id_modules" class="control-label col-sm-2">Modules</label>
 	    			<div class="col-sm-5">
 	    				{{ form.modules.errors }}
-	    				<!-- {{ id }} -  -->{{ form.modules }}
+	    				{{ form.modules }}
 	    			</div>
 	    		</div>
 	    		<div class="form-group">
@@ -98,32 +85,35 @@
     	</form>
 
 
-    	<table id="quesTable">
+    	<table id="quesTable" class="questionTable">
     		<thead>
 	    		<tr>
 	    			<th onclick="sortTable(0)">Question</td>
 	    			<th onclick="sortTable(1)">Module</td>
 	    			<th onclick="sortTable(2)">Marks</td>
 	    			<th onclick="sortTable(3)">Priority</td>
+	  				<th>Action</th>
+	  				<th>Rec</th>
 	    		</tr>
 	    	</thead>
     		<tbody>
 	    		{% for quer in query %}
 	    		<tr>
-	    			<td>{{ quer.question }}</td>
+	    			<td><a href="{% url 'question-update' quer.id %}">{{ quer.question }}</a></td>
 	    			<td>{{ quer.modules }}</td>
 	    			<td>{{ quer.marks }}</td>
 	    			<td>{{ quer.priority }}</td>
+	    			<td><a href="{% url 'question-delete' quer.id %}">Delete</a></td>
 	    			<td><input type="checkbox" name="record"></td>
 	    		</tr>
+	    		
 	    		{% endfor %}
 	    	</tbody>
-    		<button type="button" class="delete-row">Delete Row</button>
     		<br>
-
     	</table>
     </div>
 
+    
 
     <script>
 		function sortTable(n) {
