@@ -1,6 +1,14 @@
+"""
+Form for creating question
+Inside app: latex
+
+Developer: Anway Somani
+
+"""
+
 from django import forms
 from django.forms import ModelForm
-from ..models import *
+from ..models import Question
 
 # Mock question form for trial pages
 class QuestionForm(forms.ModelForm):
@@ -8,7 +16,6 @@ class QuestionForm(forms.ModelForm):
         model = Question
         fields = {'block', 'modules', 'question', 'marks', 'priority', 'notes'}
         widgets = {
-                   #'block': forms.IntegerField(attrs={"placeholder": "Enter above block value",}),
                    'modules': forms.Select(),
                    'question': forms.Textarea(attrs={"placeholder": "Enter question here...", "rows": 5,"cols": 40,}),
                    'marks': forms.Select(),

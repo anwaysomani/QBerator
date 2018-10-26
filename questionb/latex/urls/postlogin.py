@@ -1,9 +1,15 @@
+"""
+Urls for post-login pages
+
+Developer: Anway Somani
+
+"""
+
+
 from django.conf.urls import include, url
 from .. import views
 
 urlpatterns = [
-    # Post Login Urls
-
     # Post HOD Login
     url(r'hindex', views.hindex, name='hindex'),
 

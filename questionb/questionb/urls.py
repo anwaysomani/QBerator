@@ -26,17 +26,16 @@ urlpatterns = [
     url('accounts/', include('django.contrib.auth.urls')),
 
     # Urls from accounts
+    # ------------------
+    # 1) Containing login and logout views
     url('', include('accounts.urls')),
 
-    # Urls from latex
-    # includes urls for login(Ajeenkya DY Patil University: seperated login for Faculty and HoD
-    #url('', include('latex.urls.login')),
-    # Post Login to: 'findex', 'hindex'
-    url('', include('latex.urls.postlogin')),
-    # findex to fsem1-fsem8 
-    url('', include('latex.urls.fsemester')),
-    
-    # Subject page
-    url('', include('latex.urls.eachsrs')),
 
+    # Urls from latex
+    # ----------------
+    # 1) Post Login to: 'findex', 'hindex'
+    url('', include('latex.urls.postlogin')),
+    
+    # 2) Indi-Subject page
+    url('', include('latex.urls.eachsrs')),
 ]

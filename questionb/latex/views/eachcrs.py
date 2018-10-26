@@ -1,10 +1,19 @@
+"""
+Views for question...dedicated to absoltue {{ value }}
+
+Developer: Anway Somani
+
+"""
+
 from django.shortcuts import render, redirect
-from ..models import *
-from ..forms import *
+from ..models import Question, Subject
+from ..forms import QuestionForm
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
 
-# Redirect for subject-page
 
+# Page: QuestionCreate,+QuestionList
 @login_required(login_url='/accounts/login/')
 def quesdata_view(request, id):
     user = request.user    
@@ -16,7 +25,7 @@ def quesdata_view(request, id):
     if request.method=="POST":
         form = QuestionForm(request.POST)
         if form.is_valid():
-            #block = form.cleaned_data['block']
+            #block = id
             question = form.cleaned_data['question']
             modules = form.cleaned_data['modules']
             marks = form.cleaned_data['marks']
@@ -27,28 +36,31 @@ def quesdata_view(request, id):
             form = QuestionForm()
     else:
         form = QuestionForm()
-        print("Cannot decide status...")
+        print("Status unclarified...")
 
-    return render(request, "faculty/question.html", {'form': form, 'query': query, 'list': lister, 'object': obj, 'id': id})
+    context = {
+               'form': form,
+               'query': query,
+               'list': lister,
+               'object': obj,
+               'id': id,
+    }
+
+    return render(request, "faculty/question.html", context)
 
 # ------------------------------------------------------------------------
-# Generic Views
+# Generic Views: Manipulating existing data
 
-from django.views.generic.edit import UpdateView, DeleteView
-from django.urls import reverse_lazy
-
+# Update Question(View)
 class QuestionUpdate(UpdateView):
     model = Question
-
-    print("Completed updation succesfully")
     fields = ['block', 'modules', 'question', 'marks', 'priority', 'notes']
     template_name = 'faculty/questindex/questionedit.html'
     success_url = '#'  #reverse_lazy('question-update')
 
-
+# Delete Question(View)
 class QuestionDelete(DeleteView):
     model = Question
     template_name = 'faculty/questindex/questiondel.html'
     success_url = 'eachsubject'
-
 

@@ -1,7 +1,12 @@
-from django.db import models
-from multiselectfield import MultiSelectField
-from ..constant import *
+"""
+Models for admin field. Accesible to adminsitrator. By law_er_rule
+Models engaged: Branch, Specialization, Semester, Subject, Module, Chapter
 
+Developer: Anway Somani
+
+"""
+
+from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 

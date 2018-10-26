@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'latex',#external
-    'accounts',#external
+    'accounts.apps.AccountsConfig',#external
     
     'crispy_forms',
     'multiselectfield',
@@ -90,11 +90,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        #'NAME': 'database121',
-        #'USER': 'root',
-        #'PASSWORD': '',
-        #'HOST': '',
-        #'PORT': '',
     }
 }
 
@@ -117,8 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#AUTH_USER_MODEL = 'accounts.Profile'
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -138,12 +131,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Error for dbshell
-#import os
-#os.environ.setdefault("DJANGO_SETTINGS_MODULE",__file__)
-#import django
-#django.setup()
-
 # Login form Encryption
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
@@ -156,4 +143,4 @@ PASSWORD_HASHERS = (
 
 # Login redirect view
 LOGIN_REDIRECT_URL = 'panel-redirect'
-
+LOGOUT_REDIRECT_URL = 'login'

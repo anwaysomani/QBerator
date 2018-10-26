@@ -1,10 +1,16 @@
-from django.db import models
-from ..constant import *
-from multiselectfield import MultiSelectField
+"""
+Model for question, link to db
+app: latex
 
+Developer: Anway Somani
+
+"""
+
+from django.db import models
+from ..constant import MOD_CHOICES, MARKS_CHOICES, PRI_CHOICES
 from .fields import Subject
 
-# Fields: 
+# Model: Question
 class Question(models.Model):
     block = models.IntegerField(blank=True, help_text='Enter above block value as block id here')
     modules = models.CharField(max_length=100, choices=MOD_CHOICES)

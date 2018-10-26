@@ -10,40 +10,39 @@ It contains the following views:
 - View for faculty post-login page(findex).
 
 - View for hod post-login page(hindex).
+
+Developer: Anway Somani
+
 """
 
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import authenticate, get_user_model, login, logout
-from ..models import *
-from ..forms import *
-from django.http import JsonResponse
-from django.contrib.auth import authenticate, login
-from django.contrib.auth import logout
-from ..constants import *
-
-# Views below: v
+from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth.decorators import login_required
 
 # Creating main page...redirecting after
 def main(request):
-    return render(request, 'main.html', {})
+    return render(request, 'main.html')
 # -----------------------------------------
 
-# -------------------
-# Post-Faculty Login:
-# -------------------
-
-# Faculty Logged-In
+# Post-Faculty Login
 def findex(request):
-    #import ipdb;ipdb.set_trace()
     user = request.user
     lister = user.profile.subject.all()
     ider = user.profile.subject.all()
-    # return render(request, 'faculty/exfindex/sem1.html', {'list': lister, 'user': user})
-    return render(request, 'faculty/findex.html', {'list': lister, 'user': user, 'id': ider})
+    
+    context = {
+               'list': lister,
+               'user': user,
+               'id': ider,
+    }
 
-# Head-of-Department Logged-In
+    return render(request, 'faculty/findex.html', context)
+
+# Post-Head-of-Department Login
 def hindex(request):
-    return render(request, 'hod/hindex.html', {})
+    return render(request, 'hod/hindex.html')
+
 
 def error(request):
-    return render(request, 'error.html', {})
+    return render(request, 'error.html')
+

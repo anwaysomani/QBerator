@@ -1,9 +1,13 @@
-from django.apps import AppConfig
-from suit.apps import DjangoSuitConfig
+"""
+App configuration for app:accounts
+Includes, verbose_name for model and basic configs
 
+Developer: Anway Somani
+
+"""
+
+from django.apps import AppConfig
 
 class AccountsConfig(AppConfig):
     name = 'accounts'
-
-class SuitConfig(DjangoSuitConfig):
-    layout = 'horizaontal'
+    

@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change Password</title>
+
+	<!-- Local CSS File -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/password.css' %}">
+</head>
+
+<body>
+	<div class="uni-heading">
+    	AJEENKYA DY PATIL UNIVERSITY
+    </div>
+
+    <br><br><br>
+
+    <div class="centralize">
+		<form method="post">
+	  	{% csrf_token %}
+	  	{{ form.as_p }}
+	  	<button type="submit">Save changes</button>
+		</form>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -2,8 +2,7 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 
-from ..models import *
-from ..forms import *
+from ..models import Subject, Question
 
 from weasyprint import HTML
 

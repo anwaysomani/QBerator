@@ -1,11 +1,13 @@
+html {
+	margin: 0px;
+	padding: 0px;
+	position: fixed;
+}
+
 .jumbotron {
 	background: #1e9600; /* fallback for old browsers */
   	background: -webkit-linear-gradient(to bottom, #1e9600, #fff200, #ff0000); /* Chrome 10-25, Safari 5.1-6 */
   	background: linear-gradient(to bottom, #1e9600, #fff200, #ff0000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-html {
-
 }
 
 .col-sm-6 {
@@ -43,9 +45,14 @@ button {
 }
 
 .summon {
-	background-color: yellow;
+	background-color: red;
 	margin: 10px 0px 0px 0px;
 	padding: 30px;
+	font: 20px Bold;
+	font-family: 'Black Han Sans', sans-serif;
+	background: #f79d00;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #64f38c, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #64f38c, #f79d00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .doubled {
@@ -55,4 +62,16 @@ button {
 .singled {
 	width: 50%;
 	float: left;
+
+}
+
+.footer {
+	background-color: black;
+	clear: both;
+	position: relative;
+	z-index: 10;
+	height: 2em;
+	margin-top: 0;
+	color: white;
+	font-size: 20px;
 }

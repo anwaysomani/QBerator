@@ -18,6 +18,10 @@
 
 	 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
 
+	 <!-- Google Fonts -->
+	 <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -27,13 +31,21 @@
 		<p>Innovation University</p>
 	</div>
 
-		<button>FACULTY</button>	
-		<button>HOD</button>
-		
+	<button>FACULTY</button>	
+	<button>HOD</button>
+	
+	
 	{% block content %}
 
 	{% endblock %}
 
+	<br><br><br>
+
+	<div class="footer">
+		<a href="">Issue</a> 	      |
+		<a href="">Developer</a>
+	</div>
+	
 </body>
 
 </html>

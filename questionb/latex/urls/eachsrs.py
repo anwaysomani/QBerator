@@ -1,12 +1,15 @@
+"""
+Urls for CRUD operations
+
+Developer: Anway Somani
+
+"""
 from django.conf.urls import include, url
 from .. import views
-from ..views import *
+from ..views import quesdata_view, QuestionUpdate, QuestionDelete
 
 urlpatterns = [
-        #url(r'subject/', views.quesdata_view, name='subject'),
         url(r'subject/(?P<id>\d+)', views.quesdata_view, name='eachsubject'),
-
-        # (?P<id>\d+)
 
         # ------------------------------------------------------------------
         # Trial pattern for exporting to pdf
@@ -14,9 +17,9 @@ urlpatterns = [
 
         # ------------------------------------------------------------------
         # Generic views
-        # Updating
+        # Update
         url(r'question/(?P<pk>\d+)/update/', views.QuestionUpdate.as_view(), name='question-update'),
-        # Deleting
+        # Delete
         url(r'question/(?P<pk>\d+)/delete/$', views.QuestionDelete.as_view(), name='question-delete'),
 ]
 
