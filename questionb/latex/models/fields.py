@@ -10,6 +10,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 from ..constant import SUBJECT_CATEGORY
+from .question import SubjectCategory
 
 # Model: Branch
 class Branch(models.Model):
@@ -46,7 +47,7 @@ class Subject(models.Model):
     semester = models.ManyToManyField(Semester)
     subject = models.CharField(max_length=75, unique=True)
     subject_code = models.CharField(max_length=6, null=True, blank=True)
-    category = models.IntegerField(choices=SUBJECT_CATEGORY)
+    category = models.ForeignKey(SubjectCategory)
     module_type = models.CharField(max_length=2, null=True, blank=True)
     credits = models.IntegerField(validators=[MaxValueValidator(9), MinValueValidator(1)], null=True, blank=True)
 

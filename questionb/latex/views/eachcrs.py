@@ -6,7 +6,7 @@ Developer: Anway Somani
 """
 
 from django.shortcuts import render, redirect
-from ..models import Question, Subject
+from ..models import Question, Subject, SubjectCategory
 from ..forms import QuestionForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView, DeleteView
@@ -22,7 +22,9 @@ def quesdata_view(request, id):
     question_2 = Question.objects.filter(block=id, marks=2)#.order_by('?')[:2]
     question_5 = Question.objects.filter(block=id, marks=5)
     question_10 = Question.objects.filter(block=id, marks=10)
-   
+ 
+    subjects = Subject.objects.all()
+
     initial_data = {
             'block': id
     }
@@ -49,6 +51,7 @@ def quesdata_view(request, id):
                '2mksques': question_2,
                '5mksques': question_5,
                '10mksques': question_10,
+               'subjects': subjects,
     }
 
     return render(request, "faculty/question.html", context)

@@ -9,6 +9,6 @@ from .login import findex, hindex, error
 from .eachcrs import *
 
 # Importing view from .epdf for Exporting file to pdf(trial)
-from .epdf import html_to_pdf_view
+from .epdf import html_to_pdf_view, generate_pdf
 
 from .quespaper import *

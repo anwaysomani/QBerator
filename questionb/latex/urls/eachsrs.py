@@ -27,5 +27,8 @@ urlpatterns = [
 
         # Question Paper
         url(r'questpaper/$', views.upload_paper, name='questionpaper'),
+
+        # Generating pdf
+        url(r'pdf/(?P<subject_id>\d+)', views.generate_pdf, name='pdf'),
 ]
 

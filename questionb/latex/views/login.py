@@ -18,6 +18,7 @@ Developer: Anway Somani
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.decorators import login_required
+from ..models import Subject
 
 # Creating main page...redirecting after
 def main(request):
@@ -40,7 +41,12 @@ def findex(request):
 
 # Post-Head-of-Department Login
 def hindex(request):
-    return render(request, 'hod/hindex.html')
+    subjects = Subject.objects.all()
+
+    context = {
+               'subject': subjects,
+    }
+    return render(request, 'hod/hindex.html', context)
 
 
 def error(request):

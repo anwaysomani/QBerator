@@ -10,19 +10,55 @@
 <body>
 
   <h1>Ajeenkya DY Patil University</h1>
-  
-  {{ user }}
-
 
   <h3>Section A</h3>
   <br>
   <p>Q. Answer the following(Any Five):</p>
 
-  <table id="quesTable">
-	{% for quer in query %}
-	 	Q.{{ forloop.counter }} - {{ quer.question }}<br>
-	{% endfor %}
-  </table>
+  <!-- Two Marks Question -->
+  {% for field in subjects %}
+    <!-- Fifty Marks Question Paper -->
+    {% if field.category_id == '50' %}
+      <p>Question paper: 50 Marks</p>
+      {% for 2mq1 in fifties_twomarks %}
+        <p>Q.{{ forloop.counter }} - {{ 2mq1 }}</p>
+      {% endfor %}<br><hr>
+      {% for 5mq1 in fifties_fivemarks %}
+        <p>Q.{{ forloop.counter }} - {{ 5mq1 }}</p>
+      {% endfor %}<br><hr>
+      {% for 10mq1 in fifties_tenmarks %}
+        <p>Q.{{ forloop.counter }} - {{ 10mq1 }}</p>
+      {% endfor %}<br><hr><hr>
+
+    <!-- Thirty Marks Question Paper -->
+    {% elif field.category_id == '30' %}
+      <p>Question paper: 30 Marks</p>
+      {% for 2mq2 in thirties_twomarks %}
+        <p>Q.{{ forloop.counter }} - {{ 2mq2 }}</p>
+      {% endfor %}<br><hr>
+      {% for 5mq2 in thirties_fivemarks %}
+        <p>Q.{{ forloop.counter }} - {{ 5mq2 }}</p>
+      {% endfor %}<br><hr>
+      {% for 10mq2 in thirties_tenmarks %}
+        <p>Q.{{ forloop.counter }} - {{ 10mq2 }}</p>
+      {% endfor %}<br><hr><hr>
+
+    <!-- Twenty Marks Question Paper -->
+    {% elif field.category_id == '20' %}
+      <p>Question paper: 30 Marks</p>
+      {% for 2mq3 in twenties_twomarks %}
+        <p>Q.{{ forloop.counter }} - {{ 2mq3 }}</p>
+      {% endfor %}<br><hr>
+      {% for 5mq3 in twenties_fivemarks %}
+        <p>Q.{{ forloop.counter }} - {{ 5mq3 }}</p>
+      {% endfor %}<br><hr>
+      {% for 10mq3 in twenties_tenmarks %}
+        <p>Q.{{ forloop.counter }} - {{ 10mq3 }}</p>
+      {% endfor %}<br><hr><hr>
+
+      <hr><hr><hr>
+    {% endif %}
+  {% endfor %}
 </body>
 </html>
 

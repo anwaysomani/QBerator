@@ -9,7 +9,7 @@ Developer: Anway Somani
 
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from .models import Branch, Specialization, Semester, Subject, Module, Chapter, QuestionPaper
+from .models import Branch, Specialization, Semester, Subject, Module, Chapter, QuestionPaper, SubjectCategory, Question
 
 # Changing link to Many-To-Many Field View
 class SubjectAdmin(admin.ModelAdmin):
@@ -24,15 +24,23 @@ class SubjectAdmin(admin.ModelAdmin):
 class BranchAdmin(admin.ModelAdmin):
     list_display = ('br_abbr', 'branch')
 
-# ------------------------------------------
-# Registering models for application: latex 
-# ------------------------------------------
-admin.site.register(Branch, BranchAdmin)   #|
-admin.site.register(Specialization)        #|
-admin.site.register(Semester)              #|
-admin.site.register(Subject, SubjectAdmin) #|
-admin.site.register(Module)                #|
-admin.site.register(Chapter)               #|
-admin.site.register(QuestionPaper)         #|
-# ------------------------------------------
+
+class SubjectCategoryAdmin(admin.ModelAdmin):
+    list_display = ('total_marks', 'required_2mk', 'required_5mk', 'required_10mk')
+
+
+# ------------------------------------------------------------------
+# Registering models for application: latex                       #| 
+# ------------------------------------------------------------------
+admin.site.register(Branch, BranchAdmin)                          #|
+admin.site.register(Specialization)                               #|
+admin.site.register(Semester)                                     #|
+admin.site.register(Subject, SubjectAdmin)                        #|
+admin.site.register(Module)                                       #|
+admin.site.register(Chapter)                                      #|
+admin.site.register(QuestionPaper)                                #|
+admin.site.register(SubjectCategory, SubjectCategoryAdmin)        #|
+# ------------------------------------------------------------------
+
+admin.site.register(Question)
 
