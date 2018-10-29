@@ -13,13 +13,19 @@ urlpatterns = [
 
         # ------------------------------------------------------------------
         # Trial pattern for exporting to pdf
-        url(r'epdf/', views.html_to_pdf_view, name='epdf'),
+        url(r'(?P<id>\d+)/epdf', views.html_to_pdf_view, name='epdf'),
 
         # ------------------------------------------------------------------
-        # Generic views
+        # Generic views:-
         # Update
         url(r'question/(?P<pk>\d+)/update/', views.QuestionUpdate.as_view(), name='question-update'),
         # Delete
-        url(r'question/(?P<pk>\d+)/delete/$', views.QuestionDelete.as_view(), name='question-delete'),
+        #url(r'question/(?P<pk>\d+)/delete/$', views.QuestionDelete.as_view(), name='question-delete'),
+
+        # Delete Individual
+        url(r'question/(?P<id>\d+)/delete/$', views.Questiondelete, name='question-delete'),
+
+        # Question Paper
+        url(r'questpaper/$', views.upload_paper, name='questionpaper'),
 ]
 

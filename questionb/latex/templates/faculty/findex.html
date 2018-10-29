@@ -16,14 +16,23 @@
         <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
 
- 
 <body>
         <div class="uni-heading">
+            <div class="righty">
+                Hello, {{ request.user.get_full_name }}
+            </div>
             AJEENKYA DY PATIL UNIVERSITY
         </div>
 
         <div class="override">
             <a href="{% url 'change_password' %}">Change password</a>
+        </div>
+        <div class="roverride">
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+        <br>
+        <div class="roverride">
+            <a href="{% url 'questionpaper' %}">Share to HOD(under construction)</a>
         </div>
 
         <div class="big-box">
@@ -32,7 +41,7 @@
         <li><div class="sems">
             <a href="{% url 'eachsubject' subject.id %}" class="subj1">
                 <!-- Subject here -->
-                {{ subject.id }}
+                <!-- {{ subject.id }} -->
                 {{ subject }}<br><br>
             </a>
         </div></li>
@@ -40,8 +49,8 @@
 	</div>
 
 	<footer>
-		<p class="ffoot"><a href="" class="ffoot">About</a> 
-		<a href="" class="ffoot">Report_Issue</a></p>
+		<p class="ffoot"><a href="{% url 'about_developer' %}" class="ffoot">About</a> 
+		<a href="{% url 'about_developer' %}" class="ffoot">Report_Issue</a></p>
 	</footer>
 </body>
 

@@ -12,6 +12,7 @@ body {
 }
 
 .uni-heading {
+	position: relative;
 	background-color: orange;
     font-family: 'Roboto';
     font: 40px Bold;
@@ -19,9 +20,9 @@ body {
     text-align: center;
     border: Solid Black;
 	width: 2000px;
-        border-width: 0px 0px 8px 0px;
-        padding: 5px;
-        margin: 0px 0px 0px 0px;
+    border-width: 0px 0px 8px 0px;
+    padding: 5px;
+    margin: 0px 0px 0px 0px;
 }
 
 
@@ -60,14 +61,6 @@ p {
 	float: right;
 }
 
-/*.line-between {
-	position: absolute;
-	left: 50%;
-	top: 10%;
-	bottom: 10%;
-	border-left: 19px solid white;
-}*/
-
 /* Style the tab */
 .tab {
     overflow: hidden;
@@ -105,24 +98,18 @@ p {
     border-top: none;
 }
 
-.down-wala {
-	position: absolute;
-}
-
 footer { 
 	background-color: black;
-	text-color: white;
 	width: 100%;
 	text-align: center;
-	align: center;
 	word-spacing: 20px;
-	margin-top: 10px;
+	margin-top: 0;
 }
 
 .ffoot {
 	background-color: black;
 	font: 30px Bold Arial Black, Helvetica, Serif;
-	margin: 0px;
+	margin: 0px;	
 }
 
 .disable {
@@ -153,7 +140,7 @@ li {
     border-top: 3px double white;
     border-bottom: 3px solid white;
     margin: 0px;
-    padding: 0px;
+    padding: 10px;
     font-family: 'Istok Web', sans-serif;
     font: 20px Bold;
 }
@@ -168,4 +155,15 @@ li {
 
 .subj1 a.subj1 {
     background-color: white;
+}
+
+.roverride {
+	position: absolute;
+	float: right;
+}
+
+.righty {
+	float: left;
+	font: 20px Bold;
+	position: absolute;
 }

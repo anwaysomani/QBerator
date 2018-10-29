@@ -33,7 +33,7 @@
         <div id="user-tools">
             {% block welcome-msg %}
                 {% trans 'Welcome,' %}
-                <strong>Administrator</strong>.
+                <strong>{{ request.user.get_full_name }}</strong>.
             {% endblock %}
             {% block userlinks %}
                 {% if site_url %}

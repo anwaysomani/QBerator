@@ -6,13 +6,13 @@ from ..models import Subject, Question
 
 from weasyprint import HTML
 
-def html_to_pdf_view(request):
+def html_to_pdf_view(request, id):
     paragraphs = ['first paragraph', 'second paragraph', 'third paragraph']
     user = request.user
     lister = user.profile.subject.all()
-    query = Question.objects.all()
+    query = Question.objects.filter(block=id)
 
-    html_string = render_to_string('pdf/pdf_template.html', {'paragraphs': lister, 'user': user, 'query': query})
+    html_string = render_to_string('pdf/pdf_template.html', {'paragraphs': lister, 'user': user, 'query': query, 'id': id})
 
     html = HTML(string=html_string)
     html.write_pdf(target='/tmp/mypdf.pdf');

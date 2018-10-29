@@ -38,4 +38,8 @@ urlpatterns = [
     
     # 2) Indi-Subject page
     url('', include('latex.urls.eachsrs')),
+
+    # Urls from developer
+    # ------------------
+    url('', include('developer.urls')),
 ]

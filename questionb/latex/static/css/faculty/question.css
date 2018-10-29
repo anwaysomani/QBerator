@@ -20,6 +20,8 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 td, th {
@@ -48,4 +50,42 @@ tr:nth-child(even) {
 
 td {
     border: 2px solid black;
+}
+
+.table-heading {
+    background-color: lightGray;
+    padding: 5px;
+    text-align: center;
+    font: 20px Bold;
+    background: #ccc;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    font-size: 30px;
+    padding-left: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+}
+
+/*Editing Grid Item for questions count*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 2px;
+  font: 20px Bold;
+  font-family: 'Lilita One', cursive;
+  text-align: center;
+}
+
+/* Question title header */
+.marks {
+    font: 13px Italic;
 }
