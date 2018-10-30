@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['192.168.1.1', '192.168.1.2', '192.168.1.3', '192.168.1.4', '19
 # Application definition
 
 INSTALLED_APPS = [
-    # Existing Django-Project 
+    # In-built applications
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,13 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'latex',#d-end
-    'accounts',#d-end
-    'developer', #d-end
+    'latex',#developer defined
+    'accounts',#developer defined
+    'developer', #developer defined
     
-    'crispy_forms',
-    'multiselectfield',
-    'updateable',
+    'crispy_forms', #pypi
+    'multiselectfield', #pypi
+    'updateable', #pypi
 ]
 
 MIDDLEWARE = [
@@ -142,3 +142,4 @@ PASSWORD_HASHERS = (
 # Login redirect view
 LOGIN_REDIRECT_URL = 'panel-redirect'
 LOGOUT_REDIRECT_URL = 'login'
+

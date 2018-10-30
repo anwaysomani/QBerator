@@ -1,10 +1,8 @@
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.template.loader import render_to_string
-
-from ..models import Subject, Question
-
 from weasyprint import HTML
+from ..models import Subject, Question
 
 def html_to_pdf_view(request, id):
     paragraphs = ['first paragraph', 'second paragraph', 'third paragraph']
@@ -44,7 +42,6 @@ def generate_pdf(request, subject_id):
     twenties_fivemarks = Question.objects.filter(block=subject_id, marks=5).order_by('?')[:2]
     twenties_tenmarks = Question.objects.filter(block=subject_id, marks=10).order_by('?')[:1]
 
-
     context = {
                'subjects': subjects,
                'questions': questions,
@@ -63,7 +60,6 @@ def generate_pdf(request, subject_id):
                'twenties_tenmarks': twenties_tenmarks,
     }
 
-    print("Arriving here....")
     html_string = render_to_string('pdf/pdf_template.html', context)
 
     html = HTML(string=html_string)
@@ -76,15 +72,4 @@ def generate_pdf(request, subject_id):
         return response
 
     return response
-
-    if subjects.module_type is 30:
-        print("Balle")
-    elif subjects.category is 20:
-        print("Bada balle")
-    elif subjects.category is 50:
-        print("Sabse bada balle")
-    else:
-        print("Checking balle's")
-
-
 
