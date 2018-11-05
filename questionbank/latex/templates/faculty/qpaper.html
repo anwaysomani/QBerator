@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question paper</title>
+</head>
+
+<body>
+	<h1>Upload Question Paper Here!</h1>
+
+	<form method="post" class="form-horiontal">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Submit" class="btn btn-success">
+	</form>
+</body>
+</html>
