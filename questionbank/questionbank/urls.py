@@ -42,4 +42,8 @@ urlpatterns = [
     # Urls from developer
     # ------------------
     url('', include('developer.urls')),
+
+    # Urls from structure
+    # -------------------
+    url('', include('structure.urls')),
 ]

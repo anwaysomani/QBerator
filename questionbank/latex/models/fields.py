@@ -15,7 +15,7 @@ from .question import SubjectCategory
 # Model: Branch
 class Branch(models.Model):
     branch = models.CharField(max_length=75)
-    br_abbr = models.CharField(max_length=20)
+    branch_abbreviation = models.CharField(max_length=20)
 
     def __str__(self):
         return self.branch
@@ -27,9 +27,9 @@ class Branch(models.Model):
 # Model: Specialization
 class Specialization(models.Model):
     branch = models.ForeignKey(Branch)
-    specialization1 = models.CharField(max_length=30)
-    specialization2 = models.CharField(max_length=30, blank=True)
-    abbreviation = models.CharField(max_length=20)
+    primary_specialization = models.CharField(max_length=30)
+    secondary_specialization = models.CharField(max_length=30, blank=True)
+    specialization_abbreviation = models.CharField(max_length=20)
 
     def __str__(self):
         return self.branch.br_abbr + " " + self.abbreviation
@@ -72,9 +72,9 @@ class Subject(models.Model):
     def __str__(self):
         return self.subject
 
-    class Meta:
-        verbose_name = 'Subject'
-        verbose_name_plural = 'Subjects'
+    #class Meta:
+    #    verbose_name = 'Subject'
+    #    verbose_name_plural = 'Subjects'
 
 # Model: Module
 class Module(models.Model): 
@@ -90,7 +90,7 @@ class Module(models.Model):
 
 # Model: Chapter
 class Chapter(models.Model):
-    subject = models.ForeignKey(Module)
+    module = models.ForeignKey(Module)
     chapter = models.CharField(max_length=150)
     
     def __str__(self):

@@ -17,7 +17,7 @@ from django.urls import reverse_lazy
 @login_required(login_url='/accounts/login/')
 def quesdata_view(request, id):
     user = request.user    
-    lister = user.profile.subject.all()
+    lister = user.profile.subjects.all()
     obj = Subject.objects.filter(id=id)
     question_2 = Question.objects.filter(block=id, marks=2)#.order_by('?')[:2]
     question_5 = Question.objects.filter(block=id, marks=5)

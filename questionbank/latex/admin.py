@@ -24,7 +24,7 @@ class SubjectAdmin(admin.ModelAdmin):
         css = {'all': ('css//admin/admin.css',),}
 
 class BranchAdmin(admin.ModelAdmin):
-    list_display = ('br_abbr', 'branch')
+#    list_display = ('br_abbr', 'branch')
     labels = {
         'br_abbr': 'Branch Abbreviation'
     }

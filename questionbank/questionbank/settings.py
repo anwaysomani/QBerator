@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'latex',#developer defined
     'accounts',#developer defined
     'developer', #developer defined
+    'structure', #developer defined
     
     'crispy_forms', #pypi
     'multiselectfield', #pypi

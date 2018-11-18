@@ -1,0 +1,258 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ER Diagram for Question Bank Software</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+	<!-- Go JS for ER -->
+	<!-- use go-debug.js when developing and go.js when deploying -->
+  	<script src="go-debug.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.8.33/go-debug.js"></script>
+ 
+ 	<script src="index.js"></script>
+
+ 	<!-- Google Fonts -->
+ 	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+		
+</script>
+
+
+
+
+
+</head>
+
+<body>
+	<div class="head">
+		<span class="universityTitle">
+			Ajeenkya DY Patil University
+		</span>
+	</div>
+
+	<div class="leftTitleHead">
+		ER Diagram
+	</div>
+
+	<a href="{% url 'individualER' %}">
+		<div class="html-file-link">
+			Individual Entity Relation
+		</div>
+	</a>
+
+	<a href="{% url 'individualER' %}">
+		<div class="html-file-link">
+			Glossary
+		</div>
+	</a>
+
+	<br>
+
+	<br><br>
+
+
+	<!-- Models -->
+	<!-- ------------ -->
+
+	<!-- Model:Branch -->
+	<div class="restDocument">
+		<div class="mainBox1">
+			<span class="modelHead">
+				<strong>Branch</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>branch(CHAR)</li>
+			<hr>
+			<li>branch_abbreviation(CHAR)</li>
+		</div>
+
+		<!-- Model: Specialization -->
+		<div class="mainBox2">
+			<span class="modelHead">
+				<strong>Specialization</strong>
+			</span>
+			<hr>
+			<li>branch(FOREIGN_KEY)</li>
+			<hr>
+			<li>primary_specialization(CHAR)</li>
+			<hr>
+			<li>secondary_specialization(CHAR)</li>
+			<hr>
+			<li>specialization_abbreviation(CHAR)</li>
+		</div>
+
+		<!-- Model: Semester -->
+		<div class="mainBox3">
+			<span class="modelHead">
+				<strong>Semester</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>specialization(FOREIGN_KEY)</li>
+			<hr>
+			<li>semester(CHAR)</li>
+		</div>		
+
+		<!-- Model: Subject -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>Subject</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>semester(ManyToManyField, Semester)</li>
+			<hr>
+			<li>subject(CHAR)</li>
+			<hr>
+			<li>subject_code(CHAR)</li>
+			<hr>
+			<li>category(FOREIGN KEY, SubjectCategory)</li>
+			<hr>
+			<li>module_type(CHAR)</li>
+			<hr>
+			<li>credits(INT)</li>
+		</div>
+
+		<!-- Model: User -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>User</strong>
+			</span>
+			<hr>
+			<li>username(CHAR)</li>
+			<hr>
+			<li>password(VARCHAR)</li>
+			<hr>
+			<li>first_name(VARCHAR)</li>
+			<hr>
+			<li>last_name(VARCHAR)</li>
+			<hr>
+			<li>email_address(VARCHAR)</li>
+			<hr>
+			<li>active_status(BOOLEAN)</li>
+			<hr>
+			<li>staff_status(BOOLEAN)</li>
+			<hr>
+			<li>superuser_status(BOOLEAN)</li>
+			<hr>
+			<li>groups(ManyToManyField, Groups)</li>
+			<hr>
+			<li>user_permissions(ManyToManyField, User_Permissions)</li>
+			<hr>
+			<li>last_login(DATETIME)</li>
+			<hr>
+			<li>date_joined(DATETIME)</li>
+			<hr>
+			<li>subject(ManyToManyField, Subject)</li>
+		</div>				
+
+		<!-- Model: Profile -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>Profile</strong>
+			</span>
+			<hr>
+			<li>user(FOREIGN KEY, User)</li>
+			<hr>
+			<li>subject(ManyToManyField, Subject)</li>
+		</div>
+
+		<!-- Model: Module  -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>Module</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>subject(FOREIGN KEY, Subject)</li>
+			<hr>
+			<li>module(VARCHAR)</li>
+		</div>
+
+		<!-- Model: Chapter  -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>Chapter</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>module(FOREIGN KEY, Module)</li>
+			<hr>
+			<li>chapter(CHAR)</li>
+		</div>
+
+		<!-- Model: QuestionPaper  -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>QuestionPaper</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>subject(FOREIGN KEY, Subject)</li>
+			<hr>
+			<li>Questionpaper(FILE)</li>
+		</div>
+
+		<!-- Model: Question  -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>Question</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>block(INT)</li>
+			<hr>
+			<li>modules(CHAR)</li>
+			<hr>
+			<li>question(TEXT)</li>
+			<hr>
+			<li>marks(INT)</li>
+			<hr>
+			<li>priority(INT)</li>
+			<hr>
+			<li>notes(TEXT)</li>
+			<hr>
+			<li>marks(INT)</li>
+		</div>
+
+		<!-- Model: SubjectCategory  -->
+		<div class="mainBox4">
+			<span class="modelHead">
+				<strong>SubjectCategory</strong>
+			</span>
+			<hr>
+			<li>id(INT)</li>
+			<hr>
+			<li>total_marks(CHAR)</li>
+			<hr>
+			<li>required_2mk(INT)</li>
+			<hr>
+			<li>maximum_2mk(INT)</li>
+			<hr>
+			<li>required_5mk(INT)</li>
+			<hr>
+			<li>maximum_5mk(INT)</li>
+			<hr>
+			<li>required_10mk(INT)</li>
+			<hr>
+			<li>maximum_10mk(INT)</li>
+		</div>
+
+		<br><br><br>
+
+
+	</div>
+
+</body>
+</html>

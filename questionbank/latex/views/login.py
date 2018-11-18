@@ -28,8 +28,8 @@ def main(request):
 # Post-Faculty Login
 def findex(request):
     user = request.user
-    lister = user.profile.subject.all()
-    ider = user.profile.subject.all()
+    lister = user.profile.subjects.all()
+    ider = user.profile.subjects.all()
     
     context = {
                'list': lister,
