@@ -10,3 +10,9 @@ def indexPage(request):
 # View for individual er page
 def individualER(request):
     return render(request, 'erdiagram/individual.html', {})
+
+def dataFlowDiag(request):
+    return render(request, 'data-flow/df-main.html', {})
+
+def documentation(request):
+    return render(request, 'documentation/qbdocs.html', {})

@@ -10,4 +10,10 @@ urlpatterns = [
    
    # Each ER Page
    url(r'individualER/$', views.individualER, name='individualER'),
+
+   # Data Flow Diagram
+   url(r'dataFlow/$', views.dataFlowDiag, name='data-flow'),
+
+   # Documentation
+   url(r'docs/$', views.documentation, name='documentation'),
 ]
