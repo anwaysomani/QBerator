@@ -1,0 +1,581 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Model Links</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/individual.css' %}">
+
+	<!-- Go JS for ER -->
+	<!-- use go-debug.js when developing and go.js when deploying -->
+  	<script src="go-debug.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.8.33/go-debug.js"></script>
+
+  	<!-- Google Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+
+  	
+</head>
+
+<body>
+	<div class="head">
+		<span class="universityTitle">
+			Ajeenkya DY Patil University
+		</span>
+	</div>
+
+	<div id="options-anchor"></div>
+
+	<div class="options" id="options">
+		<div class="branchedOptionsTitle">
+			Apps: 
+		</div>
+		<div class="branchedOptions pointAccounts">
+			<a href="#accounts">
+				accounts
+			</a>
+		</div>
+		<div class="branchedOptions">
+			<a href="#developer">
+				developer
+			</a>
+		</div>
+		<div class="branchedOptions">
+			<a href="#latex">
+				latex
+			</a>
+		</div>
+		<div class="branchedOptions">
+			<a href="#structure">
+				structure
+			</a>
+		</div>
+	</div>
+
+	<br><br><br>
+	
+	<hr>
+
+
+	<!-- The DIV for a Diagram needs an explicit size or else we will not see anything. In this case we also add a background color so we can see that area. -->
+
+	<div class="App" id="accounts">
+		<!-- Application: Accounts -->
+		<div class="applicationName">
+			<strong>accounts</strong>
+			<hr>
+		</div>
+		<!-- 1) Model: models.py/User -->
+		<div class="modelName">
+			<u>models/User</u>
+		</div>
+		<!-- Model Block -->
+		<div id="models.py/User" class="erBlockUser">	
+		</div>
+		<!-- 2) Model: models.py/Profile -->
+		<div class="modelName">
+			<u>models/Profile</u>
+		</div>
+		<!-- Model Block -->
+		<div id="models.py/Profile" class="erBlock">	
+		</div>
+	</div>
+
+	<hr><hr><hr>
+
+	<div class="App" id="developer">
+		<!-- Application: Accounts -->
+		<div class="applicationName">
+			<strong>developer</strong>
+			<hr>
+		</div>
+		<div class="emptyBlock">
+			No models here...
+		</div>
+	</div>
+
+	<hr><hr><hr>
+
+	<div class="App" id="latex">
+		<!-- Application: Accounts -->
+		<div class="applicationName">
+			<strong>latex</strong>
+			<hr>
+		</div>
+		<!-- 1) Model: fields/py/Branch -->
+		<div class="modelName">
+			<u>fields/Branch</u>
+		</div>
+		<!-- Model Block -->
+		<div id="fields.py/Branch" class="erBlock">	
+		</div>
+		<hr>
+		<!-- 2) Model: fields.py/Specialization -->
+		<div class="modelName">
+			<u>fields/Specialization</u>
+		</div>
+		<!-- Model Block -->
+		<div id="fields.py/Specialization" class="erBlock">	
+		</div>
+		<hr>
+		<!-- 3) Model: fields.py/Semester -->
+		<div class="modelName">
+			<u>fields/Semester</u>
+		</div>
+		<!-- Model Block -->
+		<div id="fields.py/Semester" class="erBlock">	
+		</div>
+		<hr>
+		<!-- 4) Model: fields.py/Subject -->
+		<div class="modelName">
+			<u>fields/Subject</u>
+		</div>
+		<!-- Model Block -->
+		<div id="fields.py/Subject" class="erBlock">	
+		</div>
+		<hr>
+		<!-- 5) Model: fields.py/Module -->
+		<div class="modelName">
+			<u>fields/Module</u>
+		</div>
+		<!-- Model Block -->
+		<div id="fields.py/Module" class="erBlock">	
+		</div>
+		<hr>
+		<!-- 6) Model: fields.py/Chapter -->
+		<div class="modelName">
+			<u>fields/Chapter</u>
+		</div>
+		<!-- Model Block -->
+		<div id="fields.py/Chapter" class="erBlock">	
+		</div>
+		<!-- 7) Model: paper.py/QuestionPaper -->
+		<div class="modelName">
+			<u>paper/QuestionPaper</u>
+		</div>
+		<!-- Model Block -->
+		<div id="paper.py/QuestionPaper" class="erBlock">	
+		</div>
+		<!-- 6) Model: question.py/Question -->
+		<div class="modelName">
+			<u>question/Question</u>
+		</div>
+		<!-- Model Block -->
+		<div id="question.py/Question" class="erBlock">	
+		</div>
+		<!-- 6) Model: question.py/SubjectCategory -->
+		<div class="modelName">
+			<u>question/SubjectCategory</u>
+		</div>
+		<!-- Model Block -->
+		<div id="question.py/SubjectCategory" class="erBlock">	
+		</div>
+	</div>
+
+	<hr><hr><hr>
+
+	<div class="App" id="structure">
+		<!-- Application: Accounts -->
+		<div class="applicationName">
+			<strong>structure</strong>
+			<hr>
+		</div>
+		<div class="emptyBlock">
+			No models here...
+		</div>
+	</div>
+
+	<hr><hr><hr>
+
+	<!-- Model: accounts/models/User -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "models.py/User",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Vertical",
+		    { background: "#44CCFF" },
+		    // $(go.Picture,
+		    //   { margin: 10, width: 50, height: 50, background: "red" },
+		    //   new go.Binding("source")),
+		    $(go.TextBlock, "Default Text",
+		      { margin: 5, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  		  { key: "1",                name: "User"},
+				  { key: "2",  parent: "1",  name: "Username(CHAR)"},
+				  { key: "3",  parent: "1",  name: "Password(VARCHAR)"},
+				  { key: "4",  parent: "1",  name: "Personal Info"},
+				  { key: "5",  parent: "4",  name: "First_Name(VARCHAR)"},
+				  { key: "6",  parent: "4",  name: "Last_Name(VARCHAR)"},
+				  { key: "7",  parent: "4",  name: "Email_Address(VARCHAR)"},
+				  { key: "8",  parent: "1",  name: "Permissions"},
+				  { key: "9",  parent: "8",  name: "Active_Status(BOOLEAN)"},
+				  { key: "10", parent: "8",  name: "Staff_Status(BOOLEAN)"},
+				  { key: "11", parent: "8",  name: "Superuser_Status(BOOLEAN)"},
+				  { key: "12", parent: "8",  name: "Groups(ManyToManyField)"},
+				  { key: "13", parent: "8",  name: "User_Permissions(ManyToManyField)"},
+				  { key: "14", parent: "1",  name: "Important_Dates"},
+				  { key: "15", parent: "14", name: "Last_Login"},
+				  { key: "16", parent: "15", name: "Date(DATE)"},
+				  { key: "17", parent: "15", name: "Time(TIME)"},
+				  { key: "18", parent: "14", name: "Date_Joined"},
+				  { key: "19", parent: "18", name: "Date(DATE)"},
+				  { key: "20", parent: "18", name: "Time(TIME)"},
+				  { key: "21", parent: "1",  name: "Profile"},
+				  { key: "22", parent: "21",  name: "Subjects(ManyToManyField, Subject)"},
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: accounts/models/Profile -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "models.py/Profile",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Profile"},
+		  { key: "2", parent: "1", name: "User(FOREIGN KEY, User)"},
+		  { key: "3", parent: "1", name: "Subjects(ManyToManyField, Subject)"}
+		];
+		myDiagram.model = model;
+
+	</script>
+
+	<!-- Model: latex/fields/Branch -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "fields.py/Branch",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Branch"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "branch(CHAR)"},
+		  { key: "4", parent: "1", name: "branch_abbreviation"},
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/fields/Specialization -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "fields.py/Specialization",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Specialization"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "branch(FOREIGN KEY, Branch)"},
+		  { key: "4", parent: "1", name: "primary_specialization(CHAR)"},
+		  { key: "5", parent: "1", name: "secondary_specialization(CHAR)"},
+		  { key: "6", parent: "1", name: "specialization_abbreviation(CHAR)"}
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/fields/Semester -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "fields.py/Semester",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Semester"},
+		  { key: "2", parent: "1", name: "specialization(FOREIGN KEY, Specialization)"},
+		  { key: "3", parent: "1", name: "semester(CHAR)"},
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/fields/Subject -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "fields.py/Subject",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Subject"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "semester(ManyToManyField, Semester)"},
+		  { key: "4", parent: "1", name: "subject(CHAR)"},
+		  { key: "5", parent: "1", name: "subject_code(CHAR)"},
+		  { key: "6", parent: "1", name: "category(FOREIGN KEY, SubjectCategory"},
+		  { key: "7", parent: "1", name: "module_type(CHAR)"},
+		  { key: "8", parent: "1", name: "credits(INT)"}
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/fields/Module -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "fields.py/Module",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Module"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "subject(FOREIGN KEY, Subject)"},
+		  { key: "4", parent: "1", name: "module(VARCHAR)"}
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/fields/Chapter -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "fields.py/Chapter",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" }, 
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Chapter"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "module(FOREIGN KEY, Module)"},
+		  { key: "4", parent: "1", name: "chapter(CHAR)"},
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/paper/QuestionPaper -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "paper.py/QuestionPaper",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "QuestionPaper"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "Subject(FOREIGN KEY, Subject)"},
+		  { key: "4", parent: "1", name: "QuestionPaper(FILE)"},
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/question/Question -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "question.py/Question",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		     
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "Question"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "block(INT)"},
+		  { key: "4", parent: "1", name: "modules(CHAR)"},
+		  { key: "5", parent: "1", name: "question(TEXT)"},
+		  { key: "6", parent: "1", name: "marks(INT)"},
+		  { key: "7", parent: "1", name: "priority(INT)"},
+		  { key: "8", parent: "1", name: "notes(TEXT)"},
+		  { key: "9", parent: "1", name: "marks(INT)"}
+
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Model: latex/question/SubjectCategory -->
+	<script type="text/javascript">
+		var $ = go.GraphObject.make;
+		var myDiagram =
+		  $(go.Diagram, "question.py/SubjectCategory",
+		    {
+		      "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+		      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+		                { angle: 90, layerSpacing: 35 })
+		    });
+
+		// the template we defined earlier
+		myDiagram.nodeTemplate =
+		  $(go.Node, "Horizontal",
+		    { background: "#44CCFF" },
+		     
+		    $(go.TextBlock, "Default Text",
+		      { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+		      new go.Binding("text", "name"))
+		  );
+
+		var model = $(go.TreeModel);
+		model.nodeDataArray =
+		[
+		  { key: "1",              name: "SubjectCategory"},
+		  { key: "2", parent: "1", name: "id(INT)"},
+		  { key: "3", parent: "1", name: "total_marks(CHAR)"},
+		  { key: "4", parent: "1", name: "required_2mk(INT)"},
+		  { key: "5", parent: "1", name: "maximum_2mk(INT)"},
+		  { key: "6", parent: "1", name: "required_5mk(INT)"},
+		  { key: "7", parent: "1", name: "maximum_5mk(INT)"},
+		  { key: "8", parent: "1", name: "required_10mk(INT)"},
+		  { key: "9", parent: "1", name: "maximum_10mk(INT)"}
+		];
+		myDiagram.model = model;
+	</script>
+
+	<!-- Smooth Scroll on Application div -->
+	<script type="text/javascript">
+		$(".pointAccounts").click(function() {
+   			$('html,body').animate({
+        		scrollTop: $("#latex").offset().top},
+        		'slow');
+			});
+	</script>
+
+</body>
+</html>

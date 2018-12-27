@@ -1,0 +1,164 @@
+html {
+  margin: 0px;
+  padding-left: 0px;
+  width: 98%;
+}
+
+.uni-heading {
+	background-color: orange;
+  font-family: 'Roboto';
+  font: 40px Bold;
+	font-family: 'Allan';
+  text-align: center;
+  border: 1px solid black;
+	width: auto;
+  border-width: 0px 0px 8px 0px;
+  padding: 5px;
+  margin: 0px 0px 0px 0px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.delete-row {
+  border-radius: 10px;
+}
+
+/*BootStrap Design Change*/
+.form-group {
+  margin: 0px;
+}
+
+/*Setting size for table columns*/
+.questionTable td, .questionTable th{
+  width: auto;
+}
+
+td {
+  border: 2px solid black;
+}
+
+.table-heading {
+  background-color: lightGray;
+  padding: 5px;
+  text-align: center;
+  font: 20px Bold;
+  background: #ccc;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  font-size: 30px;
+  padding-left: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+/*Editing Grid Item for questions count*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 2px;
+  font: 20px Bold;
+  font-family: 'Lilita One', cursive;
+  text-align: center;
+  color: black;
+}
+
+/* Question title header */
+.marks {
+  font: 13px Italic;
+  color: black;
+}
+
+.return-view {
+  background-color: yellow;
+  font: 20px Bold;
+  width: 25%;
+  border: 2px solid black;
+  width: 40%;
+  font-family: 'Staatliches', cursive;
+}
+
+.return-view-link {
+  color: #F39308;
+}
+
+/* Styling Form */
+.form-titles {
+  background-color: green;
+  border: 2px dotted black;
+  margin: 2px;
+}
+
+/* Option Switch for new and view */
+.option-switch {
+  width: 100%;
+  padding-left: 10%;
+  padding-right:: 10%;
+  background-color: turquoise;
+}
+
+.firstOption {
+  background-color: black;
+  position: relative;
+  float: left;
+  width: 40%;
+  color: white;
+  font: 25px Bold;
+  text-align: center;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  border: 2px solid white;
+  margin-left: 8%;
+}
+
+.secondOption {
+  background-color: black;
+  position: relative;
+  float: right;
+  width: 40%;
+  color: white;
+  font: 25px Bold;
+  text-align: center;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  border: 2px solid white; 
+  margin-right: 8%;
+}
+
+.firstOption:hover, .secondOption:hover {
+  color: red;
+  transition-timing-function: linear;
+  overflow: hidden;
+  border: 8px outset pink;
+}
+
+meter {
+  border-radius: 6px;
+  color: black;
+}
+
+.disableHover {
+  cursor: none;
+}

@@ -1,0 +1,45 @@
+{% extends 'faculty/index.html' %}
+
+
+{% block bca-sem-block %}
+
+	<!-- {{ user }} -->
+	<ul>
+		{% for subject in list %}
+		<li><div class="sems">
+			<a href="#" class="subj1">
+				<!-- Subject here -->
+				<!-- {{ user }} -->
+				{{ subject }}
+			</a>
+		</div></li>
+		{% endfor %}
+
+		<br>
+
+		<!--
+		<li><div class="sems">
+			<a href="#" class="subj1">
+				Subject-2
+			</a>
+		</div></li>
+		<li><div class="sems">
+			<a href="#" class="subj1">
+				Subject-3
+			</a>
+		</div></li>
+		<li><div class="sems">
+			<a href="#" class="subj1">
+				Subject-4
+			</a>
+		</div></li>
+	</ul>
+-->
+
+{% endblock %}
+
+
+<!-- {% block question-form %}
+
+{% endblock %}
+ -->
