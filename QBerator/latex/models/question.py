@@ -2,8 +2,6 @@
 Model for question, link to db
 app: latex
 
-Developer: Anway Somani
-
 """
 
 from django.db import models
@@ -17,7 +15,6 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Question(models.Model):
     block    = models.IntegerField()
     modules  = models.CharField(max_length=100, choices=MOD_CHOICES)
-    #question = models.TextField(unique=True)
     question = RichTextUploadingField()
     marks    = models.IntegerField(choices=MARKS_CHOICES, null=True)
     priority = models.IntegerField(choices=PRI_CHOICES)

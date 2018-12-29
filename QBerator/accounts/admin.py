@@ -6,8 +6,6 @@ Registrations: |
 - ProfileInline: for importing Profile model
 - CustomUserAdmin: for aligning inlines to admin section
 
-Developer: Anway Somani
-
 """
 # Imports:-
 # ---------------------------------------------

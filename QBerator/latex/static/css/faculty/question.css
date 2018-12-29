@@ -162,3 +162,8 @@ meter {
 .disableHover {
   cursor: none;
 }
+
+/* Changing div element onHover */
+form:hover {
+  border: 4px solid black;
+}

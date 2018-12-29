@@ -6,53 +6,91 @@
 <head>
 	<title>Question Bank Software</title>
         
-        <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 
-        <link rel="stylesheet" href="{% static 'css/faculty/findex.css' %}">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="{% static 'css/faculty/findex.css' %}">
 
-        <!-- Google Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Staatliches|Patrick+Hand|Viga|Acme" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 <body>
-        <div class="uni-heading">
-            <div class="righty">
-                Hello, {{ request.user.get_full_name }}
-            </div>
-            AJEENKYA DY PATIL UNIVERSITY
-        </div>
 
-        <div class="override">
-            <a href="{% url 'change_password' %}">Change password</a>
+    <div class="widget center">
+        <div class="blur"></div>
+        <div class="text center">
+            <h1 class="universityName">Ajeenya DY Patil University</h1>
+            <p class="welcomeMessage">Welcome {{ request.user.get_full_name }}!</p>
         </div>
-        <div class="roverride">
-            <a href="{% url 'logout' %}">Logout</a>
+    </div>
+
+    <div class="theme">
+        <button class="themeBlock">
+            White
+        </button>
+        <button class="themeBlock">
+            Black
+        </button>
+        <button class="themeBlock">
+            Blue
+        </button>
+        <button class="themeBlock">
+            Red
+        </button>
+        <button class="themeBlock">
+            Demand More...
+        </button>
+    </div>
+
+    <div class="centerMenu blur"></div>
+    <div class="mainBlock">
+        <div class="subjectMainTitle">
+            Subjects
         </div>
-        <br>
-        <!-- <div class="roverride">
-            <a href="{% url 'questionpaper' %}">Share to HOD(under construction)</a>
-        </div> -->
-
-        <div class="big-box">
-
         {% for subject in list %}
-        <li><div class="sems">
-            <a href="{% url 'eachsubject' subject.id %}" class="subj1">
-                <!-- Subject here -->
-                <!-- {{ subject.id }} -->
-                {{ subject }}<br><br>
-            </a>
-        </div></li>
+        <a href="{% url 'eachsubject' subject.id %}">
+            <div class="subjects">
+                <u>{{ subject.subject_code }}</u> <br> {{ subject }}
+            </div>
+        </a>
         {% endfor %}
-	</div>
+    </div>
 
-	<footer>
-		<p class="ffoot"><a href="{% url 'about_developer' %}" class="ffoot">About</a> 
-		<a href="{% url 'about_developer' %}" class="ffoot">Report_Issue</a></p>
-	</footer>
+    <!-- Configurations -->
+    <div class="sideBlock">
+        <div class="sideBlock-title">
+            Configurations
+        </div>
+        <a href="">
+            <div class="configurations">
+                <i class="fas fa-cogs"></i>
+                Settings
+            </div>
+        </a>
+        <a href="{% url 'about_developer' %}">
+            <div class="configurations">
+                <i class="fas fa-at"></i>
+                About the Developer
+            </div>
+        </a>
+        <a href="">
+            <div class="configurations">
+                <i class="fas fa-bug"></i>
+                Report Issue
+            </div>
+        </a>
+        <a href="{% url 'logout' %}">
+            <div class="configurations">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </div>
+        </a>
+    </div>
+
+
 </body>
 
 </html>
-

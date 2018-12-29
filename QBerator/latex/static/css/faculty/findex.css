@@ -1,169 +1,187 @@
 html {
-	position: fixed;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-	
-	background: url('../../img/faculty_spotlight.jpg') no-repeat;
-	background-size: auto;
-	background-position: 50% 50%;
-	/*background-color: #141e30;*/
-	
+  background: url('../../img/faculty_spotlight.jpg') no-repeat center center fixed;
+  background-color: black;
+  background-size: cover;
 }
 
-.uni-heading {
-	position: relative;
+.blur {
+  background: url('../../img/faculty_spotlight.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  filter: blur(15px);
+  position: absolute;
+  height: 150px;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+}
+
+.widget {
+  border-top: 2px solid rgba(255, 255, 255, .5);
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} 
+
+/* Welcome message */
+.welcomeMessage {
+	font: 25px Bold;
+	color: white;
+}
+
+/* University Name */
+.universityName {
 	background-color: orange;
-    font-family: 'Roboto';
-    font: 40px Bold;
-	font-family: 'Allan';
-    text-align: center;
-    border: Solid Black;
-	width: 2000px;
-    border-width: 0px 0px 8px 0px;
-    padding: 5px;
-    margin: 0px 0px 0px 0px;
-}
-
-
-p {
-	font: 30px Bold;
-	font-family: 'Aclonica';
-	color: blue;
-	background-color: white;
-}
-
-.big-box {
-	width: 1100px;
-	height: 450px;
-	margin: 35px 50px 50px 50px;
-	padding: 15px;
-	background-color: transparent;
-}
-
-.indent {
-	text-indent: 50px;
-}
-
-.opt-title {
-	color: red;
-}
-
-.left-box {
-	float: left;
-	opacity: 1.0;
-	margin-left: -40px;
-	padding: 5px;
-	margin-top: 5px;
-}
-
-.right-wala-box {
-	float: right;
-}
-
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-
-footer { 
-	background-color: black;
-	width: 100%;
+	margin-top: 0px;
+	font-family: 'Staatliches', cursive;
 	text-align: center;
-	word-spacing: 20px;
-	margin-top: 0;
 }
 
-.ffoot {
+/* Theme Configurations */
+.theme {
 	background-color: black;
-	font: 30px Bold Arial Black, Helvetica, Serif;
-	margin: 0px;	
+	margin-top: 8%;
+	width: 100%;
 }
 
-.disable {
-    color: currentColor;
-    cursor: not-allowed;
-    opacity: 0.5;
-    text-decoration: none;
+.themeBlock {
+	position: relative;
+	float: left;
+	width: 19.5%;
+	margin: 2px;
+	background-color: lightgrey;
+	border: 2px solid white;
+	border-radius: 6px;
+	font: 20px Bold;
+	font-family: 'Patrick Hand', cursive;
 }
 
-/* New decoration in findex */
-ul {
-	list-style: none;
+.themeBlock:focus {
+	background-color: green;
+}
+
+.themeBlock:hover {
+	background-color: yellow;
+}
+
+/* Main Menu */
+.centerMenu {
+	background-color: #54DCA4;
+	background-size: cover;
+	width: 60%;
+	height: 60%;
+	left: 20%;
+	top: 35%;
+	margin-left: -50px;
+	margin-top: -50px;
+	position: absolute;
+	filter: blur(15px);
 	overflow: hidden;
 }
 
-li {
-	list-style: none; 
+/*Division menu*/
+.mainBlock {
+	opacity: 1;
+	background: #0B486B;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F56217, #0B486B);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F56217, #0B486B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: cover;
+	width: 40%;
+	height: 55%;
+	left: 20%;
+	top: 35%;
+	margin-left: -50px;
+	margin-top: -50px;
+	position: absolute;
+	overflow: hidden;
 }
 
-.sems {
+/*Subject Section*/
+.subjectMainTitle {
+	background-color: green;
 	text-align: center;
-	width: 25%;
-    background: #000000;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-left: 3px solid white;
-    border-right: 3px solid white;
-    border-top: 3px double white;
-    border-bottom: 3px solid white;
-    margin: 0px;
-    padding: 10px;
-    font-family: 'Istok Web', sans-serif;
-    font: 20px Bold;
+	font: 30px Bold;
+	font-family: 'Viga', sans-serif;
 }
 
-.subj1 {
-	/*margin: auto;
-	padding: auto;*/
-    color: yellow;
-    font: 22px Bold;
-    text-decoration: underline;
-}
-
-.subj1 a.subj1 {
-    background-color: white;
-}
-
-.roverride {
-	position: absolute;
-	float: right;
-}
-
-.righty {
+.subjects {
+	background: #141E30;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: 40%;
+	height: 30%;
+	font: 25px Bold;
+	font-family: 'Acme', sans-serif;
+	margin-left: 8%;
+	margin-top: 8%;
+	overflow: hidden;
 	float: left;
-	font: 20px Bold;
-	position: absolute;
+	color: white;
 }
+
+.subjects:hover {
+	background: #799F0C;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ACBB78, #799F0C);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ACBB78, #799F0C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: red;
+}
+
+/* Side block */
+.sideBlock {
+	opacity: 1;
+	background: #3C3B3F;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: cover;
+	width: 20%;
+	height: 55%;
+	left: 60%;
+	top: 35%;
+	margin-left: -50px;
+	margin-top: -50px;
+	position: absolute;
+	overflow: hidden;
+	border: 2px solid white;
+}
+
+.sideBlock-title {
+	background-color: yellow;
+	font: 30px Bold;
+	font-family: 'Viga', sans-serif;
+	text-align: center;
+}
+
+.configurations {
+	font: 25px Bold;
+	color: white;
+	background-color: black;
+	border: 2px solid white;
+	margin: 15px 20px;
+	width: 80%;
+	text-align: center;
+	height: 17%;
+	overflow: hidden;
+	top: 50%;
+	text-align: center;
+}
+
+.configurations:hover {
+	background-color: orange;
+}
+
+

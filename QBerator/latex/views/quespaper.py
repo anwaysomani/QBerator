@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from ..models import QuestionPaper
 from ..forms import PaperForm
 
 def upload_paper(request):

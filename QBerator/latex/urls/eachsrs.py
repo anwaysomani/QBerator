@@ -1,8 +1,5 @@
 """
 Urls for CRUD operations
-
-Developer: Anway Somani
-
 """
 from django.conf.urls import include, url
 from .. import views
@@ -23,10 +20,7 @@ urlpatterns = [
         #url(r'question/(?P<pk>\d+)/delete/$', views.QuestionDelete.as_view(), name='question-delete'),
 
         # Delete Individual
-        url(r'question/(?P<id>\d+)/delete/$', views.Questiondelete, name='question-delete'),
-
-        # Question Paper
-        url(r'questpaper/$', views.upload_paper, name='questionpaper'),
+        url(r'question/(?P<id>\d+)/delete/$', views.QuestionDelete, name='question-delete'),
 
         # Generating pdf
         url(r'pdf/(?P<subject_id>\d+)', views.generate_pdf, name='pdf'),

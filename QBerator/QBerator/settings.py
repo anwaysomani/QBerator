@@ -25,7 +25,7 @@ SECRET_KEY = 'j85b0a_nwn=^#-9m$yz$5=o1h($epyjg(xuh-9ov%#og4ll@80'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.1', '192.168.1.2', '192.168.1.3', '192.168.1.4', '192.168.1.5', '192.168.1.6', '192.168.1.7', '192.168.1.8', '192.168.43.69', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.1.1', '192.168.1.2', '192.168.1.3', '192.168.1.4', '192.168.1.5', '192.168.1.6', '192.168.1.7', '192.168.1.8', '192.168.43.69', '192.168.0.105', '192.168.0.106', '192.168.0.108', '127.0.0.1']
 
 # Application definition
 
@@ -60,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #'latex.middleware.UserRestrict',
 ]
 
 ROOT_URLCONF = 'QBerator.urls'

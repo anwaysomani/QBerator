@@ -1,15 +1,12 @@
 """
 Admin view for manipulating admin section 
 from app: latex
-
-Developer: Anway Somani
-
 """
 
 
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from .models import Branch, Specialization, Semester, Subject, Module, Chapter, QuestionPaper, SubjectCategory, Question
+from .models import Branch, Specialization, Semester, Subject, Module, Chapter, SubjectCategory, Question
 
 # Adding verbose names to fields
 
@@ -43,7 +40,6 @@ admin.site.register(Semester)                                     #|
 admin.site.register(Subject, SubjectAdmin)                        #|
 admin.site.register(Module)                                       #|
 admin.site.register(Chapter)                                      #|
-admin.site.register(QuestionPaper)                                #|
 admin.site.register(SubjectCategory, SubjectCategoryAdmin)        #|
 # ------------------------------------------------------------------
 

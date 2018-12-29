@@ -1,17 +1,9 @@
-"""
-Views for question...dedicated to absoltue {{ value }}
-
-Developer: Anway Somani
-
-"""
-
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from ..models import Question, Subject, SubjectCategory
 from ..forms import QuestionForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
-
 
 # Page: QuestionCreate,+QuestionList
 @login_required(login_url='/accounts/login/')
@@ -19,7 +11,7 @@ def quesdata_view(request, id):
     user = request.user    
     lister = user.profile.subjects.all()
     obj = Subject.objects.filter(id=id)
-    question_2 = Question.objects.filter(block=id, marks=2)#.order_by('?')[:2]
+    question_2 = Question.objects.filter(block=id, marks=2)
     question_5 = Question.objects.filter(block=id, marks=5)
     question_10 = Question.objects.filter(block=id, marks=10)
  
@@ -66,17 +58,8 @@ class QuestionUpdate(UpdateView):
     template_name = 'faculty/questindex/questionedit.html'
     success_url = '#'
 
-# Delete Question(View)
-class QuestionDelete(DeleteView):
-    #import ipdb; ipdb.set_trace()
-    model = Question
-    template_name = 'faculty/question.html'
-    success_url = '#'
-
-from django.shortcuts import get_object_or_404
-
 # Deleting single question input
-def Questiondelete(request, id):
+def QuestionDelete(request, id):
     user = request.user
     obj = get_object_or_404(Question, id=id)
     context = {
