@@ -22,7 +22,8 @@
     <div class="widget center">
         <div class="blur"></div>
         <div class="text center">
-            <h1 class="universityName">Ajeenya DY Patil University</h1>
+            {% block content %}
+            {% endblock %}
             <p class="welcomeMessage">Welcome {{ request.user.get_full_name }}!</p>
         </div>
     </div>
