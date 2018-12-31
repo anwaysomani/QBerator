@@ -1,0 +1,27 @@
+[0;1;32m●[0m mariadb.service - MariaDB 10.3 database server
+   Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; vendor preset: disabled)
+  Drop-In: /usr/lib/systemd/system/mariadb.service.d
+           └─tokudb.conf
+   Active: [0;1;32mactive (running)[0m since Sun 2018-12-30 20:26:08 IST; 9s ago
+     Docs: man:mysqld(8)
+           https://mariadb.com/kb/en/library/systemd/
+  Process: 8175 ExecStartPost=/usr/libexec/mysql-check-upgrade (code=exited, status=0/SUCCESS)
+  Process: 7993 ExecStartPre=/usr/libexec/mysql-prepare-db-dir mariadb.service (code=exited, status=0/SUCCESS)
+  Process: 7969 ExecStartPre=/usr/libexec/mysql-check-socket (code=exited, status=0/SUCCESS)
+ Main PID: 8119 (mysqld)
+   Status: "Taking your SQL requests now..."
+    Tasks: 55 (limit: 4915)
+   Memory: 153.4M
+   CGroup: /system.slice/mariadb.service
+           └─8119 /usr/libexec/mysqld --basedir=/usr
+
+Dec 30 20:26:07 anway mysql-prepare-db-dir[7993]: Please report any problems at http://mariadb.org/jira
+Dec 30 20:26:07 anway mysql-prepare-db-dir[7993]: The latest information about MariaDB is available at http://mariadb.org/.
+Dec 30 20:26:07 anway mysql-prepare-db-dir[7993]: You can find additional information about the MySQL part at:
+Dec 30 20:26:07 anway mysql-prepare-db-dir[7993]: http://dev.mysql.com
+Dec 30 20:26:07 anway mysql-prepare-db-dir[7993]: Consider joining MariaDB's strong and vibrant community:
+Dec 30 20:26:07 anway mysql-prepare-db-dir[7993]: https://mariadb.org/get-involved/
+Dec 30 20:26:07 anway mysqld[8119]: 2018-12-30 20:26:07 0 [Note] /usr/libexec/mysqld (mysqld 10.3.11-MariaDB) starting as process 8119 ...
+Dec 30 20:26:07 anway mysqld[8119]: 2018-12-30 20:26:07 0 [Warning] Could not increase number of max_open_files to more than 1024 (request: 4186)
+Dec 30 20:26:07 anway mysqld[8119]: 2018-12-30 20:26:07 0 [Warning] Changed limits: max_open_files: 1024  max_connections: 151 (was 151)  table_cache: 421 (was 2000)
+Dec 30 20:26:08 anway systemd[1]: Started MariaDB 10.3 database server.
