@@ -4,12 +4,13 @@
 <html>
 
 <head>
-	<title>Question Bank Software</title>
+	<title>Home | QBerator</title>
         
     <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 
     <!-- Local CSS -->
     <link rel="stylesheet" href="{% static 'css/faculty/findex.css' %}">
+    
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Staatliches|Patrick+Hand|Viga|Acme" rel="stylesheet">
@@ -22,8 +23,7 @@
     <div class="widget center">
         <div class="blur"></div>
         <div class="text center">
-            {% block content %}
-            {% endblock %}
+            {% include 'faculty/commons/universityHeader.html' %}
             <p class="welcomeMessage">Welcome {{ request.user.get_full_name }}!</p>
         </div>
     </div>

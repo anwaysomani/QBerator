@@ -159,11 +159,20 @@ meter {
   color: black;
 }
 
-.disableHover {
-  cursor: none;
+input {
+  border-radius: 10px;
+  text-align: center; 
 }
 
-/* Changing div element onHover */
-form:hover {
-  border: 4px solid black;
+select {
+  border-radius: 10px;
+  width: 30%;
+}
+
+option {
+  text-align: right;
+}
+
+textarea {
+  border-radius: 10px;
 }

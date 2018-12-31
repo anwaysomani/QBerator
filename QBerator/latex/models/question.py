@@ -18,7 +18,7 @@ class Question(models.Model):
     question = RichTextUploadingField()
     marks    = models.IntegerField(choices=MARKS_CHOICES, null=True)
     priority = models.IntegerField(choices=PRI_CHOICES)
-    notes    = models.TextField()
+    notes    = models.TextField(null=True)
 
     def __str__(self):
         return self.question
