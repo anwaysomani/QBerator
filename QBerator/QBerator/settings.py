@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'latex',#developer defined
     'accounts',#developer defined
     'developer', #developer defined
+    'structure', #developer defined
     
     'crispy_forms', #pypi
     'multiselectfield', #pypi
@@ -90,18 +91,18 @@ WSGI_APPLICATION = 'QBerator.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
     #'default': {
-    #    'ENGINE': 'django.db.backends.mysql',
-    #    'NAME': 'QBerator',
-    #    'USER': 'root',
-    #    'PASSWORD': 'Anway@12345',
-    #    'HOST': '127.0.0.1',
-    #    'PORT': '3306',
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'QBerator',
+        'USER': 'anway',
+        'PASSWORD': 'anway123',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
 }
 
 
