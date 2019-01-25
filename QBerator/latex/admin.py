@@ -21,7 +21,7 @@ class SubjectAdmin(admin.ModelAdmin):
         css = {'all': ('css//admin/admin.css',),}
 
 class BranchAdmin(admin.ModelAdmin):
-#    list_display = ('br_abbr', 'branch')
+    list_display = ('branch_abbreviation', 'branch')
     labels = {
         'br_abbr': 'Branch Abbreviation'
     }
@@ -30,13 +30,21 @@ class SubjectCategoryAdmin(admin.ModelAdmin):
     list_display = ('total_marks', 'required_2mk', 'required_5mk', 'required_10mk')
     fields = ['total_marks', ('required_2mk', 'maximum_2mk'), ('required_5mk', 'maximum_5mk'), ('required_10mk', 'maximum_10mk')]
 
+class SpecializationAdmin(admin.ModelAdmin):
+    list_display = ('branch', 'specialization_abbreviation')
+    labels = {
+        'specialization_abbreviation': 'Specialization'
+    }
+
+class SemesterAdmin(admin.ModelAdmin):
+    search_fields = ('specialization',)
 
 # ------------------------------------------------------------------
 # Registering models for application: latex                       #| 
 # ------------------------------------------------------------------
 admin.site.register(Branch, BranchAdmin)                          #|
-admin.site.register(Specialization)                               #|
-admin.site.register(Semester)                                     #|
+admin.site.register(Specialization, SpecializationAdmin)          #|
+admin.site.register(Semester, SemesterAdmin)                      #|
 admin.site.register(Subject, SubjectAdmin)                        #|
 admin.site.register(Module)                                       #|
 admin.site.register(Chapter)                                      #|

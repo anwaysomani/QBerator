@@ -46,7 +46,7 @@
       {% endfor %}<br><hr><hr>
 
     <!-- Twenty Marks Question Paper -->
-    {% elif field.category_id == '20' %}
+    {% elif field.category_id == '20' %}  
       <p>Question paper: 30 Marks</p>
       {% for 2mq3 in twenties_twomarks %}
         <p>Q.{{ forloop.counter }} - {{ 2mq3|safe }}</p>
