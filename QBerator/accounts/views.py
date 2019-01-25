@@ -1,8 +1,6 @@
 """
 User Certification for granted access to post-login urls
 
-Developer: Anway Somani
-
 """
 
 from django.shortcuts import render, redirect, get_object_or_404
@@ -32,7 +30,7 @@ class PanelRedirectView(RedirectView):
     # Checking user group for redirecting based on user-role
     def get_redirect_url(self, *args, **kwargs):
         user = self.request.user
-        if user.groups.filter(name='HOD').count():
+        if user.groups.filter(name='HoD').count():
             return redirect('/hindex/$')
         elif user.groups.filter(name='Faculty').count():
             return redirect('findex/$')
