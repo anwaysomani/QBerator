@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     #'latex.middleware.UserRestrict',
+    #'latex.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'QBerator.urls'
