@@ -32,7 +32,7 @@ class Specialization(models.Model):
     specialization_abbreviation = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.branch.br_abbr + " " + self.abbreviation
+        return self.branch.branch_abbreviation + " " + self.specialization_abbreviation
 
     class Meta:
         verbose_name = 'Specialization'
@@ -47,7 +47,7 @@ class Semester(models.Model):
         unique_together = [("specialization", "semester")]
 
     def __str__(self):
-        return self.specialization.branch.br_abbr + " " + self.specialization.abbreviation + " " + self.semester
+        return self.specialization.branch.branch_abbreviation + " " + self.specialization.specialization_abbreviation + " - " + self.semester
 
     class Meta:
         verbose_name = 'Semester'
