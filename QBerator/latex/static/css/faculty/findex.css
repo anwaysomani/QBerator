@@ -177,3 +177,18 @@ body {
 	background-color: orange;
 }
 
+.HoverWhite:hover {
+	background-color: white;
+}
+
+.HoverBlack:hover {
+	background-color: black;
+}
+
+.HoverBlue:hover {
+	background-color: blue;
+}
+
+.HoverRed:hover {
+	background-color: red;
+}

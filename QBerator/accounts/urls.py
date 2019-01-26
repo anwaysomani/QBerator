@@ -22,4 +22,7 @@ urlpatterns = [
 
     # Password change
     url(r'^password/$', views.change_password, name='change_password'),
+
+    # User configuration url
+    url(r'^settings/$', views.settings, name='settings'),
 ]

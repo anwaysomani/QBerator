@@ -56,3 +56,8 @@ def change_password(request):
         'form': form
     })
 
+# --------------------------------------------------------------------------------
+
+# Configurations page for user
+def settings(request):
+   return render( request, "configurations/settings.html")
